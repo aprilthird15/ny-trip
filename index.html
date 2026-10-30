@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NEW YORK 2026 — 20주년 기념 뉴욕 여행</title>
 <meta name="description" content="2026.11.13–21 뉴욕 8박9일 우정여행 가이드북: 일정, 예약, 볼거리, 공연, 맛집, 쇼핑, 실전 정보">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#fff9ef">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="NY 2026">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -123,10 +129,11 @@ p.lead{color:var(--dim);margin:0 0 6px;font-size:14px}
 .eng{font-size:11.5px;color:var(--dim);white-space:nowrap}
 .eng b{color:var(--amber);letter-spacing:1px}
 .steps{counter-reset:s;list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
-.steps li{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 13px 12px 46px;position:relative;font-size:13.5px}
-.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:13px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.steps li>b:first-child{display:block;font-size:14.5px;margin-bottom:2px}
+.steps>li{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 13px 12px 46px;position:relative;font-size:13.5px}
+.steps>li:before{counter-increment:s;content:counter(s);position:absolute;left:13px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps>li>b:first-child{display:block;font-size:14.5px;margin-bottom:2px}
 .steps ul{margin:4px 0 0;padding-left:18px}
+.steps ul li{margin:2px 0}
 table.mini{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;background:var(--panel);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 table.mini th,table.mini td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 table.mini th{background:var(--gray-bg);font-size:12px;color:var(--dim);font-weight:600}
@@ -152,6 +159,8 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px soli
 .stoplist .num.hotel{background:var(--ink)}
 .leaflet-popup-content{font-family:'Noto Sans KR',sans-serif;font-size:13px}
 .tabs{z-index:1000}
+.offbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:2000;background:var(--ink);color:#fff;font-size:13px;padding:10px 14px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.2);display:none}
+.offbar.on{display:block}
 </style>
 </head>
 <body>
@@ -223,6 +232,7 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px soli
   </section>
 </main>
 
+<div class="offbar" id="offbar">📴 오프라인 모드 — 마지막으로 저장된 내용을 보여주고 있어요. 지도는 미리 본 지역만 보여요.</div>
 <footer>
   NY, 20 · 20주년 근속기념 뉴욕 우정여행 · 2026.11.13–21<br>
   운영시간·가격은 2026.10.30 기준. "방문 전 확인" 표시가 있는 곳은 공식 사이트에서 다시 확인하세요.
@@ -1072,7 +1082,7 @@ catView("shop",$("#shopView"),$("#shopChips"),[
 ],k=>k==="all"?`<div class="note">뉴욕 의류 판매세는 $110 미만 품목 면제, 그 이상은 약 8.875%. 가격표엔 세금이 빠져 있어요.</div>`:"");
 
 /* ---------- info ---------- */
-const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"alt",t:"대안·참고 코스"},{k:"sos",t:"비상 연락"}];
+const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"alt",t:"대안·참고 코스"},{k:"offline",t:"오프라인 사용"},{k:"sos",t:"비상 연락"}];
 function drawInfo(k){
   let h="";
   if(k==="air") h=`<h3>JFK → 호텔 (지하철, 1인 $11.75)</h3>
@@ -1108,6 +1118,15 @@ function drawInfo(k){
     <div class="note">${esc(a.tips)}</div>
     <div class="grid">${a.places.map(id=>card(P[id])).join("")}</div>
     ${a.mta?`<div class="btns"><a class="btn res" target="_blank" rel="noopener" href="https://new.mta.info/agency/metro-north-railroad">메트로노스 ↗</a></div>`:""}`).join("");
+  if(k==="offline") h=`<h3>데이터 없이 이 가이드북 보기</h3>
+   <ol class="steps">
+    <li><b>출국 전, 와이파이에서 한 번 열기</b>사이트 내용이 휴대폰에 자동 저장돼요. 사이트가 수정됐다면 출국 직전에 한 번 더 열면 최신 버전으로 바뀌어요(쌓이지 않고 덮어써요).</li>
+    <li><b>홈 화면에 추가</b>앱처럼 아이콘이 생겨서 바로 열 수 있어요.
+     <ul><li>아이폰(사파리): 아래 공유 버튼 → "홈 화면에 추가"</li><li>갤럭시(크롬·삼성인터넷): 오른쪽 위 ⋮ 또는 ≡ → "홈 화면에 추가"</li></ul></li>
+    <li><b>D1~D9 지도를 한 번씩 넘겨보기</b>지도 배경은 한 번 본 지역만 저장돼요. 와이파이에서 각 Day 지도를 한 번씩 열어두면 여행 중 데이터 없이도 보여요.</li>
+    <li><b>구글지도 오프라인 지도 받기</b>길찾기용으로 꼭 받아두세요. 구글지도 앱 → 프로필 사진 → "오프라인 지도" → "나만의 지도 선택" → 맨해튼과 브루클린이 들어가게 영역 맞추고 다운로드.</li>
+   </ol>
+   <div class="note">오프라인일 땐 화면 아래에 "오프라인 모드" 안내가 떠요. 예약 링크·구글지도 버튼처럼 외부 사이트로 가는 기능은 인터넷이 있어야 해요. 예약 확인 메일·티켓 QR은 캡처해두면 안전해요.</div>`;
   if(k==="sos") h=`<h3>비상 연락</h3><div class="card"><ul>
     <li>긴급(경찰·구급·화재): <b>911</b></li>
     <li>주뉴욕 대한민국 총영사관: 460 Park Ave (57th St) — 여권 분실 등. 연락처는 출국 전 영사관 홈페이지에서 저장해두기.</li>
@@ -1121,6 +1140,10 @@ chips($("#infoChips"),infoSubs,"air",drawInfo); drawInfo("air");
 openTab((location.hash||"#plan").slice(1),false);
 })();
 
+</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}
+(function(){const b=document.getElementById("offbar");const u=()=>b.classList.toggle("on",!navigator.onLine);window.addEventListener("online",u);window.addEventListener("offline",u);u();})();
 </script>
 </body>
 </html>
