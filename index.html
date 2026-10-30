@@ -397,10 +397,10 @@ const P = {
     hours:"월~금 11:45~22:30 / 토 17:00~22:30 / 일 17:00~21:30",price:"$$$ (머튼찹 $60)",
     pick:"레전더리 머튼찹, 프라임 립, 드라이에이징 스테이크",how:"지하철 B·D·F·M·N·Q·R·W → 34 St-Herald Sq",status:"must",
     resv:"OpenTable 미등록 → 공식 사이트(keens.com) 또는 전화 예약. 기념일이라고 말해두기",link:"https://www.keens.com/",checked:true},
-  luger:{cat:"eat",sub:"steak",name:"피터 루거",en:"Peter Luger Steak House",addr:"178 Broadway, Brooklyn",
-    desc:"브루클린 윌리엄스버그의 전설적 스테이크하우스. 포터하우스 하나로 140년 가까이.",
-    hours:"방문 전 확인",price:"$$$$",pick:"포터하우스(2인), 베이컨 슬라이스",how:"지하철 J·M·Z → Marcy Av",status:"must",
-    resv:"전화·공식 사이트 예약, 1~2개월 전 마감",link:"https://peterluger.com/",checked:false},
+  luger:{cat:"eat",sub:"steak",name:"피터 루거 (대안)",en:"Peter Luger Steak House",addr:"178 Broadway, Brooklyn",
+    desc:"1887년 개업한 윌리엄스버그의 전설적 스테이크하우스. 일정엔 넣지 않았고, 갤러거스·킨스와 겹치지 않게 대안으로만 둬요. 윌리엄스버그(D4)에서 가까워요.",
+    hours:"점심·저녁 (방문 전 확인)",price:"$$$$",pick:"포터하우스(2인), 두툼한 베이컨 슬라이스 / 점심에만 파는 버거",
+    how:"J·M·Z선 Marcy Av 도보 5분 / 도미노 파크에서 도보 10분",status:"must",resv:"공식 사이트·전화 예약. 저녁은 몇 주 전 마감, 점심이 비교적 수월",link:"https://peterluger.com/",checked:false},
 
   /* ===== 맛집 : 베이글·델리·브런치 ===== */
   essa:{cat:"eat",sub:"bagel",name:"에사 베이글",en:"Ess-a-Bagel",addr:"831 3rd Ave",
@@ -593,6 +593,30 @@ const P = {
   target:{cat:"shop",sub:"mart",name:"타깃 헤럴드스퀘어",en:"Target Herald Square",addr:"112 W 34th St",
     desc:"미국 대형마트. H마트와 같은 34번가라 한 번에 들르기 좋아요.",hours:"매일",price:"$",
     pick:"미국 과자·영양제·생활용품, 아이 옷(캣앤잭)",how:"34 St-Herald Sq",status:"walk",checked:false},
+
+  /* ===== 윌리엄스버그 ===== */
+  domino:{cat:"see",sub:"landmark",name:"도미노 파크",en:"Domino Park",addr:"15 River St, Brooklyn",
+    desc:"옛 도미노 설탕 공장 부지를 바꾼 윌리엄스버그 강변 공원. 윌리엄스버그 브리지와 맨해튼 스카이라인이 한눈에 보여요.",
+    hours:"매일 6:00~23:00",price:"무료",pick:"강변 산책로, 옛 공장 설비를 살린 '아티팩트 워크', 겨울 아이스링크",
+    how:"L선 Bedford Av 또는 J·M·Z선 Marcy Av에서 도보 10분",status:"free",link:"https://dominopark.com/visit",checked:true},
+  bedford:{cat:"see",sub:"landmark",name:"베드포드 애비뉴",en:"Bedford Avenue, Williamsburg",addr:"Bedford Ave & N 6th St, Brooklyn",
+    desc:"윌리엄스버그의 중심 거리. 로컬 디자이너 주얼리, 빈티지숍, 독립서점, 카페가 모여 있어요. 맨해튼과 다른 '브루클린 감성'을 느끼기 좋아요.",
+    hours:"매장 보통 11~19시",price:"무료",pick:"캣버드(브루클린 주얼리), 베드포드 미니몰의 독립서점, 드릭스 애비뉴 빈티지숍(버팔로 익스체인지 등)",
+    how:"L선 Bedford Av 바로 앞",status:"free",checked:false},
+  hudsonyards:{cat:"see",sub:"landmark",name:"허드슨 야드 & 베슬",en:"Hudson Yards & Vessel",addr:"20 Hudson Yards",
+    desc:"하이라인 북쪽 끝의 신도시 개발지. 벌집 모양 조형물 '베슬'과 쇼핑몰이 있어요. 하이라인 산책의 종착점.",
+    hours:"상시 (몰·베슬 입장은 별도 운영)",price:"외관 무료",pick:"베슬 앞 광장 사진, 몰 안에서 잠깐 휴식",
+    how:"하이라인 북쪽 끝 / 호텔에서 도보 20분",status:"free",checked:false},
+  devocion:{cat:"eat",sub:"cafe",name:"데보시온",en:"Devoción",addr:"148 Grand St, Brooklyn",
+    desc:"콜롬비아 원두를 직접 들여와 볶는 로스터리 카페. 천장 유리창과 초록 식물 벽이 있는 밝은 공간.",
+    hours:"매일 아침~오후 (방문 전 확인)",price:"$",pick:"싱글 오리진 드립, 라떼",how:"L선 Bedford Av에서 도보 7분",status:"walk",checked:false},
+  sundaybk:{cat:"eat",sub:"bagel",name:"선데이 인 브루클린",en:"Sunday in Brooklyn",addr:"348 Wythe Ave, Brooklyn",
+    desc:"윌리엄스버그 대표 브런치 레스토랑. 런던에도 지점을 낸 인기 브런치집.",
+    hours:"브런치·저녁 (요일별 운영시간 방문 전 확인)",price:"$$~$$$",pick:"말레이시아식 피칸 스티키번, 헤이즐넛 프랄린 팬케이크, 에그 샌드위치",
+    how:"도미노 파크에서 도보 5분",status:"rec",resv:"Resy 예약 권장",checked:false},
+  winson:{cat:"eat",sub:"asian",name:"윈선 베이커리",en:"Win Son Bakery",addr:"164 Graham Ave, Brooklyn",
+    desc:"대만계 미국식 베이커리 겸 식당. 파전 같은 대만식 총유빙에 계란·베이컨을 넣은 샌드위치가 명물.",
+    hours:"아침·점심·저녁 (방문 전 확인)",price:"$$",pick:"총유빙 BEC(14시 전), 모찌 도넛, 에그타르트",how:"L선 Graham Av",status:"walk",checked:false},
   /* ===== 대안 일정 ===== */
   dia:{cat:"alt",sub:"alt",name:"디아비콘",en:"Dia Beacon",addr:"3 Beekman St, Beacon, NY",
     desc:"옛 나비스코 공장을 개조한 초대형 현대미술관. 리처드 세라의 거대한 강철 조각이 압권.",
@@ -642,19 +666,23 @@ const DAYS = [
    {t:"19:00",p:"overstory",note:"야경 ① · 차이나타운에서 택시 10분 또는 지하철 J·Z Canal St → Broad St"}
   ],
   route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Jane's Carousel, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Heights Promenade","Time Out Market New York","Brooklyn Bridge City Hall","Joe's Shanghai, 46 Bowery","Overstory, 70 Pine St"]},
- {d:4,date:"11/16 (월)",title:"웨스트사이드 산책 & 댄스",theme:"미트패킹·첼시·웨스트빌리지",
-  tag:"미술관 → 공중정원 → 강 위의 섬 → 골목 산책. 월요일은 브로드웨이가 쉬는 날이라 댄스 수업.",
+ {d:4,date:"11/16 (월)",title:"윌리엄스버그 & 하이라인 · 댄스",theme:"윌리엄스버그·첼시·허드슨야드",
+  tag:"브루클린의 힙한 동네 윌리엄스버그에서 커피·편집숍·브런치·강변 뷰, 오후엔 하이라인을 걸어 허드슨야드 노을. 저녁은 댄스 수업.",
   items:[
-   {t:"10:30",p:"whitney",note:"화요일 휴관이라 월요일 배치. 테라스 꼭 나가보기"},
-   {t:"12:30",p:"highline",note:"북쪽으로 15분 걷다 16th St 계단으로 내려가면 첼시마켓"},
-   {t:"13:00",p:"chelseamkt"},
-   {t:"14:30",p:"little"},
-   {t:"15:15",p:"wvillage",note:"매그놀리아 베이커리에서 바나나 푸딩"},
-   {t:"17:00",title:"호텔 휴식"},
+   {t:"09:45",title:"윌리엄스버그로 이동",note:"지하철 C·E 50 St → 14 St-8 Av에서 L선 환승 → Bedford Av (약 35분)"},
+   {t:"10:15",p:"devocion",note:"채광 좋은 로스터리 카페에서 아침 커피"},
+   {t:"10:45",p:"bedford",note:"편집숍·빈티지·주얼리 구경"},
+   {t:"12:00",p:"sundaybk",alt:"대만식 캐주얼을 원하면 윈선 베이커리(L선 Graham Av)"},
+   {t:"13:15",p:"domino",note:"강변 산책로에서 맨해튼 스카이라인 감상"},
+   {t:"14:15",title:"L선으로 맨해튼 복귀",note:"Bedford Av → 8 Av (약 15분)"},
+   {t:"14:45",p:"chelseamkt",note:"간식 타임(로스 타코스 No.1 등)"},
+   {t:"15:15",p:"highline",note:"첼시마켓 옆 16th St 입구로 올라가 북쪽으로 약 1시간"},
+   {t:"16:30",p:"hudsonyards",note:"하이라인 북쪽 끝 도착 무렵 노을(일몰 약 16:36)"},
+   {t:"17:00",title:"호텔 휴식",note:"허드슨야드에서 도보 약 20분 또는 지하철 7 → Times Sq"},
    {t:"19:00",p:"bdc",note:"이번 여행 유일한 댄스 수업. 편한 옷·실내화 준비"},
    {t:"20:30",p:"hk",note:"수업 후 호텔 앞에서 늦은 저녁"}
   ],
-  route:["Whitney Museum","Chelsea Market","Little Island","Magnolia Bakery, 401 Bleecker St"]},
+  route:["Bedford Av Station, Brooklyn","Devocion, 148 Grand St, Brooklyn","Bedford Ave & N 6th St, Brooklyn","Sunday in Brooklyn, 348 Wythe Ave, Brooklyn","Domino Park, Brooklyn","Chelsea Market","High Line 16th St entrance","Hudson Yards"]},
  {d:5,date:"11/17 (화)",title:"MoMA · 탑오브더락 · 뮤지컬",theme:"미드타운",
   tag:"모두 호텔에서 걸어서 가는 하루. 일몰 전망대 → 이른 저녁 → 브로드웨이.",
   items:[
@@ -675,19 +703,19 @@ const DAYS = [
    {t:"19:30",title:"호텔 앞 가벼운 저녁 & 짐 정리"}
   ],
   route:["1651 Broadway","Woodbury Common Premium Outlets"]},
- {d:7,date:"11/19 (목)",title:"다운타운 랜드마크 · 소호 · 재즈",theme:"로어맨해튼·소호",
-  tag:"자유의 여신상을 배에서 보고, 9/11 메모리얼 → 소호 쇼핑 → 빌리지 재즈클럽.",
+ {d:7,date:"11/19 (목)",title:"메모리얼 · 소호 · 웨스트빌리지 · 재즈",theme:"다운타운",
+  tag:"9/11 메모리얼을 짧게 보고, 소호·놀리타 쇼핑 → 웨스트빌리지 골목 산책 → 재즈의 성지에서 마무리. 하루 종일 다운타운 안에서만 움직여요.",
   items:[
-   {t:"09:30",p:"ferry",note:"왕복 약 1시간"},
-   {t:"10:45",p:"wall"},
-   {t:"11:30",p:"m911",note:"연못만 보면 30분 / 뮤지엄까지 2시간"},
-   {t:"13:00",p:"oculus",note:"점심은 오큘러스·브룩필드 플레이스 푸드홀"},
-   {t:"14:30",p:"soho",note:"글로시에(72 Spring St)·아릿지아 소호점·러닝화 매장·르 라보 등. '쇼핑' 탭에서 미리 찜"},
-   {t:"17:00",p:"ansel",note:"쇼핑 중 당 충전"},
-   {t:"19:00",title:"웨스트빌리지 저녁"},
+   {t:"10:00",p:"m911",note:"추모 연못만 짧게(뮤지엄은 생략) · 호텔 앞 E선 50 St → World Trade Center 한 번에"},
+   {t:"10:30",p:"oculus",note:"하얀 날개 모양 역사 내부 구경"},
+   {t:"11:15",p:"soho",note:"글로시에(72 Spring St)·아릿지아 소호점·러닝화 매장·르 라보 등. '쇼핑' 탭에서 미리 찜"},
+   {t:"13:00",p:"balthazar",alt:"타이 다이너(놀리타) 또는 라쿠 우동"},
+   {t:"14:30",p:"ansel",note:"쇼핑 이어서 + 당 충전"},
+   {t:"15:30",p:"wvillage",note:"블리커 스트리트 → 매그놀리아 바나나 푸딩 → 프렌즈 아파트 → 워싱턴스퀘어"},
+   {t:"18:00",title:"웨스트빌리지 저녁",note:"골목의 작은 비스트로·와인바. 구글지도 평점 4.5↑로 골라 걷기"},
    {t:"20:30",p:"vanguard",alt:"호텔 근처가 편하면 버드랜드"}
   ],
-  route:["Staten Island Ferry Whitehall Terminal","Charging Bull","9/11 Memorial","Prince St & Greene St","Village Vanguard"]},
+  route:["9/11 Memorial","Oculus","Prince St & Greene St","Balthazar, 80 Spring St","Magnolia Bakery, 401 Bleecker St","Washington Square Park","Village Vanguard"]},
  {d:8,date:"11/20 (금)",title:"메트 & 20주년 기념 디너",theme:"어퍼이스트·노매드",
   tag:"여행의 하이라이트. 명작을 보고, 50층 노을 한 잔, 클래식 스테이크하우스에서 자축.",
   items:[
@@ -720,11 +748,10 @@ const RESV = [
  {id:"r7",day:"11/18 08:30",what:"우드버리 왕복 버스",status:"rec",how:"투어아메리카 / CitySights / 그레이라인 온라인",when:"1주 전",p:"woodbury"},
  {id:"r8",day:"11/19 20:30",what:"재즈클럽 (빌리지 뱅가드 or 버드랜드)",status:"rec",how:"공식 사이트 예매",when:"라인업 보고 1~2주 전",p:"vanguard"},
  {id:"r9",day:"11/17 10:30",what:"MoMA·메트 — 사원증 챙기기",status:"rec",how:"사원증 제시로 무료 입장(예매 불필요). 출국 짐에 사원증 꼭 넣기",when:"출국 전",p:"moma"},
- {id:"r10",day:"11/16 10:30",what:"휘트니 입장권",status:"rec",how:"whitney.org",when:"전날까지",p:"whitney"},
-  {id:"r12",day:"11/15 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
+  {id:"r16",day:"11/16 12:00",what:"선데이 인 브루클린 (윌리엄스버그 브런치)",status:"rec",how:"Resy",when:"며칠 전",p:"sundaybk"},
+ {id:"r12",day:"11/15 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
  {id:"r13",day:"11/16 19:00",what:"브로드웨이 댄스 센터 클래스",status:"rec",how:"공식 사이트 시간표 확인 후 결제",when:"전날",p:"bdc"},
  {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
- {id:"r15",day:"11/19 11:30",what:"9/11 뮤지엄 (들어갈 경우)",status:"rec",how:"911memorial.org",when:"전날까지",p:"m911"}
 ];
 
 /* ---------------- MUSICALS ---------------- */
@@ -766,9 +793,18 @@ const SHOWS = [
 
 /* ---------------- 대안 일정 ---------------- */
 const ALT = [
+ {title:"피터 루거 (스테이크 대안)",desc:"D4 윌리엄스버그 점심을 선데이 인 브루클린 대신 피터 루거로 바꿀 수 있어요. 다만 토(갤러거스)·금(킨스)과 스테이크가 몰리니, 꼭 원할 때만.",
+  steps:["D4 12:00 선데이 인 브루클린 → 피터 루거 점심으로 교체 (베드포드 애비뉴에서 도보 15분)","점심 메뉴: 버거(점심 한정) 또는 포터하우스 2인","식사 후 도미노 파크까지 도보 10분, 이후 일정은 그대로"],
+  tips:"점심도 예약 권장. 결제 방식은 방문 전 확인.",places:["luger"]},
+ {title:"로어맨해튼 코스: 페리 + 월스트리트 + 9/11 뮤지엄",desc:"D7에서 뺀 코스. 자유의 여신상을 가까이 보고 싶거나 9/11 뮤지엄을 제대로 보고 싶다면 D7 오전을 이걸로 바꿔요(소호 쇼핑이 줄어요).",
+  steps:["09:00 스태튼아일랜드 페리 왕복(무료, 약 1시간) — 갈 때 오른쪽 갑판","10:15 월스트리트·황소상·증권거래소 (20분)","11:00 9/11 메모리얼 + 뮤지엄 (약 2시간, 화요일 휴관)","13:00 오큘러스 → 소호로 이동"],
+  tips:"황소상은 아침 일찍이 덜 붐벼요. 9/11 뮤지엄은 시간지정 예매 권장.",places:["ferry","wall","m911"]},
+ {title:"휘트니 미술관 + 리틀 아일랜드",desc:"D4에서 뺀 코스. 하이라인 남쪽 끝(미트패킹)에 모여 있어요. 윌리엄스버그 대신 맨해튼에서 미술관을 하나 더 보고 싶다면 D4 오전을 이걸로.",
+  steps:["10:30 휘트니 미술관 (약 2시간, 테라스 꼭 나가보기)","12:30 바로 옆 리틀 아일랜드 (30분)","13:00 첼시마켓 점심 → 하이라인 북쪽으로"],
+  tips:"휘트니는 화요일 휴관, 금요일 17~22시 무료.",places:["whitney","little"]},
  {title:"허드슨강 당일치기: 디아비콘 + 콜드스프링",desc:"일정에서 빼둔 근교 코스. Day4(월)나 Day7(목)과 바꿀 수 있어요. 기차 창밖 허드슨강 뷰가 좋아 진행방향 왼쪽 좌석 추천.",
   steps:["08:00 그랜드센트럴 → 메트로노스 허드슨선 (비콘역 약 1시간 25분)","09:40~13:00 디아비콘 (역에서 도보 5분)","13:30 기차로 콜드스프링 이동 (약 10분)","14:00~17:00 메인스트리트·강변 산책·카페","17:30 콜드스프링 → 그랜드센트럴 (약 1시간 10분)"],
-  tips:"기차표는 MTA TrainTime 앱으로 구매(역에 매표소가 없을 수 있음). 디아비콘은 겨울 운영요일이 줄어드니 목·금·토·일·월 중 운영일을 꼭 확인.",
+  mta:true,tips:"기차표는 MTA TrainTime 앱으로 구매(역에 매표소가 없을 수 있음). 디아비콘은 겨울 운영요일이 줄어드니 목·금·토·일·월 중 운영일을 꼭 확인.",
   places:["dia","coldspring"]}
 ];
 
@@ -980,7 +1016,7 @@ catView("shop",$("#shopView"),$("#shopChips"),[
 ],k=>k==="all"?`<div class="note">뉴욕 의류 판매세는 $110 미만 품목 면제, 그 이상은 약 8.875%. 가격표엔 세금이 빠져 있어요.</div>`:"");
 
 /* ---------- info ---------- */
-const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"alt",t:"대안 일정"},{k:"sos",t:"비상 연락"}];
+const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"alt",t:"대안·참고 코스"},{k:"sos",t:"비상 연락"}];
 function drawInfo(k){
   let h="";
   if(k==="air") h=`<h3>JFK → 호텔 (지하철, 1인 $11.75)</h3>
@@ -1015,7 +1051,7 @@ function drawInfo(k){
     <ol class="steps">${a.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
     <div class="note">${esc(a.tips)}</div>
     <div class="grid">${a.places.map(id=>card(P[id])).join("")}</div>
-    <div class="btns"><a class="btn res" target="_blank" rel="noopener" href="https://new.mta.info/agency/metro-north-railroad">메트로노스 ↗</a></div>`).join("");
+    ${a.mta?`<div class="btns"><a class="btn res" target="_blank" rel="noopener" href="https://new.mta.info/agency/metro-north-railroad">메트로노스 ↗</a></div>`:""}`).join("");
   if(k==="sos") h=`<h3>비상 연락</h3><div class="card"><ul>
     <li>긴급(경찰·구급·화재): <b>911</b></li>
     <li>주뉴욕 대한민국 총영사관: 460 Park Ave (57th St) — 여권 분실 등. 연락처는 출국 전 영사관 홈페이지에서 저장해두기.</li>
