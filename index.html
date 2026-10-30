@@ -232,15 +232,15 @@ const P = {
   /* ===== 볼거리 : 미술관·박물관 ===== */
   moma:{cat:"see",sub:"museum",name:"MoMA 현대미술관",en:"Museum of Modern Art",addr:"11 W 53rd St",
     desc:"고흐·모네·피카소·워홀까지 20세기 미술 대표작이 한 곳에. 처음 가는 사람도 지루할 틈 없는 미술관.",
-    hours:"월~목·토·일 10:30~17:30 / 금 10:30~20:30",price:"성인 $30",
+    hours:"월~목·토·일 10:30~17:30 / 금 10:30~20:30",price:"성인 $30 → 회사 사원증 제시 시 무료",
     pick:"5층: 고흐 〈별이 빛나는 밤〉, 피카소 〈아비뇽의 처녀들〉, 모네 〈수련〉 / 4층: 워홀 〈캠벨 수프〉",
-    how:"호텔에서 도보 약 10분",status:"rec",resv:"공식 사이트 시간지정권 예매 → 줄 없이 입장. 오픈 직후가 가장 한산",
+    how:"호텔에서 도보 약 10분",status:"free",resv:"🎫 회사 사원증으로 무료 입장 — 온라인 예매 없이 현장 매표소(안내 데스크)에서 사원증 제시하고 무료 티켓 발급. 각자 사원증·여권 지참. 오픈 직후가 가장 한산",
     link:"https://www.moma.org/visit",checked:true},
   met:{cat:"see",sub:"museum",name:"메트로폴리탄 미술관",en:"The Met Fifth Avenue",addr:"1000 5th Ave",
     desc:"세계 3대 미술관. 하루로도 다 못 보는 규모라 명작 위주로 2~3시간 동선을 추천.",
-    hours:"일~화·목 10:00~17:00 / 금·토 10:00~21:00 / 수요일 휴관",price:"성인 $30 (뉴욕주 거주자만 기부입장)",
+    hours:"일~화·목 10:00~17:00 / 금·토 10:00~21:00 / 수요일 휴관",price:"성인 $30 → 회사 사원증 제시 시 무료",
     pick:"이집트 덴두르 신전, 페르메이르, 고흐 자화상, 유럽 회화관(2층), 중세 갑옷관",
-    how:"지하철 4·5·6 → 86 St, 도보 10분 / 택시 약 15분",status:"rec",resv:"온라인 예매하면 매표 줄 생략. 현장 구매도 가능",
+    how:"지하철 4·5·6 → 86 St, 도보 10분 / 택시 약 15분",status:"free",resv:"🎫 회사 사원증으로 무료 입장 — 현장 매표소에서 사원증 제시하고 무료 티켓 발급. 각자 사원증·여권 지참",
     link:"https://www.metmuseum.org/plan-your-visit",checked:true},
   whitney:{cat:"see",sub:"museum",name:"휘트니 미술관",en:"Whitney Museum of American Art",addr:"99 Gansevoort St",
     desc:"미국 현대미술 중심. 층마다 있는 야외 테라스에서 보는 허드슨강·하이라인 뷰가 백미.",
@@ -302,8 +302,9 @@ const P = {
     pick:"추천 동선: 갭스토 브리지 → 더 몰(느릅나무 가로수) → 베데스다 테라스·분수 → 보우 브리지",
     how:"지하철 N·R·W → 5 Av/59 St 하차",status:"free",checked:false},
   bbridge:{cat:"see",sub:"landmark",name:"브루클린 브리지",en:"Brooklyn Bridge",addr:"Brooklyn Bridge Pedestrian Walkway",
-    desc:"맨해튼에서 브루클린까지 걸어서 건너는 30~40분 코스. 오전 일찍일수록 한산해요.",
-    hours:"상시",price:"무료",pick:"맨해튼 쪽에서 출발해 돌아보며 스카이라인 감상",how:"지하철 4·5·6 → Brooklyn Bridge-City Hall",status:"free",checked:false},
+    desc:"브루클린 → 맨해튼 방향으로 걸어야 스카이라인이 내내 정면에 보여요. 30~40분 코스. 해 진 뒤 건너면 불 켜진 맨해튼을 향해 걷게 돼요.",
+    hours:"상시",price:"무료",pick:"브루클린 쪽 입구에서 출발해 맨해튼 시청 쪽으로 도착. 다리 중간 석조 아치 앞이 사진 포인트. 밤엔 바람이 세니 목도리 필수",
+    how:"덤보 쪽 입구: 워싱턴 스트리트 아래 계단(Prospect St 부근) / 도착: Brooklyn Bridge-City Hall역",status:"free",checked:false},
   dumbo:{cat:"see",sub:"landmark",name:"덤보 & 브루클린 브리지 파크",en:"DUMBO",addr:"Washington St & Water St, Brooklyn",
     desc:"맨해튼 브리지가 건물 사이로 보이는 포토스팟과 강변 공원. 회전목마(제인스 캐러셀)도 여기.",
     hours:"상시",price:"무료",pick:"워싱턴 스트리트 포토스팟, 페블 비치(일몰 명소), 제인스 캐러셀",how:"브루클린 브리지 건너 바로",status:"free",checked:false},
@@ -333,6 +334,15 @@ const P = {
     desc:"다리미 모양의 삼각 빌딩. 매디슨스퀘어파크 쪽에서 찍으면 예뻐요.",hours:"외관 상시",price:"무료",
     pick:"매디슨스퀘어파크 쉐이크쉑 1호점과 함께",how:"누벨루즈에서 도보 5분",status:"free",checked:false},
 
+  topview:{cat:"see",sub:"tour",name:"탑뷰 2층 버스 투어",en:"TopView Sightseeing",addr:"7th Ave between 47th & 48th St",
+    desc:"지붕 없는 2층 버스로 맨해튼을 도는 시티투어(홉온·홉오프: 정류장에서 자유롭게 내렸다 다시 타기). 한국어 오디오 가이드가 있어 걷기 지친 날이나 첫날 시차 적응용으로 좋아요. 출발 정류장이 호텔에서 2블록.",
+    hours:"다운타운 08:00~17:45 (20~25분 간격) · 업타운 10:00~16:00 (약 1시간 간격) · 나이트 18:00~24:00 (약 1시간 간격) — 계절·교통에 따라 변동",
+    price:"24시간권 약 $55~65 (한국 여행앱에서 7만 원대부터) / 나이트 투어 단독 약 $51 / 2~5일권도 있음",
+    pick:"다운타운 노선(약 2시간 30분) — 타임스퀘어·플랫아이언·소호·월스트리트를 한 바퀴. 나이트 투어(약 1시간 30분, 내리지 않음)는 맨해튼 다리를 건너며 야경 감상",
+    how:"다운타운·나이트: Stop 1 (7th Ave, 47~48th St 사이) · 업타운: Stop 15 (8th Ave, 46~47th St 사이) — 둘 다 호텔에서 도보 3분",
+    status:"rec",
+    resv:"온라인 구매 → 이메일 코드를 'TopView Sightseeing' 앱에 등록 → 앱 QR을 기사에게 보여주고 탑승(첫 스캔부터 24시간). 나이트 투어는 별도 링크로 날짜·시간 예약. 한국 앱 상품은 환불 불가가 많으니 날짜 확정 후 구매. 11월엔 2층이 매우 추우니 장갑·목도리 필수",
+    link:"https://www.topviewnyc.com/",checked:true},
   /* ===== 볼거리 : 마켓·크리스마스 ===== */
   winter:{cat:"see",sub:"market",name:"브라이언트파크 윈터빌리지",en:"Bank of America Winter Village",addr:"Bryant Park, 6th Ave & 42nd St",
     desc:"뉴욕 대표 크리스마스 마켓. 유리 큐브 부스 170여 개와 무료 아이스링크. 여행 첫날 분위기 내기 딱.",
@@ -600,7 +610,7 @@ const DAYS = [
   items:[
    {t:"10:00",title:"JFK 도착 → 호텔",note:"지하철 약 1시간 15분 / 택시 약 1시간. 방법은 '실전' 탭. 체크인은 보통 15시, 먼저 짐만 맡기기"},
    {t:"12:30",p:"lostacos",note:"호텔 근처에서 가벼운 첫 끼"},
-   {t:"14:00",p:"rock",note:"록펠러센터 → 바로 건너편 세인트패트릭 대성당 → 5번가 구경"},
+   {t:"14:00",p:"rock",note:"록펠러센터 → 바로 건너편 세인트패트릭 대성당 → 5번가 구경",alt:"걷기 힘들면 탑뷰 2층 버스 다운타운 노선(호텔 앞 출발, '볼거리 > 투어 버스')"},
    {t:"15:00",title:"호텔 체크인 & 휴식"},
    {t:"16:30",p:"times",note:"해 질 무렵 전광판이 켜지는 시간"},
    {t:"17:15",p:"winter",note:"핫초코 들고 마켓 한 바퀴"},
@@ -616,21 +626,22 @@ const DAYS = [
    {t:"11:15",p:"cpark",note:"갭스토 브리지 → 더 몰 → 베데스다 → 보우 브리지. 남쪽으로 다시 나와 걸어서 갤러거스까지 15분"},
    {t:"14:00",p:"gallaghers",note:"✔ 예약 완료"},
    {t:"16:00",title:"호텔 휴식"},
-   {t:"저녁",title:"자유 저녁",note:"점심이 든든하니 가볍게. 선택지: 호텔 앞 9번가 산책 / 주니어스 치즈케이크 / 라디오시티 크리스마스 공연(두 번째 공연을 원하면)"}
+   {t:"저녁",title:"자유 저녁",note:"점심이 든든하니 가볍게. 선택지: 탑뷰 나이트 투어(18시~, 호텔 앞 출발) / 호텔 앞 9번가 산책 / 라디오시티 크리스마스 공연(두 번째 공연을 원하면)"}
   ],
   route:["Chelsea Flea, 29 W 25th St","Gapstow Bridge, Central Park","Bethesda Terrace","Gallaghers Steakhouse, 228 W 52nd St"]},
  {d:3,date:"11/15 (일)",title:"브루클린 하루",theme:"브루클린",
-  tag:"다리를 걸어 건너 덤보에서 놀고, 강변 일몰 → 피자 → 64층 야경으로 마무리.",
+  tag:"덤보에서 시작해 강변 일몰 → 피자 → 브루클린 브리지를 건너 맨해튼 야경을 향해 걷고, 64층 바에서 마무리.",
   items:[
-   {t:"09:30",p:"bbridge",note:"맨해튼 시청 쪽 입구에서 출발"},
-   {t:"10:30",p:"dumbo",note:"워싱턴 스트리트 포토스팟 → 제인스 캐러셀 → 강변 공원"},
-   {t:"12:30",p:"timeout",note:"점심 + 루프탑 뷰"},
-   {t:"14:00",p:"promenade",note:"브라운스톤 골목 산책 후 덤보로 천천히 복귀(카페 휴식)"},
+   {t:"09:30",title:"덤보로 이동",note:"지하철 A·C → High St 또는 F → York St (호텔에서 약 30분)"},
+   {t:"10:00",p:"dumbo",note:"아침이라 워싱턴 스트리트 포토스팟이 한산해요 → 제인스 캐러셀 → 강변 공원"},
+   {t:"12:00",p:"timeout",note:"점심 + 루프탑에서 브루클린 브리지 뷰"},
+   {t:"13:30",p:"promenade",note:"브라운스톤 골목 산책 후 덤보로 천천히 복귀(카페 휴식)"},
    {t:"16:15",title:"페블 비치에서 일몰",note:"일몰 약 16:37. 맨해튼 스카이라인에 불 들어오는 시간"},
    {t:"17:00",p:"julianas",note:"저녁 이른 시간이라 웨이팅이 짧아요"},
-   {t:"19:00",p:"overstory",note:"야경 ① · 지하철 A·C High St → Fulton St 또는 택시 10분"}
+   {t:"18:15",p:"bbridge",note:"브루클린 → 맨해튼 방향, 불 켜진 스카이라인을 정면으로 보며 걷기(약 40분)"},
+   {t:"19:15",p:"overstory",note:"야경 ① · 다리 끝(시청)에서 도보 15분 또는 택시 5분"}
   ],
-  route:["Brooklyn Bridge City Hall","Washington St & Water St, Brooklyn","Brooklyn Heights Promenade","Pebble Beach, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Overstory, 70 Pine St"]},
+  route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Time Out Market New York","Brooklyn Heights Promenade","Pebble Beach, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Bridge City Hall","Overstory, 70 Pine St"]},
  {d:4,date:"11/16 (월)",title:"웨스트사이드 산책 & 댄스",theme:"미트패킹·첼시·웨스트빌리지",
   tag:"미술관 → 공중정원 → 강 위의 섬 → 골목 산책. 월요일은 브로드웨이가 쉬는 날이라 댄스 수업.",
   items:[
@@ -647,7 +658,7 @@ const DAYS = [
  {d:5,date:"11/17 (화)",title:"MoMA · 탑오브더락 · 뮤지컬",theme:"미드타운",
   tag:"모두 호텔에서 걸어서 가는 하루. 일몰 전망대 → 이른 저녁 → 브로드웨이.",
   items:[
-   {t:"10:30",p:"moma",note:"오픈 시간 입장, 5층부터"},
+   {t:"10:30",p:"moma",note:"🎫 사원증 무료입장 · 오픈 시간 입장, 5층부터"},
    {t:"13:00",title:"점심 (MoMA 근처)",note:"선택: 에사 베이글 / MoMA 카페 / 5번가 근처 캐주얼"},
    {t:"14:00",p:"fifthave",note:"나이키·세포라·앤트로폴로지 등"},
    {t:"15:45",p:"totr",note:"야경 ② · 일몰 약 16:35"},
@@ -680,7 +691,7 @@ const DAYS = [
  {d:8,date:"11/20 (금)",title:"메트 & 20주년 기념 디너",theme:"어퍼이스트·노매드",
   tag:"여행의 하이라이트. 명작을 보고, 50층 노을 한 잔, 클래식 스테이크하우스에서 자축.",
   items:[
-   {t:"10:00",p:"met",note:"명작 위주 2~3시간"},
+   {t:"10:00",p:"met",note:"🎫 사원증 무료입장 · 명작 위주 2~3시간"},
    {t:"13:00",p:"ralph",note:"매디슨 애비뉴 쪽으로 걸어 커피·디저트"},
    {t:"14:00",title:"호텔 휴식 & 디너 차림 준비"},
    {t:"16:15",p:"nubeluz",note:"선택 · 오픈 직후 창가에서 일몰(약 16:32). 야경이 3번째라 빼도 괜찮아요"},
@@ -705,13 +716,12 @@ const RESV = [
  {id:"r3",day:"11/17 19:00",what:"브로드웨이 뮤지컬 (위키드 1순위)",status:"must",how:"공식 사이트 정가 예매 + 할인 로터리 병행 ('공연' 탭)",when:"출국 전",p:null,link:"#show"},
  {id:"r4",day:"11/17 15:45",what:"탑 오브 더 락 일몰 슬롯",status:"must",how:"공식 사이트 시간지정 예매",when:"출국 전 (일몰 슬롯 매진 잦음)",p:"totr"},
  {id:"r5",day:"11/20 16:15",what:"누벨루즈 (선택)",status:"must",how:"OpenTable, 창가석 요청",when:"1~2주 전",p:"nubeluz"},
- {id:"r6",day:"11/15 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
+ {id:"r6",day:"11/15 19:15",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
  {id:"r7",day:"11/18 08:30",what:"우드버리 왕복 버스",status:"rec",how:"투어아메리카 / CitySights / 그레이라인 온라인",when:"1주 전",p:"woodbury"},
  {id:"r8",day:"11/19 20:30",what:"재즈클럽 (빌리지 뱅가드 or 버드랜드)",status:"rec",how:"공식 사이트 예매",when:"라인업 보고 1~2주 전",p:"vanguard"},
- {id:"r9",day:"11/17 10:30",what:"MoMA 시간지정권",status:"rec",how:"moma.org",when:"전날까지",p:"moma"},
+ {id:"r9",day:"11/17 10:30",what:"MoMA·메트 — 사원증 챙기기",status:"rec",how:"사원증 제시로 무료 입장(예매 불필요). 출국 짐에 사원증 꼭 넣기",when:"출국 전",p:"moma"},
  {id:"r10",day:"11/16 10:30",what:"휘트니 입장권",status:"rec",how:"whitney.org",when:"전날까지",p:"whitney"},
- {id:"r11",day:"11/20 10:00",what:"메트 입장권",status:"rec",how:"metmuseum.org (현장 구매도 가능)",when:"전날까지",p:"met"},
- {id:"r12",day:"11/15 17:00",what:"줄리아나스",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
+  {id:"r12",day:"11/15 17:00",what:"줄리아나스",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
  {id:"r13",day:"11/16 19:00",what:"브로드웨이 댄스 센터 클래스",status:"rec",how:"공식 사이트 시간표 확인 후 결제",when:"전날",p:"bdc"},
  {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
  {id:"r15",day:"11/19 11:30",what:"9/11 뮤지엄 (들어갈 경우)",status:"rec",how:"911memorial.org",when:"전날까지",p:"m911"}
@@ -892,10 +902,11 @@ function catView(cat,el,chipEl,subs,intro){
 const legendNote=`<div class="legend">${["done","must","rec","walk","free"].map(badge).join("")}</div>`;
 
 catView("see",$("#seeView"),$("#seeChips"),[
-  {k:"museum",t:"미술관·박물관",lead:"메트는 수요일, 휘트니·9/11 뮤지엄은 화요일 휴관."},
+  {k:"museum",t:"미술관·박물관",lead:"🎫 MoMA·메트는 회사 사원증으로 무료 입장. 메트는 수요일, 휘트니·9/11 뮤지엄은 화요일 휴관."},
   {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 야경은 오버스토리(D3) · 탑오브더락(D5) · 누벨루즈(D8, 선택)."},
   {k:"market",t:"크리스마스 마켓·플리마켓",lead:"록펠러 트리는 12월 초 점등이라 11월 중순엔 설치 중이에요."},
-  {k:"landmark",t:"랜드마크·공원"}
+  {k:"landmark",t:"랜드마크·공원"},
+  {k:"tour",t:"투어 버스",lead:"선택 일정이에요. 추천 타이밍: D1 오후(시차로 걷기 힘들 때 다운타운 노선) 또는 D2 자유 저녁(나이트 투어)."}
 ],k=>k==="all"?legendNote:"");
 
 /* shows */
