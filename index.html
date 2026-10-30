@@ -418,7 +418,7 @@ const P = {
 
   /* ===== 맛집 : 피자·버거 ===== */
   julianas:{cat:"eat",sub:"pizza",name:"줄리아나스",en:"Juliana's",addr:"19 Old Fulton St, Brooklyn",
-    desc:"브루클린 브리지 아래 석탄 화덕 피자. 덤보 일정 마무리 저녁으로 딱.",
+    desc:"브루클린 브리지 아래 석탄 화덕 피자. 덤보 일정 중 점심(11시 오픈)으로 넣었어요.",
     hours:"매일 11:00~23:00",price:"$$ (피자 한 판 약 $20대~)",
     pick:"클래식 마르게리타, No.1(모차렐라+스카모르차+판체타+화이트 트러플 오일)",how:"지하철 A·C → High St / 덤보에서 도보 3분",status:"rec",
     resv:"OpenTable 예약 가능. 안 되면 줄 서기(회전 빠름)",link:"https://www.julianaspizza.com/",checked:true},
@@ -630,18 +630,18 @@ const DAYS = [
   ],
   route:["Chelsea Flea, 29 W 25th St","Gapstow Bridge, Central Park","Bethesda Terrace","Gallaghers Steakhouse, 228 W 52nd St"]},
  {d:3,date:"11/15 (일)",title:"브루클린 하루",theme:"브루클린",
-  tag:"덤보에서 시작해 강변 일몰 → 피자 → 브루클린 브리지를 건너 맨해튼 야경을 향해 걷고, 64층 바에서 마무리.",
+  tag:"한산한 아침 덤보 포토스팟 → 강변 → 피자 점심 → 프롬나드 산책 → 노을 지는 브루클린 브리지를 건너 맨해튼 야경 속으로.",
   items:[
-   {t:"09:30",title:"덤보로 이동",note:"지하철 A·C → High St 또는 F → York St (호텔에서 약 30분)"},
-   {t:"10:00",p:"dumbo",note:"아침이라 워싱턴 스트리트 포토스팟이 한산해요 → 제인스 캐러셀 → 강변 공원"},
-   {t:"12:00",p:"timeout",note:"점심 + 루프탑에서 브루클린 브리지 뷰"},
-   {t:"13:30",p:"promenade",note:"브라운스톤 골목 산책 후 덤보로 천천히 복귀(카페 휴식)"},
-   {t:"16:15",title:"페블 비치에서 일몰",note:"일몰 약 16:37. 맨해튼 스카이라인에 불 들어오는 시간"},
-   {t:"17:00",p:"julianas",note:"저녁 이른 시간이라 웨이팅이 짧아요"},
-   {t:"18:15",p:"bbridge",note:"브루클린 → 맨해튼 방향, 불 켜진 스카이라인을 정면으로 보며 걷기(약 40분)"},
-   {t:"19:15",p:"overstory",note:"야경 ① · 다리 끝(시청)에서 도보 15분 또는 택시 5분"}
+   {t:"09:30",title:"덤보로 이동",note:"지하철 F → York St 또는 A·C → High St (호텔에서 약 30분)"},
+   {t:"09:45",p:"dumbo",note:"오전이라 워싱턴 스트리트 포토스팟이 한산해요 → 제인스 캐러셀 → 페블 비치 → 브루클린 브리지 파크 강변"},
+   {t:"11:00",p:"julianas",note:"오픈 시간이라 웨이팅이 가장 짧아요. 공원에서 도보 2분"},
+   {t:"12:30",p:"promenade",note:"줄리아나스에서 언덕길로 도보 10분. 프롬나드 + 브라운스톤 골목 산책"},
+   {t:"14:00",p:"timeout",note:"덤보로 돌아와 카페 휴식. 피곤하면 쉬고, 여유 있으면 덤보 소품숍 구경"},
+   {t:"16:00",p:"bbridge",note:"브루클린 → 맨해튼 방향. 일몰 약 16:37 → 17시 이후 야경. 사진 찍으며 천천히 약 1시간. 해는 진행방향 왼쪽(자유의 여신상 쪽)으로 져요"},
+   {t:"17:15",p:"joes_sh",note:"다리 끝(시청)에서 도보 15분, 차이나타운에서 샤오롱바오 저녁"},
+   {t:"19:00",p:"overstory",note:"야경 ① · 차이나타운에서 택시 10분 또는 지하철 J·Z Canal St → Broad St"}
   ],
-  route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Time Out Market New York","Brooklyn Heights Promenade","Pebble Beach, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Bridge City Hall","Overstory, 70 Pine St"]},
+  route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Jane's Carousel, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Heights Promenade","Time Out Market New York","Brooklyn Bridge City Hall","Joe's Shanghai, 46 Bowery","Overstory, 70 Pine St"]},
  {d:4,date:"11/16 (월)",title:"웨스트사이드 산책 & 댄스",theme:"미트패킹·첼시·웨스트빌리지",
   tag:"미술관 → 공중정원 → 강 위의 섬 → 골목 산책. 월요일은 브로드웨이가 쉬는 날이라 댄스 수업.",
   items:[
@@ -716,12 +716,12 @@ const RESV = [
  {id:"r3",day:"11/17 19:00",what:"브로드웨이 뮤지컬 (위키드 1순위)",status:"must",how:"공식 사이트 정가 예매 + 할인 로터리 병행 ('공연' 탭)",when:"출국 전",p:null,link:"#show"},
  {id:"r4",day:"11/17 15:45",what:"탑 오브 더 락 일몰 슬롯",status:"must",how:"공식 사이트 시간지정 예매",when:"출국 전 (일몰 슬롯 매진 잦음)",p:"totr"},
  {id:"r5",day:"11/20 16:15",what:"누벨루즈 (선택)",status:"must",how:"OpenTable, 창가석 요청",when:"1~2주 전",p:"nubeluz"},
- {id:"r6",day:"11/15 19:15",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
+ {id:"r6",day:"11/15 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
  {id:"r7",day:"11/18 08:30",what:"우드버리 왕복 버스",status:"rec",how:"투어아메리카 / CitySights / 그레이라인 온라인",when:"1주 전",p:"woodbury"},
  {id:"r8",day:"11/19 20:30",what:"재즈클럽 (빌리지 뱅가드 or 버드랜드)",status:"rec",how:"공식 사이트 예매",when:"라인업 보고 1~2주 전",p:"vanguard"},
  {id:"r9",day:"11/17 10:30",what:"MoMA·메트 — 사원증 챙기기",status:"rec",how:"사원증 제시로 무료 입장(예매 불필요). 출국 짐에 사원증 꼭 넣기",when:"출국 전",p:"moma"},
  {id:"r10",day:"11/16 10:30",what:"휘트니 입장권",status:"rec",how:"whitney.org",when:"전날까지",p:"whitney"},
-  {id:"r12",day:"11/15 17:00",what:"줄리아나스",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
+  {id:"r12",day:"11/15 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
  {id:"r13",day:"11/16 19:00",what:"브로드웨이 댄스 센터 클래스",status:"rec",how:"공식 사이트 시간표 확인 후 결제",when:"전날",p:"bdc"},
  {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
  {id:"r15",day:"11/19 11:30",what:"9/11 뮤지엄 (들어갈 경우)",status:"rec",how:"911memorial.org",when:"전날까지",p:"m911"}
