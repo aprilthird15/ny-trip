@@ -939,8 +939,8 @@ function drawMap(n){
   if(mapObj){ try{mapObj.remove()}catch(e){} mapObj=null; }
   const stops=DAYMAP[n]||[];
   const m=L.map(el,{scrollWheelZoom:false,tap:true,attributionControl:true,zoomControl:true});
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{maxZoom:19,subdomains:"abcd",
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'}).addTo(m);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(m);
   const pts=stops.map(s=>[s[1],s[2]]);
   if(pts.length>1) L.polyline(pts,{color:"#c62a44",weight:3,opacity:.75,dashArray:"6 7"}).addTo(m);
   stops.forEach((s,i)=>{
