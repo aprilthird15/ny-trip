@@ -2,765 +2,1022 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>우리의 뉴욕 — 20주년 우정여행 가이드북</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEW YORK 2026 — 20주년 기념 뉴욕 여행</title>
+<meta name="description" content="2026.11.13–21 뉴욕 8박9일 우정여행 가이드북: 일정, 예약, 볼거리, 공연, 맛집, 쇼핑, 실전 정보">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --navy-deep:#fff9ef;
-    --navy-panel:#ffffff;
-    --navy-line:rgba(30,38,58,0.14);
-    --cream:#33415c;
-    --cream-dim:rgba(51,65,92,0.72);
-    --amber:#c17d00;
-    --amber-dim:rgba(193,125,0,0.14);
-    --marquee:#c62a44;
-    --radius:2px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--navy-deep);
-    color:var(--cream);
-    font-family:'Noto Sans KR',sans-serif;
-    line-height:1.68;
-    font-size:15.5px;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.display{
-    font-family:'Noto Sans KR',sans-serif;
-    font-weight:700;
-    letter-spacing:-0.2px;
-    margin:0;
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
+:root{
+  --bg:#fff9ef; --panel:#ffffff; --line:rgba(30,38,58,.12); --ink:#2c3852; --dim:rgba(44,56,82,.68);
+  --amber:#b87400; --amber-bg:rgba(193,125,0,.10); --red:#c62a44; --red-bg:rgba(198,42,68,.09);
+  --green:#2f7d4f; --green-bg:rgba(47,125,79,.10); --blue:#2f5fa8; --blue-bg:rgba(47,95,168,.09);
+  --gray-bg:rgba(44,56,82,.07); --shadow:0 1px 2px rgba(30,38,58,.06),0 4px 14px rgba(30,38,58,.05); --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:64px 24px 40px;
-    background:
-      radial-gradient(ellipse at 20% -10%, rgba(220,139,0,0.16), transparent 55%),
-      radial-gradient(ellipse at 100% 0%, rgba(214,48,75,0.10), transparent 50%),
-      linear-gradient(180deg,#fffdf8,var(--navy-deep) 70%);
-    border-bottom:1px solid var(--navy-line);
-    overflow:hidden;
-  }
-  .hero-skyline{
-    position:absolute;
-    bottom:0;left:0;right:0;
-    height:120px;
-    opacity:0.5;
-  }
-  .eyebrow{
-    color:var(--amber);
-    font-size:13px;
-    letter-spacing:1.5px;
-    margin-bottom:14px;
-    font-family:'Noto Sans KR',sans-serif;
-  }
-  .hero h1{
-    font-size:clamp(34px,8vw,56px);
-    line-height:1.05;
-    max-width:680px;
-  }
-  .hero p.sub{
-    margin-top:16px;
-    color:var(--cream-dim);
-    max-width:520px;
-    font-size:15.5px;
-  }
-  .hero-meta{
-    margin-top:32px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:1px;
-    background:var(--navy-line);
-    border:1px solid var(--navy-line);
-    max-width:680px;
-    position:relative;
-    z-index:1;
-  }
-  .hero-meta div{
-    background:var(--navy-deep);
-    padding:14px 16px;
-  }
-  .hero-meta .label{font-size:11.5px;color:var(--cream-dim);margin-bottom:4px;}
-  .hero-meta .val{font-size:14.5px;font-weight:500;}
+/* hero */
+.hero{padding:40px 0 22px;background:radial-gradient(ellipse at 15% -20%,rgba(220,139,0,.18),transparent 55%),radial-gradient(ellipse at 100% 0,rgba(214,48,75,.10),transparent 50%),linear-gradient(180deg,#fffdf8,var(--bg))}
+.eyebrow{color:var(--amber);font-size:12px;letter-spacing:1.6px;font-weight:600}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(30px,8vw,44px);line-height:1.15;margin:8px 0 6px}
+.hero .sub{color:var(--dim);margin:0;font-size:14.5px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:18px}
+@media(min-width:620px){.facts{grid-template-columns:repeat(4,1fr)}}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px}
+.fact .l{font-size:11.5px;color:var(--dim)}
+.fact .v{font-size:13.5px;font-weight:600;line-height:1.35}
+.today{margin-top:12px;font-size:13px;color:var(--amber);font-weight:600}
 
-  /* ---------- NAV ---------- */
-  .daynav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(255,249,239,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--navy-line);
-    display:flex;
-    overflow-x:auto;
-    padding:0 12px;
-    scrollbar-width:none;
-  }
-  .daynav::-webkit-scrollbar{display:none;}
-  .daynav a{
-    flex:0 0 auto;
-    padding:14px 14px;
-    font-size:13px;
-    color:var(--cream-dim);
-    text-decoration:none;
-    white-space:nowrap;
-    border-bottom:2px solid transparent;
-  }
-  .daynav a:hover{color:var(--cream);border-bottom-color:var(--amber);}
+/* main tabs */
+.tabs{position:sticky;top:0;z-index:40;background:rgba(255,249,239,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs .row{display:flex;overflow-x:auto;scrollbar-width:none;gap:2px;max-width:760px;margin:0 auto;padding:0 8px}
+.tabs .row::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:0;background:none;padding:13px 12px 11px;font-size:14px;color:var(--dim);border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap}
+.tab .ic{margin-right:4px}
+.tab[aria-selected=true]{color:var(--ink);font-weight:700;border-bottom-color:var(--amber)}
 
-  /* ---------- SECTIONS ---------- */
-  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
-  section.day{
-    padding:56px 0 8px;
-    border-bottom:1px solid var(--navy-line);
-    scroll-margin-top:56px;
-  }
-  .day-head{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:6px;
-  }
-  .day-icon{
-    width:26px;height:26px;flex:0 0 auto;
-    color:var(--amber);
-    display:inline-flex;
-  }
-  .day-icon svg{width:100%;height:100%;}
-  .day-num{
-    font-family:'Noto Sans KR',sans-serif;
-    font-size:15px;
-    color:var(--amber);
-    border:1px solid var(--amber-dim);
-    padding:3px 10px;
-  }
-  .day-date{font-size:13.5px;color:var(--cream-dim);}
-  .day-title{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:25px;margin-top:10px;}
-  .day-tagline{color:var(--cream-dim);font-size:14.5px;margin-top:8px;max-width:60ch;}
+/* chips */
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:14px 0 4px;margin:0 -16px;padding-left:16px;padding-right:16px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 13px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip small{opacity:.7;margin-left:3px}
 
-  .route-btn{
-    display:inline-flex;align-items:center;gap:8px;
-    margin-top:18px;
-    padding:9px 16px;
-    background:transparent;
-    border:1px solid var(--amber);
-    color:var(--amber);
-    font-size:13px;
-    text-decoration:none;
-    border-radius:var(--radius);
-  }
-  .route-btn:hover{background:var(--amber-dim);}
+section.panel{display:none;padding-bottom:60px}
+section.panel.on{display:block}
+h2.sec{font-family:'Noto Serif KR',serif;font-size:22px;margin:22px 0 4px}
+p.lead{color:var(--dim);margin:0 0 6px;font-size:14px}
 
-  .stops{margin-top:26px;}
-  .stop{
-    position:relative;
-    padding:20px 0 20px 26px;
-    border-left:1px solid var(--navy-line);
-    margin-left:5px;
-  }
-  .stop:before{
-    content:"";
-    position:absolute;left:-5px;top:24px;
-    width:9px;height:9px;
-    background:var(--navy-deep);
-    border:2px solid var(--amber);
-    border-radius:50%;
-  }
-  .stop:last-child{padding-bottom:4px;}
-  .stop-time{font-size:12px;color:var(--amber);letter-spacing:0.5px;margin-bottom:6px;}
-  .stop-name{font-family:'Noto Sans KR',sans-serif;font-size:19px;font-weight:700;}
-  .stop-desc{margin-top:6px;font-size:14px;color:var(--cream-dim);max-width:62ch;}
-  .stop-meta{
-    margin-top:12px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:6px;
-    font-size:13px;
-  }
-  .stop-meta .row{display:flex;gap:8px;}
-  .stop-meta .k{color:var(--cream);font-weight:600;min-width:64px;flex:0 0 auto;}
-  .stop-meta .v{color:var(--cream-dim);}
-  .stop-links{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap;}
-  .stop-links a{
-    font-size:12.5px;color:var(--cream);
-    border-bottom:1px solid var(--amber);
-    text-decoration:none;
-    padding-bottom:1px;
-  }
-  .note{
-    margin-top:10px;
-    font-size:12.5px;
-    color:var(--marquee);
-    background:rgba(214,48,75,0.08);
-    border-left:2px solid var(--marquee);
-    padding:8px 10px;
-  }
+/* day */
+.dayhead{margin:18px 0 10px}
+.dayhead .k{display:inline-block;font-size:12px;font-weight:700;color:var(--amber);background:var(--amber-bg);padding:2px 9px;border-radius:999px}
+.dayhead h3{font-family:'Noto Serif KR',serif;font-size:21px;margin:8px 0 2px;line-height:1.3}
+.dayhead p{margin:0;color:var(--dim);font-size:14px}
+.routebtn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:600;text-decoration:none;color:var(--blue);background:var(--blue-bg);padding:7px 12px;border-radius:8px}
+.tl{list-style:none;margin:14px 0 0;padding:0;position:relative}
+.tl:before{content:"";position:absolute;left:52px;top:6px;bottom:6px;width:1.5px;background:var(--line)}
+.tl li{display:grid;grid-template-columns:46px 1fr;gap:14px;margin-bottom:10px;position:relative}
+.tl .time{font-size:12.5px;font-weight:700;color:var(--amber);padding-top:12px;text-align:right;font-variant-numeric:tabular-nums}
+.tl li:before{content:"";position:absolute;left:49px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--bg);border:2px solid var(--amber)}
+.ti{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}
+.ti>summary,.ti>.plain{list-style:none;padding:10px 12px;cursor:pointer;display:block}
+.ti>.plain{cursor:default}
+.ti>summary::-webkit-details-marker{display:none}
+.ti .nm{font-weight:700;font-size:15px;display:flex;gap:6px;align-items:flex-start;justify-content:space-between}
+.ti .nm .chev{flex:0 0 auto;color:var(--dim);font-size:12px;transition:transform .2s;margin-top:3px}
+.ti[open] .nm .chev{transform:rotate(180deg)}
+.ti .nt{font-size:13px;color:var(--dim);margin-top:2px}
+.ti .badges{margin-top:5px}
+.ti .body{border-top:1px solid var(--line);padding:10px 12px 12px}
 
-  /* ---------- EXTRA SECTION ---------- */
-  .extra{padding:56px 0 80px;}
-  .extra-head h2{font-size:28px;}
-  .extra-head p{color:var(--cream-dim);font-size:14px;margin-top:10px;max-width:60ch;}
-  .tabs{display:flex;gap:8px;margin-top:26px;flex-wrap:wrap;}
-  .tab{
-    padding:8px 16px;font-size:13px;
-    border:1px solid var(--navy-line);
-    background:transparent;color:var(--cream-dim);
-    cursor:pointer;border-radius:var(--radius);
-    font-family:'Noto Sans KR',sans-serif;
-  }
-  .tab.active{border-color:var(--amber);color:var(--amber);}
-  .panel{display:none;margin-top:26px;}
-  .panel.active{display:block;}
-  .card-grid{display:grid;grid-template-columns:1fr;gap:14px;}
-  @media(min-width:560px){.card-grid{grid-template-columns:1fr 1fr;}}
-  .card{
-    border:1px solid var(--navy-line);
-    padding:16px 18px;
-    background:var(--navy-panel);
-    box-shadow:0 2px 10px rgba(30,38,58,0.05);
-  }
-  .card h3{font-size:16.5px;margin-bottom:6px;}
-  .card p{font-size:13px;color:var(--cream-dim);margin:0 0 8px;}
-  .card .addr{font-size:12px;color:var(--cream-dim);}
-  .card a.maplink{
-    display:inline-block;margin-top:8px;font-size:12px;
-    color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber);
-  }
+/* cards */
+.grid{display:grid;gap:10px;margin-top:10px}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:13px 14px;display:flex;flex-direction:column;min-width:0}
+.card h4{margin:0;font-size:16px;line-height:1.35}
+.card .en{font-size:12px;color:var(--dim);margin-top:1px}
+.card .desc{font-size:13.5px;margin:7px 0 0}
+.meta{margin:8px 0 0;padding:0;display:grid;gap:4px;font-size:13px}
+.meta div{display:grid;grid-template-columns:52px 1fr;gap:8px}
+.meta dt{color:var(--dim);font-size:12px;padding-top:1px}
+.meta dd{margin:0;overflow-wrap:anywhere}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}
+.btn{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;text-decoration:none;padding:6px 10px;border-radius:7px;background:var(--gray-bg)}
+.btn.map{background:var(--blue-bg);color:var(--blue)}
+.btn.res{background:var(--amber-bg);color:var(--amber)}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:4px;vertical-align:middle;white-space:nowrap}
+.b-done{background:var(--green-bg);color:var(--green)}
+.b-must{background:var(--red-bg);color:var(--red)}
+.b-rec{background:var(--amber-bg);color:var(--amber)}
+.b-walk{background:var(--blue-bg);color:var(--blue)}
+.b-free{background:var(--gray-bg);color:var(--dim)}
+.b-chk{background:none;color:var(--dim);font-weight:500;padding-left:0}
+.b-pick{background:var(--ink);color:#fff}
+.price{font-weight:700;color:var(--amber);letter-spacing:.5px}
 
-  footer{
-    padding:40px 20px 60px;
-    text-align:center;
-    color:var(--cream-dim);
-    font-size:12.5px;
-  }
-  footer .brand{font-family:'Noto Sans KR',sans-serif;color:var(--cream);font-size:15px;margin-bottom:6px;}
+.legend{display:flex;flex-wrap:wrap;gap:6px 4px;margin:10px 0 0;font-size:12px;color:var(--dim)}
+.note{background:var(--amber-bg);border-radius:var(--r);padding:11px 13px;font-size:13.5px;margin:12px 0}
+.note.red{background:var(--red-bg)}
+.note b{font-weight:700}
+
+/* reservation */
+.rlist{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.ritem{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:11px 12px;display:grid;grid-template-columns:28px 1fr;gap:8px;box-shadow:var(--shadow)}
+.ritem input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--green)}
+.ritem .w{font-weight:700;font-size:14.5px}
+.ritem .d{font-size:12.5px;color:var(--dim)}
+.ritem .h{font-size:13px;margin-top:3px}
+.ritem.checked .w{text-decoration:line-through;opacity:.55}
+.progress{height:6px;background:var(--gray-bg);border-radius:9px;overflow:hidden;margin-top:12px}
+.progress i{display:block;height:100%;background:var(--green);width:0;transition:width .3s}
+.ptext{font-size:12.5px;color:var(--dim);margin-top:4px}
+
+/* shows */
+.show .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.eng{font-size:11.5px;color:var(--dim);white-space:nowrap}
+.eng b{color:var(--amber);letter-spacing:1px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.steps li{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 13px 12px 46px;position:relative;font-size:13.5px}
+.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:13px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps li>b:first-child{display:block;font-size:14.5px;margin-bottom:2px}
+.steps ul{margin:4px 0 0;padding-left:18px}
+table.mini{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;background:var(--panel);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+table.mini th,table.mini td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.mini th{background:var(--gray-bg);font-size:12px;color:var(--dim);font-weight:600}
+table.mini tr:last-child td{border-bottom:0}
+
+/* info */
+.info h3{font-size:17px;margin:22px 0 6px}
+.info .card+ .card{margin-top:10px}
+.info ul{margin:4px 0 0;padding-left:18px;font-size:13.5px}
+.info li{margin:3px 0}
+footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);text-align:center}
+.hide{display:none!important}
 </style>
 </head>
 <body>
-
-<div class="hero">
-  <div class="hero-skyline">
-    <svg viewBox="0 0 800 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,120 L0,80 L20,80 L20,60 L40,60 L40,90 L65,90 L65,40 L75,40 L75,25 L85,25 L85,40 L95,40 L95,95 L120,95 L120,55 L140,55 L140,70 L150,70 L150,50 L165,50 L165,20 L175,10 L185,20 L185,50 L200,50 L200,75 L225,75 L225,45 L235,45 L235,30 L245,30 L245,45 L255,45 L255,85 L280,85 L280,65 L300,65 L300,95 L320,95 L320,55 L335,55 L335,35 L345,25 L355,35 L355,55 L370,55 L370,90 L395,90 L395,60 L415,60 L415,75 L430,75 L430,45 L445,45 L445,30 L460,30 L460,45 L475,45 L475,80 L500,80 L500,50 L515,50 L515,15 L525,5 L535,15 L535,50 L550,50 L550,70 L570,70 L570,90 L590,90 L590,60 L605,60 L605,40 L620,40 L620,60 L635,60 L635,95 L660,95 L660,65 L675,65 L675,50 L685,50 L685,65 L700,65 L700,85 L725,85 L725,55 L740,55 L740,35 L750,25 L760,35 L760,55 L775,55 L775,90 L800,90 L800,120 Z" fill="#212a3d" opacity="0.07"/>
-    </svg>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">FRIENDS TRIP · NOV 13–21, 2026</div>
+    <h1>NEW YORK 2026</h1>
+    <p class="sub">20주년 기념 뉴욕 여행 · 11월 13일 – 21일</p>
+    <div class="facts">
+      <div class="fact"><div class="l">기간</div><div class="v">11.13(금) – 11.21(토)</div></div>
+      <div class="fact"><div class="l">숙소</div><div class="v">Kimpton Hotel Theta<br><a href="#" id="hotelMap" style="font-weight:500;font-size:12px;color:var(--blue)">48th St & 8th Ave · 지도</a></div></div>
+      <div class="fact"><div class="l">날씨</div><div class="v">4~12°C · 바람 강함</div></div>
+      <div class="fact"><div class="l">일몰</div><div class="v">16:30 전후</div></div>
+    </div>
+    <div class="today" id="today"></div>
   </div>
-  <div class="eyebrow">FRIENDS TRIP · NOV 13–21, 2026</div>
-  <h1>우리의 뉴욕</h1>
-  <p class="sub">입사 20주년을 자축하는 우정여행. 한 사람에겐 처음, 한 사람에겐 10년 만의 재회인 도시를 함께 걷는 8박 9일.</p>
-  <div class="hero-meta">
-    <div><div class="label">기간</div><div class="val">11.13(금) – 11.21(토), 8박9일</div></div>
-    <div><div class="label">숙소</div><div class="val">Kimpton Hotel Theta</div></div>
-    <div><div class="label">위치</div><div class="val">48th St & 8th Ave, 미드타운</div></div>
-    <div><div class="label">날씨</div><div class="val">4°C~12°C · 초겨울, 바람 강함</div></div>
-  </div>
-</div>
+</header>
 
-<nav class="daynav" id="daynav">
-  <a href="javascript:void(0)" data-target="day1">Day1 도착</a>
-  <a href="javascript:void(0)" data-target="day2">Day2 플리마켓</a>
-  <a href="javascript:void(0)" data-target="day3">Day3 브루클린</a>
-  <a href="javascript:void(0)" data-target="day4">Day4 모마</a>
-  <a href="javascript:void(0)" data-target="day5">Day5 하이라인</a>
-  <a href="javascript:void(0)" data-target="day6">Day6 아울렛</a>
-  <a href="javascript:void(0)" data-target="day7">Day7 근교</a>
-  <a href="javascript:void(0)" data-target="day8">Day8 메트</a>
-  <a href="javascript:void(0)" data-target="day9">Day9 출국</a>
-  <a href="javascript:void(0)" data-target="booking">예약가이드</a>
-  <a href="javascript:void(0)" data-target="extra">추가정보</a>
+<nav class="tabs" aria-label="메뉴">
+  <div class="row" role="tablist">
+    <button class="tab" role="tab" data-tab="plan"><span class="ic">🗓</span>일정</button>
+    <button class="tab" role="tab" data-tab="resv"><span class="ic">✅</span>예약</button>
+    <button class="tab" role="tab" data-tab="see"><span class="ic">🗽</span>볼거리</button>
+    <button class="tab" role="tab" data-tab="show"><span class="ic">🎭</span>공연</button>
+    <button class="tab" role="tab" data-tab="eat"><span class="ic">🍽</span>맛집</button>
+    <button class="tab" role="tab" data-tab="shop"><span class="ic">🛍</span>쇼핑</button>
+    <button class="tab" role="tab" data-tab="info"><span class="ic">🧳</span>실전</button>
+  </div>
 </nav>
 
-<div class="wrap">
+<main class="wrap">
+  <section class="panel" id="plan">
+    <div class="chips" id="dayChips"></div>
+    <div id="dayView"></div>
+  </section>
 
-<!-- DAY 1 -->
-<section class="day" id="day1">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="3" x2="10" y2="14"></line><polygon points="21 3 14 21 10 14 3 10 21 3"></polygon></svg></span><span class="day-num">DAY 1</span><span class="day-date">11월 13일 (금)</span></div>
-  <div class="day-title">뉴욕 도착 &amp; 웰컴</div>
-  <p class="day-tagline">시차 적응이 우선. 짐만 풀고 가볍게 미드타운을 걸으며 여행 텐션을 끌어올리는 날.</p>
+  <section class="panel" id="resv">
+    <h2 class="sec">예약 체크리스트</h2>
+    <p class="lead">출국 전에 할 일. 체크하면 이 기기에 저장돼요.</p>
+    <div class="progress"><i id="pbar"></i></div>
+    <div class="ptext" id="ptext"></div>
+    <ul class="rlist" id="rlist"></ul>
+    <div class="legend" id="legend"></div>
+  </section>
 
+  <section class="panel" id="see">
+    <div class="chips" id="seeChips"></div>
+    <div id="seeView"></div>
+  </section>
 
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">오전</div>
-      <div class="stop-name">Kimpton Hotel Theta 체크인</div>
-      <div class="stop-desc">48th St &amp; 8th Ave, 미드타운 중심. 브로드웨이 극장가·타임스퀘어 도보권이며 A·C·E·1·N·Q·R·W 라인이 인접.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">가는 법</span><span class="v">JFK: 에어트레인+지하철 약 1시간 / 뉴어크: NJ 트랜싯+지하철 약 1시간</span></div>
-        <div class="row"><span class="k">체크인</span><span class="v">보통 15:00부터, 이른 도착 시 짐 보관만 우선 요청 가능</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Kimpton+Hotel+Theta+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
+  <section class="panel" id="show">
+    <div class="chips" id="showChips"></div>
+    <div id="showView"></div>
+  </section>
 
-    <div class="stop">
-      <div class="stop-time">오후</div>
-      <div class="stop-name">타임스퀘어</div>
-      <div class="stop-desc">거대한 전광판 거리. 도착 첫날 가볍게 훑고 지나가는 정도로 충분.</div>
-      <div class="stop-meta"><div class="row"><span class="k">가는 법</span><span class="v">호텔서 도보 5분</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Times+Square+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
+  <section class="panel" id="eat">
+    <div class="chips" id="eatChips"></div>
+    <div id="eatView"></div>
+  </section>
 
-    <div class="stop">
-      <div class="stop-time">늦은 오후~저녁</div>
-      <div class="stop-name">브라이언트 파크 윈터빌리지</div>
-      <div class="stop-desc">홀리데이 마켓 + 무료 야외 아이스링크(스케이트 대여는 유료). 공예품 부스와 핫초코로 크리스마스 분위기를 먼저 맛본다.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">운영시간</span><span class="v">보통 11:00~21:00 (요일별 상이, 시즌 중 매일 운영)</span></div>
-        <div class="row"><span class="k">가는 법</span><span class="v">호텔서 도보 약 15분 (6th Ave &amp; 42nd St)</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">마켓 입장 무료 / 아이스링크는 온라인 사전예약 권장</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Bryant+Park+Winter+Village" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-</section>
+  <section class="panel" id="shop">
+    <div class="chips" id="shopChips"></div>
+    <div id="shopView"></div>
+  </section>
 
-<!-- DAY 2 -->
-<section class="day" id="day2">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3L3 7v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-3-4Z"></path><path d="M3 7h18"></path><path d="M16 11a4 4 0 0 1-8 0"></path></svg></span><span class="day-num">DAY 2</span><span class="day-date">11월 14일 (토)</span></div>
-  <div class="day-title">첼시 플리마켓 &amp; 센트럴파크 단풍</div>
-  <p class="day-tagline">주말에만 열리는 첼시 플리마켓으로 하루를 열고, 센트럴파크에서 가을의 마지막 단풍을 걷는다.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">08:00 – 10:30</div>
-      <div class="stop-name">첼시 플리마켓 (Chelsea Flea Market)</div>
-      <div class="stop-desc">빈티지 소품, 앤티크, 골동품을 파는 야외 벼룩시장. 뉴욕 로컬들 사이에서도 유명한 주말 명소.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">운영시간</span><span class="v">토·일요일만, 보통 08:00~17:00</span></div>
-        <div class="row"><span class="k">가는 법</span><span class="v">호텔서 지하철 C/E 25분 or 도보 25분 (25th St 인근)</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">불필요, 현금 소지 권장</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Chelsea+Flea+Market+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">오후</div>
-      <div class="stop-name">센트럴파크 단풍 산책</div>
-      <div class="stop-desc">더 몰(The Mall)의 단풍 터널과 베데스다 테라스·분수대까지 이어지는 대표 산책로. 11월 중순은 단풍 끝자락이라 일부 구역만 남아있을 수 있음.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">가는 법</span><span class="v">지하철로 5th Ave/59th St 하차, 남쪽 입구로 진입</span></div>
-      </div>
-      <div class="note">주말이라 사람이 많지만, 야외 산책은 붐벼도 크게 상관없어 토요일에 배치했습니다.</div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=The+Mall+Central+Park+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">저녁</div>
-      <div class="stop-name">댄스 클래스 ① — Broadway Dance Center</div>
-      <div class="stop-desc">예약 없이 참여 가능한 드롭인 클래스. 재즈·힙합·탭 등 다양한 레벨과 스타일 중 선택.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">위치</span><span class="v">322 W 45th St, 호텔서 도보 5분</span></div>
-        <div class="row"><span class="k">비용</span><span class="v">드롭인 1회 약 $20~25</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">홈페이지에서 당일 스케줄 확인 후 현장 등록 가능</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Broadway+Dance+Center+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">밤</div>
-      <div class="stop-name">루프탑바 나이트캡 — 230 Fifth</div>
-      <div class="stop-desc">엠파이어 스테이트 빌딩 뷰. 겨울엔 히팅 이글루를 운영해 추워도 야외 좌석 이용 가능. 댄스클래스로 몸 푼 뒤 가볍게 한 잔.</div>
-      <div class="stop-meta"><div class="row"><span class="k">위치</span><span class="v">230 5th Ave</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=230+Fifth+Rooftop+Bar+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-
-  <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Kimpton+Hotel+Theta+New+York&destination=230+Fifth+Rooftop+Bar+New+York&waypoints=Chelsea+Flea+Market+New+York|Central+Park+The+Mall|Broadway+Dance+Center+New+York&travelmode=walking" target="_blank">전체 동선 길찾기 →</a>
-</section>
-
-<!-- DAY 3 -->
-<section class="day" id="day3">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg></span><span class="day-num">DAY 3</span><span class="day-date">11월 15일 (일)</span></div>
-  <div class="day-title">브루클린 종일</div>
-  <p class="day-tagline">브루클린 브릿지를 걸어서 건너 덤보로, 겨울 한정 플리마켓을 거쳐 강변의 로맨틱한 저녁으로 마무리.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">오전</div>
-      <div class="stop-name">브루클린 브릿지 도보 횡단</div>
-      <div class="stop-desc">맨해튼 시청(City Hall) 쪽 입구에서 시작해 다리를 걸어서 건너는 뉴욕 대표 산책 코스. 오전 일찍일수록 한산함.</div>
-      <div class="stop-meta"><div class="row"><span class="k">가는 법</span><span class="v">지하철 4/5/6호선 Brooklyn Bridge-City Hall역 하차</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Brooklyn+Bridge+Manhattan+entrance" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">낮</div>
-      <div class="stop-name">덤보(DUMBO) &amp; 브루클린 브릿지 파크</div>
-      <div class="stop-desc">워싱턴 스트리트의 맨해튼 브릿지 포토스팟, 제인스 캐러셀, 강변 공원 산책.</div>
-      <div class="stop-meta"><div class="row"><span class="k">가는 법</span><span class="v">브루클린 브릿지 건넌 직후 바로 연결</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=DUMBO+Brooklyn" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">오후 (11~18시)</div>
-      <div class="stop-name">브루클린 윈터 플리마켓 + 스모가스버그</div>
-      <div class="stop-desc">11월~3월 겨울 시즌엔 Fort Greene(Atlantic Center 인근) 실내에서 열리는 빈티지 마켓 &amp; 푸드마켓. 여름 야외 버전보다 규모는 작지만 겨울 한정 매력.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">운영시간</span><span class="v">토·일요일 11:00~18:00</span></div>
-        <div class="row"><span class="k">가는 법</span><span class="v">덤보에서 지하철 or 도보+버스 약 20~25분</span></div>
-      </div>
-      <div class="note">겨울 시즌 정확한 위치는 매년 조금씩 바뀌니 방문 전 공식 인스타그램/홈페이지에서 최신 장소 확인 필요.</div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Brooklyn+Flea+Fort+Greene" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">저녁</div>
-      <div class="stop-name">The River Café</div>
-      <div class="stop-desc">브루클린 브릿지 바로 아래, 맨해튼 스카이라인 야경을 마주보며 즐기는 파인다이닝. 로맨틱한 우정여행 저녁으로 손색없음.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">주소</span><span class="v">1 Water St, Brooklyn</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">공식 홈페이지 또는 전화 사전예약 필수 (드레스코드 있음)</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=The+River+Cafe+Brooklyn" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-
-  <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=City+Hall+Park+Manhattan&destination=The+River+Cafe+Brooklyn&waypoints=DUMBO+Brooklyn|Brooklyn+Flea+Fort+Greene&travelmode=walking" target="_blank">전체 동선 길찾기 →</a>
-</section>
-
-<!-- DAY 4 -->
-<section class="day" id="day4">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></span><span class="day-num">DAY 4</span><span class="day-date">11월 16일 (월)</span></div>
-  <div class="day-title">MoMA &amp; 탑오브더락 선셋</div>
-  <p class="day-tagline">평일이라 주말보다 여유로운 미드타운 명소 데이. 일몰 시간에 맞춰 전망대를 예약한다.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">오전~오후</div>
-      <div class="stop-name">MoMA (현대미술관)</div>
-      <div class="stop-desc">고흐, 피카소, 모네, 워홀 등 20세기 현대미술 대표작 총집합. 대중적이라 누구나 즐겁게 관람 가능.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">운영시간</span><span class="v">10:30~17:30 (연중무휴, 추수감사절·크리스마스만 휴관)</span></div>
-        <div class="row"><span class="k">가는 법</span><span class="v">11 W 53rd St, 호텔서 도보 약 10분</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">온라인 시간지정권 사전예매 권장</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=MoMA+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">15:30 – 16:30</div>
-      <div class="stop-name">탑 오브 더 락 (Top of the Rock)</div>
-      <div class="stop-desc">엠파이어 스테이트 빌딩과 센트럴파크를 양쪽에 두고 보는 전망대. 이번 여행 유일한 전망대 스팟이라 일몰 슬롯으로 예약해 주간·일몰·야경을 한번에.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">위치</span><span class="v">30 Rockefeller Plaza</span></div>
-        <div class="row"><span class="k">요금</span><span class="v">일반 약 $40~ / 선셋 타임슬롯 +$12~15</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">공식 홈페이지에서 시간지정 예약 필수, 이 시간대는 인기라 조기예약 권장</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Top+of+the+Rock+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">저녁</div>
-      <div class="stop-name">댄스 클래스 ② — Broadway Dance Center</div>
-      <div class="stop-desc">첫 번째와 다른 스타일로 골라보는 두 번째 드롭인 클래스.</div>
-      <div class="stop-meta"><div class="row"><span class="k">위치</span><span class="v">322 W 45th St</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Broadway+Dance+Center+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- DAY 5 -->
-<section class="day" id="day5">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span><span class="day-num">DAY 5</span><span class="day-date">11월 17일 (화)</span></div>
-  <div class="day-title">하이라인 &amp; 트렌디 뉴욕 &amp; 브로드웨이</div>
-  <p class="day-tagline">첼시의 예술·공원 동선을 걷고, 저녁엔 브로드웨이 뮤지컬로 하루를 마무리.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">오전</div>
-      <div class="stop-name">휘트니 미술관</div>
-      <div class="stop-desc">미국 현대미술 중심 컬렉션. 야외 테라스에서 보는 하이라인·허드슨강 뷰가 특히 좋음.</div>
-      <div class="stop-meta"><div class="row"><span class="k">위치</span><span class="v">99 Gansevoort St</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Whitney+Museum+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">점심</div>
-      <div class="stop-name">첼시 마켓</div>
-      <div class="stop-desc">다양한 푸드홀이 모인 실내 시장. 랍스터롤, 타코 등 캐주얼하게 한 끼.</div>
-      <div class="stop-meta"><div class="row"><span class="k">위치</span><span class="v">75 9th Ave</span></div></div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Chelsea+Market+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">오후</div>
-      <div class="stop-name">하이라인 → 리틀 아일랜드</div>
-      <div class="stop-desc">옛 철길을 개조한 입체 공원을 걸어 허드슨강 위에 떠 있는 인공섬 공원까지. 뉴욕의 가장 트렌디한 도심 산책 동선.</div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Little+Island+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">저녁</div>
-      <div class="stop-name">브로드웨이 뮤지컬 관람</div>
-      <div class="stop-desc">시카고 / 위키드 / 라이온킹 등 11월에도 상연 중인 스테디셀러 중 택1.</div>
-      <div class="stop-meta"><div class="row"><span class="k">예약</span><span class="v">공식 사이트(hamiltonmusical.com, wickedthemusical.com 등)에서 좌석·스케줄 사전확정 필수</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- DAY 6 -->
-<section class="day" id="day6">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2.5 12.5V2.5h10l8.1 8.1a2 2 0 0 1 0 2.8Z"></path><circle cx="6.5" cy="6.5" r="1.4"></circle></svg></span><span class="day-num">DAY 6</span><span class="day-date">11월 18일 (수)</span></div>
-  <div class="day-title">우드버리 아울렛 종일</div>
-  <p class="day-tagline">메트로폴리탄 미술관이 휴관하는 수요일에 배치한 쇼핑 데이.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">종일 (10:00~21:00)</div>
-      <div class="stop-name">우드버리 커먼 프리미엄 아울렛</div>
-      <div class="stop-desc">토리버치, 코치, 폴로, 몽클레르 등 미국 브랜드 초특가 매장이 모여있는 대형 아울렛.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">가는 법</span><span class="v">포트 오소리티 버스터미널서 왕복 셔틀버스 (약 1시간~1시간10분)</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">셔틀 왕복권 온라인 사전예매 권장(현장구매도 가능하나 대기 있음)</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Woodbury+Common+Premium+Outlets" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- DAY 7 -->
-<section class="day" id="day7">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="4"></rect><circle cx="8" cy="19" r="1"></circle><circle cx="16" cy="19" r="1"></circle><path d="M4 11h16"></path></svg></span><span class="day-num">DAY 7</span><span class="day-date">11월 19일 (목)</span></div>
-  <div class="day-title">콜드스프링 &amp; 디아비콘 당일치기</div>
-  <p class="day-tagline">허드슨강을 따라 올라가는 조용하고 예술적인 하루. 돌아와서는 재즈 한 세트로 마무리.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">08:00</div>
-      <div class="stop-name">그랜드 센트럴역 출발</div>
-      <div class="stop-desc">메트로노스 허드슨라인 탑승, 비콘역까지 약 1시간 25분.</div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Grand+Central+Terminal" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">09:40 – 13:00</div>
-      <div class="stop-name">디아비콘 (Dia:Beacon)</div>
-      <div class="stop-desc">옛 나비스코 비스킷 공장을 개조한 초대형 현대미술관. 리처드 세라의 거대 강철 설치작품, 앤디 워홀, 댄 플래빈 작품 등.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">운영시간</span><span class="v">11~12월 목~월 11:00~16:00 (화·수 휴관)</span></div>
-        <div class="row"><span class="k">가는 법</span><span class="v">비콘역에서 도보 약 5분</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">타임슬롯 사전예약 요구되는 시기가 있어 출발 전 홈페이지 확인 필요</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Dia+Beacon" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">14:20</div>
-      <div class="stop-name">콜드스프링 (Cold Spring) 이동</div>
-      <div class="stop-desc">비콘역에서 기차로 약 10분. 200년 넘은 건물이 남아있는 메인스트리트, 앤티크숍, 허드슨강변 산책.</div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Cold+Spring+NY" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">저녁 (21:00경)</div>
-      <div class="stop-name">버드랜드 재즈클럽 (Birdland)</div>
-      <div class="stop-desc">호텔서 도보 가능한 미드타운 재즈클럽. 저녁 세트 공연 관람.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">위치</span><span class="v">315 W 44th St</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">공식 홈페이지에서 사전예약 권장(주말·인기 공연은 매진 가능)</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Birdland+Jazz+Club+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- DAY 8 -->
-<section class="day" id="day8">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v7a2 2 0 0 0 4 0V2"></path><path d="M6 9v13"></path><path d="M16 2c-1.5 1.5-2 3.5-2 6s.5 4.5 2 6v8"></path></svg></span><span class="day-num">DAY 8</span><span class="day-date">11월 20일 (금)</span></div>
-  <div class="day-title">메트로폴리탄 &amp; 20주년 기념 디너</div>
-  <p class="day-tagline">여행의 마지막 완전한 하루. 세계 3대 미술관 중 하나를 여유 있게 보고, 밤은 특별하게.</p>
-
-
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">오전~오후</div>
-      <div class="stop-name">메트로폴리탄 미술관 (The Met)</div>
-      <div class="stop-desc">이집트 덴두르 신전, 고흐, 모네, 페르메이르 등 인류 미술사 총망라. 규모가 커서 오디오가이드로 주요 명작 위주 2~3시간 코스 추천.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">위치</span><span class="v">1000 5th Ave</span></div>
-        <div class="row"><span class="k">운영시간</span><span class="v">금요일 10:00~21:00 (수요일 휴관)</span></div>
-      </div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Metropolitan+Museum+of+Art" target="_blank">지도에서 열기</a></div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-time">18:00 – 19:30</div>
-      <div class="stop-name">Keens Steakhouse — 20주년 기념 디너</div>
-      <div class="stop-desc">1885년부터 이어온 클래식 스테이크하우스. 프라임 립·머튼찹이 시그니처. 고풍스러운 분위기에서 20주년을 자축하기 좋음.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">위치</span><span class="v">72 W 36th St</span></div>
-        <div class="row"><span class="k">예약</span><span class="v">공식 홈페이지 또는 전화로 사전예약 필수</span></div>
-      </div>
-      <div class="note">다음날 이른 오후 출국이라 저녁은 19시 반경 마무리하고 호텔로 복귀, 짐 정리하는 시간을 넉넉히 확보했어요. (루프탑바는 Day2 밤으로 옮겼습니다)</div>
-      <div class="stop-links"><a href="https://www.google.com/maps/search/?api=1&query=Keens+Steakhouse+New+York" target="_blank">지도에서 열기</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- DAY 9 -->
-<section class="day" id="day9">
-  <div class="day-head"><span class="day-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="3" x2="10" y2="14"></line><polygon points="21 3 14 21 10 14 3 10 21 3"></polygon></svg></span><span class="day-num">DAY 9</span><span class="day-date">11월 21일 (토)</span></div>
-  <div class="day-title">출국</div>
-  <p class="day-tagline">짐 정리하고 여유롭게 마무리.</p>
-  <div class="stops">
-    <div class="stop">
-      <div class="stop-time">오전</div>
-      <div class="stop-name">체크아웃 &amp; 공항 이동</div>
-      <div class="stop-desc">낮 12시 출발 기준, 국제선은 최소 3시간 전 공항 도착 권장.</div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING GUIDE -->
-<section class="extra" id="booking" style="padding-top:56px;border-bottom:1px solid var(--navy-line);">
-  <div class="extra-head">
-    <h2>실전 예약 가이드</h2>
-    <p>일정에 나온 세 가지는 미리 방법을 알아두면 훨씬 수월해요. 가격·마감시간은 자주 바뀌니 출발 전 공식 링크에서 최종 확인하세요.</p>
-  </div>
-
-  <div class="stops" style="margin-top:30px;">
-    <div class="stop">
-      <div class="stop-name">① 브로드웨이 저렴하게 보기 — 로터리 &amp; 러시</div>
-      <div class="stop-desc">정가보다 훨씬 싸게(대략 $40~50대) 볼 수 있는 두 가지 방법. 둘 다 당첨/구매를 보장하진 않으니, 정가 예매를 기본으로 해두고 밑져야 본전으로 시도해보는 걸 추천.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">로터리</span><span class="v">TodayTix 앱에서 응모 → 보통 공연 전날~당일 사이 당첨자 발표 → 짧은 시간 내 앱에서 결제해야 유효</span></div>
-        <div class="row"><span class="k">러시</span><span class="v">당일 아침 9시에 TodayTix 앱에서 티켓 오픈, 선착순(첫 클릭이 중요)</span></div>
-        <div class="row"><span class="k">해밀턴</span><span class="v">자체 앱(Hamilton 공식 앱)에서만 응모 가능. 매주 금요일 오전 10시 오픈~목요일 정오 마감, 앞줄 좌석 $10</span></div>
-      </div>
-      <div class="note">앱 전용 시스템이라 웹사이트에서는 응모 불가. 출국 전 TodayTix 앱을 미리 설치하고 계정을 만들어두면 당일 허둥대지 않아요.</div>
-      <div class="stop-links">
-        <a href="https://www.todaytix.com" target="_blank">TodayTix 바로가기</a>
-        <a href="https://www.luckyseat.com" target="_blank">Lucky Seat 바로가기</a>
-        <a href="https://www.hamiltonmusical.com" target="_blank">Hamilton 공식사이트</a>
-      </div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-name">② 우드버리 아울렛 왕복 셔틀 예약</div>
-      <div class="stop-desc">포트오소리티 버스터미널에서 출발하는 공식 셔틀. 온라인 사전예매하면 줄 서지 않고 바로 탑승 가능.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">공식 파트너</span><span class="v">Coach USA (ShortLine) — Simon 프리미엄아울렛 공식 셔틀사</span></div>
-        <div class="row"><span class="k">예약 방법</span><span class="v">coachusa.com에서 "Port Authority ↔ Woodbury Common" 검색 후 날짜·시간 선택, 온라인 결제</span></div>
-        <div class="row"><span class="k">대안</span><span class="v">Woodbury Bus(Silver Star) — 51st St &amp; Broadway 출발, 온라인 예약 필수</span></div>
-      </div>
-      <div class="note">Klook·Groupon 등 제3자 사이트에서 산 바우처는 현장에서 실물 티켓으로 교환해야 해서 출발 30분 전 도착 권장. 메인 매표 카운터(작은 게이트 앞 부스 아님) 위치를 미리 확인하세요.</div>
-      <div class="stop-links">
-        <a href="https://www.coachusa.com" target="_blank">Coach USA 바로가기</a>
-        <a href="https://www.woodburybus.com" target="_blank">Woodbury Bus 바로가기</a>
-      </div>
-    </div>
-
-    <div class="stop">
-      <div class="stop-name">③ 콜드스프링 &amp; 디아비콘 가는 법</div>
-      <div class="stop-desc">그랜드센트럴역에서 메트로노스(Metro-North) 허드슨라인 탑승, 비콘역까지 약 1시간 20~30분. 창밖으로 허드슨강 뷰가 좋으니 진행방향 왼쪽 좌석 추천.</div>
-      <div class="stop-meta">
-        <div class="row"><span class="k">기차표 구매</span><span class="v">MTA TrainTime 앱에서 미리 구매 가능(비콘역엔 매표소가 없어 앱 구매 사실상 필수), 또는 그랜드센트럴역 발권기</span></div>
-        <div class="row"><span class="k">디아비콘 입장권</span><span class="v">공식 홈페이지에서 시간지정 사전예약 권장, 성수기엔 매진되기도 함</span></div>
-        <div class="row"><span class="k">비콘역→디아비콘</span><span class="v">도보 8~10분, 또는 무료 Beacon Free Loop 버스(월~토 운행) 이용 가능</span></div>
-      </div>
-      <div class="stop-links">
-        <a href="https://www.mta.info" target="_blank">MTA/Metro-North 바로가기</a>
-        <a href="https://www.diaart.org/visit/visit-our-locations-sites/dia-beacon-beacon-united-states" target="_blank">Dia:Beacon 공식사이트</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXTRA -->
-<section class="extra" id="extra">
-  <div class="extra-head">
-    <h2>일정 외 참고 정보</h2>
-    <p>일정엔 넣지 않았지만 여유가 생기면 들를 만한 맛집·쇼핑·랜드마크 모음.</p>
-  </div>
-
-  <div class="tabs">
-    <button class="tab active" data-tab="food">맛집</button>
-    <button class="tab" data-tab="shop">쇼핑</button>
-    <button class="tab" data-tab="land">랜드마크</button>
-  </div>
-
-  <div class="panel active" id="panel-food">
-    <div class="card-grid">
-      <div class="card"><h3>Katz's Delicatessen</h3><p>1888년부터 이어온 뉴욕 델리의 정석. 오리지널 파스트라미 샌드위치.</p><p class="addr">205 E Houston St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Katz%27s+Delicatessen" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Russ &amp; Daughters Cafe</h3><p>베이글+록스(훈제연어). 유대계 이민자 음식 문화의 대표주자.</p><p class="addr">127 Orchard St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Russ+and+Daughters+Cafe" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Joe's Pizza</h3><p>그리니치빌리지의 클래식 뉴욕 스타일 조각피자.</p><p class="addr">7 Carmine St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Joe%27s+Pizza+Carmine+St" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Levain Bakery</h3><p>두껍고 쫀득한 쿠키로 유명한 어퍼웨스트사이드 오리지널 베이커리.</p><p class="addr">167 W 74th St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Levain+Bakery+74th+St" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Los Tacos No.1</h3><p>미드타운의 스탠딩 타코 맛집. 줄이 길어도 회전 빠름.</p><p class="addr">Chelsea Market 內</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Los+Tacos+No+1+Chelsea+Market" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Junior's Cheesecake</h3><p>뉴욕 치즈케이크의 대표 브랜드.</p><p class="addr">Times Square 지점 등 다수</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Junior%27s+Cheesecake+Times+Square" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Ess-a-Bagel</h3><p>1976년부터 이어온 뉴욕 베이글의 기준점. 두툼하고 쫄깃한 반죽에 스캘리언 크림치즈 조합이 시그니처.</p><p class="addr">831 3rd Ave 외 매장</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Ess-a-Bagel+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Murray's Bagels</h3><p>그리니치빌리지의 전통 방식 베이글집. 손으로 말고 삶아 굽는 정통 방식 고수.</p><p class="addr">500 6th Ave</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Murray%27s+Bagels+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Dominique Ansel Bakery</h3><p>크로넛(크루아상+도넛) 탄생지. 소호 산책 중 들르기 좋은 프렌치 베이커리.</p><p class="addr">189 Spring St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Dominique+Ansel+Bakery+Soho" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Shake Shack (Madison Sq Park)</h3><p>세계적인 버거 체인의 시작점. 원조 매장에서 먹는 쉑버거는 의미가 남다름.</p><p class="addr">Madison Square Park</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Shake+Shack+Madison+Square+Park" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Corner Bistro</h3><p>웨스트빌리지의 오래된 다이브바 버거집. 두꺼운 패티와 저렴한 가격으로 로컬들에게 꾸준히 사랑받음.</p><p class="addr">331 W 4th St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Corner+Bistro+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>J.G. Melon</h3><p>어퍼이스트사이드의 클래식 버거 펍. 체더치즈버거와 코티지프라이가 시그니처.</p><p class="addr">1291 3rd Ave</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=JG+Melon+New+York" target="_blank">지도 보기</a></div>
-    </div>
-  </div>
-
-  <div class="panel" id="panel-shop">
-    <div class="card-grid">
-      <div class="card"><h3>소호 (SoHo)</h3><p>프린스·스프링 스트리트 일대 편집숍. 애소프, 글로시에, 랙앤본 등 한국 미출점 브랜드 다수.</p><p class="addr">Prince St / Spring St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=SoHo+Prince+Street+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>5번가 플래그십</h3><p>버그도프굿맨, 삭스, 티파니 본점 등 럭셔리 스토어 거리.</p><p class="addr">5th Ave, 49th~59th St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fifth+Avenue+Bergdorf+Goodman" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>유니온스퀘어 그린마켓</h3><p>로컬 농산물·수공예품 마켓. 연말 홀리데이 마켓도 함께 열림.</p><p class="addr">Union Square Park</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Union+Square+Greenmarket" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>첼시 마켓 숍</h3><p>식료품 외에도 소품·잡화 매장이 많아 구경하기 좋음.</p><p class="addr">75 9th Ave</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Chelsea+Market" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Eileen Fisher</h3><p>편안하면서 고급스러운 실루엣의 여성복 브랜드. 톤다운된 색감과 좋은 소재로 40대 이상 여성들에게 꾸준한 사랑을 받음.</p><p class="addr">SoHo 등 여러 지점</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Eileen+Fisher+SoHo" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Theory / Vince</h3><p>미니멀하고 세련된 컨템포러리 브랜드. 클래식하면서 질 좋은 니트·아우터가 강점.</p><p class="addr">Meatpacking District, 5th Ave 지점</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Theory+Meatpacking+District+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Bloomingdale's</h3><p>여성 컨템포러리·명품 브랜드가 한 건물에 모인 대형 백화점. 시간 없을 때 한 번에 둘러보기 좋음.</p><p class="addr">1000 3rd Ave</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bloomingdale%27s+59th+Street" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Bluemercury</h3><p>니치 스킨케어·향수 브랜드를 큐레이션한 뷰티 편집숍. 라메르, 어그니, 이솝 등 취급.</p><p class="addr">뉴욕 곳곳 여러 지점</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bluemercury+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Aesop / Le Labo</h3><p>고급 스킨케어·향수 브랜드. 소호·놀리타 매장 자체가 인테리어로도 볼거리.</p><p class="addr">Nolita, SoHo</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Le+Labo+Nolita+New+York" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>Anthropologie</h3><p>여성스럽고 빈티지한 무드의 의류·홈굿즈 편집숍. 구경하는 재미가 있어 선물 사기도 좋음.</p><p class="addr">Rockefeller Center 지점 등</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Anthropologie+Rockefeller+Center" target="_blank">지도 보기</a></div>
-    </div>
-  </div>
-
-  <div class="panel" id="panel-land">
-    <div class="card-grid">
-      <div class="card"><h3>그랜드 센트럴 터미널</h3><p>천장 별자리 프레스코화로 유명한 세계적인 기차역 건축물.</p><p class="addr">89 E 42nd St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Grand+Central+Terminal" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>플랫아이언 빌딩</h3><p>다림판 모양의 상징적인 삼각형 건물. 외관 사진 명소.</p><p class="addr">175 5th Ave</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Flatiron+Building" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>워싱턴스퀘어 파크</h3><p>그리니치빌리지 중심 공원. 개선문 형태의 아치가 상징.</p><p class="addr">Washington Square Park</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Washington+Square+Park" target="_blank">지도 보기</a></div>
-      <div class="card"><h3>세인트 패트릭 대성당</h3><p>5번가 한복판의 고딕 양식 대성당. 내부 무료 관람 가능.</p><p class="addr">5th Ave &amp; 51st St</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=St+Patrick%27s+Cathedral+New+York" target="_blank">지도 보기</a></div>
-    </div>
-  </div>
-</section>
-
-</div>
+  <section class="panel info" id="info">
+    <div class="chips" id="infoChips"></div>
+    <div id="infoView"></div>
+  </section>
+</main>
 
 <footer>
-  <div class="brand">NY, 20</div>
-  20주년 근속기념 뉴욕 우정여행 · 2026.11.13–21<br>
-  운영시간·예약 정보는 방문 전 공식 홈페이지에서 재확인하세요.
+  NY, 20 · 20주년 근속기념 뉴욕 우정여행 · 2026.11.13–21<br>
+  운영시간·가격은 2026.10.30 기준. "방문 전 확인" 표시가 있는 곳은 공식 사이트에서 다시 확인하세요.
 </footer>
 
 <script>
-  document.querySelectorAll('.daynav a').forEach(function(link){
-    link.addEventListener('click', function(e){
-      e.preventDefault();
-      var target = document.getElementById(link.dataset.target);
-      if(target){
-        var navHeight = document.getElementById('daynav').offsetHeight;
-        var y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
-        window.scrollTo({top: y, behavior: 'smooth'});
-      }
-    });
-  });
+const HOTEL = "Kimpton Hotel Theta New York";
+const CHECKED = "2026.10.30 확인";
 
-  document.querySelectorAll('.tab').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
-      document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
-      btn.classList.add('active');
-      document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
-    });
-  });
+/* status: done 예약완료 / must 예약필수 / rec 예약권장 / walk 워크인OK / free 예약불필요 */
+const STATUS = {
+  done: {t:"예약 완료", c:"done"},
+  must: {t:"예약 필수", c:"must"},
+  rec:  {t:"예약 권장", c:"rec"},
+  walk: {t:"워크인 OK", c:"walk"},
+  free: {t:"예약 불필요", c:"free"}
+};
+
+/* ---------------- PLACES ---------------- */
+const P = {
+  /* ===== 볼거리 : 미술관·박물관 ===== */
+  moma:{cat:"see",sub:"museum",name:"MoMA 현대미술관",en:"Museum of Modern Art",addr:"11 W 53rd St",
+    desc:"고흐·모네·피카소·워홀까지 20세기 미술 대표작이 한 곳에. 처음 가는 사람도 지루할 틈 없는 미술관.",
+    hours:"월~목·토·일 10:30~17:30 / 금 10:30~20:30",price:"성인 $30",
+    pick:"5층: 고흐 〈별이 빛나는 밤〉, 피카소 〈아비뇽의 처녀들〉, 모네 〈수련〉 / 4층: 워홀 〈캠벨 수프〉",
+    how:"호텔에서 도보 약 10분",status:"rec",resv:"공식 사이트 시간지정권 예매 → 줄 없이 입장. 오픈 직후가 가장 한산",
+    link:"https://www.moma.org/visit",checked:true},
+  met:{cat:"see",sub:"museum",name:"메트로폴리탄 미술관",en:"The Met Fifth Avenue",addr:"1000 5th Ave",
+    desc:"세계 3대 미술관. 하루로도 다 못 보는 규모라 명작 위주로 2~3시간 동선을 추천.",
+    hours:"일~화·목 10:00~17:00 / 금·토 10:00~21:00 / 수요일 휴관",price:"성인 $30 (뉴욕주 거주자만 기부입장)",
+    pick:"이집트 덴두르 신전, 페르메이르, 고흐 자화상, 유럽 회화관(2층), 중세 갑옷관",
+    how:"지하철 4·5·6 → 86 St, 도보 10분 / 택시 약 15분",status:"rec",resv:"온라인 예매하면 매표 줄 생략. 현장 구매도 가능",
+    link:"https://www.metmuseum.org/plan-your-visit",checked:true},
+  whitney:{cat:"see",sub:"museum",name:"휘트니 미술관",en:"Whitney Museum of American Art",addr:"99 Gansevoort St",
+    desc:"미국 현대미술 중심. 층마다 있는 야외 테라스에서 보는 허드슨강·하이라인 뷰가 백미.",
+    hours:"월·수·목·토·일 10:30~18:00 / 금 10:30~22:00 / 화요일 휴관",price:"성인 $30 (금 17~22시 무료)",
+    pick:"에드워드 호퍼 컬렉션, 5·6·8층 야외 테라스",how:"지하철 A·C·E → 14 St, 도보 8분",status:"rec",
+    resv:"공식 사이트 사전예매 권장",link:"https://whitney.org/visit",checked:true},
+  m911:{cat:"see",sub:"museum",name:"9/11 메모리얼 & 뮤지엄",en:"9/11 Memorial & Museum",addr:"180 Greenwich St",
+    desc:"쌍둥이 빌딩 자리의 거대한 추모 연못. 연못은 무료로 언제든 볼 수 있고, 뮤지엄은 2시간 정도 필요.",
+    hours:"뮤지엄 수~월 9:00~19:00 (입장마감 17:30) / 화요일 휴관 · 메모리얼 연못은 상시 개방",price:"연못 무료 / 뮤지엄 성인 $28",
+    pick:"남·북 추모 연못, 바로 옆 오큘러스 역사(驛舍)",how:"지하철 E → World Trade Center",status:"rec",
+    resv:"뮤지엄만 시간지정 예매 권장",link:"https://www.911memorial.org/visit",checked:true},
+  gugg:{cat:"see",sub:"museum",name:"구겐하임 미술관",en:"Solomon R. Guggenheim Museum",addr:"1071 5th Ave",
+    desc:"달팽이 모양 나선형 건물 자체가 작품. 메트에서 도보 10분이라 같은 날 외관만 봐도 좋아요.",
+    hours:"요일별 상이 — 방문 전 공식 사이트 확인",price:"성인 약 $30",pick:"나선형 로툰다, 외관 사진",
+    how:"메트에서 5번가 따라 북쪽 도보 10분",status:"rec",resv:"공식 사이트 예매",link:"https://www.guggenheim.org/plan-your-visit",checked:false},
+
+  /* ===== 볼거리 : 전망대·루프탑 ===== */
+  totr:{cat:"see",sub:"view",name:"탑 오브 더 락",en:"Top of the Rock",addr:"30 Rockefeller Plaza",
+    desc:"엠파이어스테이트와 센트럴파크를 양쪽으로 담는 전망대. 유리벽 없는 70층 야외 데크가 있어 사진이 잘 나와요.",
+    hours:"매일 9:00~22:00",price:"성인 약 $40대 (일몰 시간대는 추가요금)",
+    pick:"일몰 40~50분 전 슬롯 → 낮·노을·야경을 한 번에. 11/17 일몰 약 16:35",
+    how:"호텔에서 도보 약 12분",status:"must",resv:"공식 사이트 시간지정 예매. 일몰 슬롯은 빨리 매진 → 출국 전 예매",
+    link:"https://www.rockefellercenter.com/attractions/top-of-the-rock-observation-deck/",checked:true},
+  overstory:{cat:"see",sub:"view",name:"오버스토리",en:"Overstory",addr:"70 Pine St, 64F",
+    desc:"아르데코 마천루 64층의 칵테일 바. 테라스를 한 바퀴 둘러싼 맨해튼 다운타운 야경이 압도적. 월드 50 베스트 바 리스트에도 오른 곳.",
+    hours:"월~수 17:00~24:00 / 목~토 16:00~24:00 / 일 16:00~23:00",price:"$$$ (칵테일 1잔 $20 후반대 예상)",
+    pick:"해 질 무렵~밤 테라스 / 21세 이상 / 운동복·민소매·슬리퍼 불가",
+    how:"지하철 2·3 → Wall St 도보 3분. 1층 붉은 대리석 로비에서 체크인 후 전용 엘리베이터",status:"rec",
+    resv:"Resy 예약(2~6인). 자리 있으면 워크인 가능. 예약 후 6시간 지나 취소하면 1인 $25 수수료, 15분 지나면 자리 취소",
+    link:"https://www.overstory-nyc.com/",checked:true},
+  nubeluz:{cat:"see",sub:"view",name:"누벨루즈",en:"Nubeluz by José Andrés",addr:"25 W 28th St, 50F",
+    desc:"리츠칼튼 노매드 50층 칵테일 라운지. 통유리 너머로 엠파이어스테이트가 바로 앞에 보이는 럭셔리한 공간.",
+    hours:"매일 16:00 오픈 (일~수 24시, 목~토 1시까지 — 방문 전 재확인)",price:"$$$$",
+    pick:"오픈 직후 창가석에서 일몰 / 티셔츠·야구모자 불가",how:"지하철 R·W → 28 St 도보 2분 / 킨스까지 도보 10분",status:"must",
+    resv:"OpenTable 예약. 오픈 시간(16:00) 바로 예약해 창가석 요청",link:"https://www.theinfatuation.com/new-york/reviews/nubeluz",checked:false},
+  fifth230:{cat:"see",sub:"view",name:"230 피프스",en:"230 Fifth Rooftop",addr:"230 5th Ave",
+    desc:"엠파이어스테이트 뷰 대형 루프탑. 겨울엔 히팅 이글루를 운영해 캐주얼하게 한 잔하기 좋은 대안.",
+    hours:"방문 전 공식 사이트 확인",price:"$$",pick:"이글루 좌석",how:"지하철 R·W → 28 St",status:"walk",
+    resv:"대부분 워크인. 이글루는 별도 예약",link:"https://www.230-fifth.com/",checked:false},
+
+  /* ===== 볼거리 : 랜드마크·공원 ===== */
+  times:{cat:"see",sub:"landmark",name:"타임스퀘어",en:"Times Square",addr:"Times Square",
+    desc:"거대한 전광판 거리. 해 진 직후가 가장 화려해요. 호텔에서 바로라 여러 번 지나게 됩니다.",
+    hours:"상시",price:"무료",pick:"빨간 계단(TKTS 부스 위)에서 사진",how:"호텔에서 도보 5분",status:"free",checked:true},
+  rock:{cat:"see",sub:"landmark",name:"록펠러 센터",en:"Rockefeller Center",addr:"45 Rockefeller Plaza",
+    desc:"아이스링크와 크리스마스 트리로 유명한 광장. 11월 중순엔 트리 설치 중이고 점등은 12월 초예요.",
+    hours:"상시 (링크는 별도 운영)",price:"광장 무료",pick:"채널 가든, 아이스링크, 프로메테우스 동상",how:"호텔에서 도보 10분",status:"free",checked:true},
+  stpat:{cat:"see",sub:"landmark",name:"세인트 패트릭 대성당",en:"St. Patrick's Cathedral",addr:"5th Ave & 51st St",
+    desc:"5번가 한복판의 고딕 대성당. 내부 무료 관람, 스테인드글라스가 아름다워요.",
+    hours:"매일 개방 (미사 중엔 조용히)",price:"무료",pick:"정면 장미창",how:"록펠러센터 건너편",status:"free",checked:false},
+  gct:{cat:"see",sub:"landmark",name:"그랜드 센트럴 터미널",en:"Grand Central Terminal",addr:"89 E 42nd St",
+    desc:"천장 별자리 벽화와 대합실이 상징인 기차역. 11월엔 밴더빌트 홀에서 홀리데이 페어가 열려요.",
+    hours:"역은 매일 / 홀리데이 페어 월~토 10~19시, 일 11~18시",price:"무료",
+    pick:"메인 홀 천장, 지하 '속삭이는 회랑'(오이스터 바 앞 아치 모서리에서 속삭이면 반대편에 들림)",
+    how:"브라이언트파크에서 동쪽 도보 5분",status:"free",checked:true},
+  cpark:{cat:"see",sub:"landmark",name:"센트럴파크 단풍길",en:"Central Park",addr:"Gapstow Bridge, Central Park",
+    desc:"11월 중순은 단풍 끝자락. 남쪽 입구에서 시작하는 2시간 산책 코스.",
+    hours:"매일 6:00~01:00",price:"무료",
+    pick:"추천 동선: 갭스토 브리지 → 더 몰(느릅나무 가로수) → 베데스다 테라스·분수 → 보우 브리지",
+    how:"지하철 N·R·W → 5 Av/59 St 하차",status:"free",checked:false},
+  bbridge:{cat:"see",sub:"landmark",name:"브루클린 브리지",en:"Brooklyn Bridge",addr:"Brooklyn Bridge Pedestrian Walkway",
+    desc:"맨해튼에서 브루클린까지 걸어서 건너는 30~40분 코스. 오전 일찍일수록 한산해요.",
+    hours:"상시",price:"무료",pick:"맨해튼 쪽에서 출발해 돌아보며 스카이라인 감상",how:"지하철 4·5·6 → Brooklyn Bridge-City Hall",status:"free",checked:false},
+  dumbo:{cat:"see",sub:"landmark",name:"덤보 & 브루클린 브리지 파크",en:"DUMBO",addr:"Washington St & Water St, Brooklyn",
+    desc:"맨해튼 브리지가 건물 사이로 보이는 포토스팟과 강변 공원. 회전목마(제인스 캐러셀)도 여기.",
+    hours:"상시",price:"무료",pick:"워싱턴 스트리트 포토스팟, 페블 비치(일몰 명소), 제인스 캐러셀",how:"브루클린 브리지 건너 바로",status:"free",checked:false},
+  promenade:{cat:"see",sub:"landmark",name:"브루클린 하이츠 프롬나드",en:"Brooklyn Heights Promenade",addr:"Brooklyn Heights Promenade",
+    desc:"고풍스러운 브라운스톤 주택가 끝, 강 건너 로어 맨해튼이 정면으로 보이는 산책로.",
+    hours:"상시",price:"무료",pick:"주택가 골목 산책 + 스카이라인",how:"덤보에서 도보 15분",status:"free",checked:false},
+  highline:{cat:"see",sub:"landmark",name:"하이라인",en:"The High Line",addr:"Gansevoort St & Washington St",
+    desc:"옛 고가 철길을 공원으로 바꾼 2.3km 산책로. 휘트니 앞에서 시작해 북쪽으로 걸어요.",
+    hours:"매일 (계절별 상이, 보통 7시~19시)",price:"무료",pick:"첼시마켓 근처 구간, 허드슨야드 끝 구간",how:"휘트니 바로 앞 입구",status:"free",checked:false},
+  little:{cat:"see",sub:"landmark",name:"리틀 아일랜드",en:"Little Island",addr:"Pier 55, Hudson River Park",
+    desc:"허드슨강 위에 떠 있는 튤립 모양 기둥의 인공섬 공원. 짧게 30분이면 충분.",
+    hours:"매일 (계절별 상이)",price:"무료",pick:"섬 꼭대기 전망 포인트",how:"휘트니에서 도보 5분",status:"free",checked:false},
+  ferry:{cat:"see",sub:"landmark",name:"스태튼아일랜드 페리",en:"Staten Island Ferry",addr:"Whitehall Terminal, 4 South St",
+    desc:"자유의 여신상 앞을 지나는 무료 페리. 편도 25분, 도착하면 바로 돌아오는 배를 타면 돼요.",
+    hours:"24시간 운항 (낮엔 15~30분 간격)",price:"무료",pick:"갈 때 배 오른쪽 갑판 → 여신상이 가까이 보임",
+    how:"지하철 1 → South Ferry / R·W → Whitehall St",status:"free",link:"https://www.siferry.com/",checked:false},
+  wall:{cat:"see",sub:"landmark",name:"월스트리트 & 황소상",en:"Wall Street & Charging Bull",addr:"Charging Bull, Broadway & Morris St",
+    desc:"금융가의 상징. 황소상·뉴욕증권거래소·페더럴홀을 20분이면 둘러봐요.",
+    hours:"상시",price:"무료",pick:"황소상은 아침 일찍 가야 줄이 짧음",how:"페리 터미널에서 도보 5분",status:"free",checked:false},
+  oculus:{cat:"see",sub:"landmark",name:"오큘러스",en:"The Oculus",addr:"185 Greenwich St",
+    desc:"하얀 새의 날개를 닮은 WTC 환승역 겸 쇼핑몰. 내부 사진이 정말 예뻐요.",
+    hours:"상시 (매장은 10~20시 전후)",price:"무료",pick:"메인 홀 중앙에서 천장 올려다보기",how:"9/11 메모리얼 바로 옆",status:"free",checked:false},
+  wvillage:{cat:"see",sub:"landmark",name:"웨스트빌리지 & 워싱턴스퀘어",en:"West Village",addr:"Bleecker St & Perry St",
+    desc:"나무 그늘 골목, 브라운스톤, 작은 가게들. 뉴욕에서 가장 걷기 좋은 동네.",
+    hours:"상시",price:"무료",pick:"블리커 스트리트, '프렌즈' 아파트 외관(90 Bedford St), 워싱턴스퀘어 아치",how:"리틀 아일랜드에서 도보 10분",status:"free",checked:false},
+  flatiron:{cat:"see",sub:"landmark",name:"플랫아이언 빌딩",en:"Flatiron Building",addr:"175 5th Ave",
+    desc:"다리미 모양의 삼각 빌딩. 매디슨스퀘어파크 쪽에서 찍으면 예뻐요.",hours:"외관 상시",price:"무료",
+    pick:"매디슨스퀘어파크 쉐이크쉑 1호점과 함께",how:"누벨루즈에서 도보 5분",status:"free",checked:false},
+
+  /* ===== 볼거리 : 마켓·크리스마스 ===== */
+  winter:{cat:"see",sub:"market",name:"브라이언트파크 윈터빌리지",en:"Bank of America Winter Village",addr:"Bryant Park, 6th Ave & 42nd St",
+    desc:"뉴욕 대표 크리스마스 마켓. 유리 큐브 부스 170여 개와 무료 아이스링크. 여행 첫날 분위기 내기 딱.",
+    hours:"마켓 10/28~1/3 · 평일 11:00~20:00, 주말 10:00~20:00",price:"입장 무료 / 스케이트 대여 유료",
+    pick:"핫초코, 수공예 오너먼트, 링크 옆 '더 로지' 바",how:"호텔에서 도보 15분",status:"free",
+    resv:"마켓은 자유. 스케이트는 온라인 시간 예약 권장",link:"https://bryantpark.org/activities/bank-of-america-winter-village-at-bryant-park",checked:true},
+  gcfair:{cat:"see",sub:"market",name:"그랜드센트럴 홀리데이 페어",en:"Grand Central Holiday Fair",addr:"Vanderbilt Hall, 89 E 42nd St",
+    desc:"역 안 밴더빌트 홀에서 열리는 실내 크리스마스 마켓. 날씨와 상관없이 구경하기 좋아요.",
+    hours:"11/9~12/24 · 월~토 10:00~19:00, 일 11:00~18:00",price:"무료",pick:"주얼리·소품 부스",how:"브라이언트파크에서 도보 5분",status:"free",checked:true},
+  union:{cat:"see",sub:"market",name:"유니언스퀘어 홀리데이 마켓",en:"Union Square Holiday Market",addr:"Union Square Park",
+    desc:"로컬 공예 작가들이 많은 홀리데이 마켓. 작년엔 11/13 개장 — 올해 날짜는 아직 미발표.",
+    hours:"2026 일정 미발표 (작년 11/13~12/24)",price:"무료",pick:"월·수·금·토엔 그린마켓(농산물 장터)도 함께",how:"지하철 N·Q·R·W → 14 St-Union Sq",status:"free",checked:true},
+  chelseaflea:{cat:"see",sub:"market",name:"첼시 플리마켓",en:"Chelsea Flea",addr:"29 W 25th St",
+    desc:"50년 넘은 주말 벼룩시장. 빈티지 주얼리·그릇·포스터 등 구경하는 재미.",
+    hours:"토·일 8:00~17:00 (우천 시에도 운영)",price:"입장료 $1 (현금)",pick:"아침 일찍 가야 좋은 물건이 남아 있어요. 흥정은 현금이 유리",
+    how:"지하철 N·R·W → 23 St 또는 F·M → 23 St",status:"free",checked:true},
+
+  /* ===== 공연 ===== */
+  bdc:{cat:"show",sub:"dance",name:"브로드웨이 댄스 센터",en:"Broadway Dance Center",addr:"322 W 45th St",
+    desc:"브로드웨이 배우들도 다니는 댄스 스튜디오. 예약 없이 1회 수업을 듣는 드롭인 클래스가 매일 열려요.",
+    hours:"매일 (클래스 시간표는 공식 사이트)",price:"1회권 가격은 공식 사이트 확인",
+    pick:"처음이면 'Absolute Beginner' 또는 'Beginner' 레벨의 재즈·브로드웨이·힙합 클래스",
+    how:"호텔에서 도보 5분",status:"rec",resv:"공식 사이트에서 시간표 확인 → 온라인 또는 현장 결제. 시작 15분 전 도착",
+    link:"https://www.broadwaydancecenter.com/",checked:false},
+  birdland:{cat:"show",sub:"jazz",name:"버드랜드",en:"Birdland Jazz Club",addr:"315 W 44th St",
+    desc:"찰리 파커의 별명에서 이름을 딴 전설적인 재즈클럽. 호텔에서 걸어갈 수 있어 늦은 시간에도 부담 없어요.",
+    hours:"매일 저녁 공연 (시간은 공연별 상이)",price:"티켓 + 1인 음식·음료 최소 $20",
+    pick:"금요일 밤 버드랜드 빅밴드 / 스마트 캐주얼 복장",how:"호텔에서 도보 5분",status:"rec",
+    resv:"birdlandjazz.com 예매. 좌석은 선착순이라 30~45분 전 도착",link:"https://www.birdlandjazz.com/",checked:true},
+  vanguard:{cat:"show",sub:"jazz",name:"빌리지 뱅가드",en:"Village Vanguard",addr:"178 7th Ave S",
+    desc:"1935년부터 이어온 재즈의 성지. 작은 지하 공간이라 연주자와 아주 가까워요. 다운타운 일정 날 저녁에 추천.",
+    hours:"매일 저녁 2회 세트 (시간은 공식 사이트)",price:"티켓 + 1드링크",
+    pick:"좁고 클래식한 분위기 그대로가 매력",how:"지하철 1·2·3 → 14 St 또는 Christopher St",status:"rec",
+    resv:"공식 사이트 온라인 예매. 인기 공연은 매진",link:"https://villagevanguard.com/",checked:false},
+  bluenote:{cat:"show",sub:"jazz",name:"블루노트",en:"Blue Note",addr:"131 W 3rd St",
+    desc:"세계적으로 가장 유명한 재즈클럽 브랜드. 유명 아티스트 공연이 많고 식사도 가능.",
+    hours:"매일 저녁 공연",price:"공연별 상이",pick:"라인업 먼저 보고 결정",how:"지하철 A·C·E → W 4 St",status:"rec",
+    resv:"공식 사이트 예매",link:"https://www.bluenotejazz.com/nyc/",checked:false},
+  radiocity:{cat:"show",sub:"musical",name:"라디오시티 크리스마스 스펙태큘러",en:"Christmas Spectacular starring the Radio City Rockettes",addr:"1260 6th Ave",
+    desc:"로켓츠의 칼군무 라인댄스와 산타가 나오는 뉴욕 연말 대표 공연. 영어를 몰라도 100% 즐길 수 있어요.",
+    hours:"11/4~1/4 (하루 여러 회차)",price:"좌석별 상이",pick:"두 번째 공연을 본다면 1순위. 호텔에서 도보 10분",
+    how:"호텔에서 도보 10분",status:"must",resv:"Radio City 공식 사이트·박스오피스",link:"https://www.rockettes.com/christmas/",checked:true},
+
+  /* ===== 맛집 : 스테이크·디너 ===== */
+  gallaghers:{cat:"eat",sub:"steak",name:"갤러거스 스테이크하우스",en:"Gallaghers Steakhouse",addr:"228 W 52nd St",
+    desc:"1927년부터 이어온 미드타운 스테이크하우스. 입구 유리창 너머 드라이에이징 고기 저장고가 볼거리.",
+    hours:"일~목 11:45~22:00 / 금·토 11:45~23:00",price:"$$$",
+    pick:"드라이에이징 프라임 스테이크(히코리 숯불), 로브스터, 크림 스피니치",how:"호텔에서 도보 7분",status:"done",
+    resv:"✔ 11/14(토) 14:00 예약 완료",link:"https://www.gallaghersnysteakhouse.com/location/gallaghers-nyc/",checked:true},
+  keens:{cat:"eat",sub:"steak",name:"킨스 스테이크하우스",en:"Keens Steakhouse",addr:"72 W 36th St",
+    desc:"1885년 개업. 천장을 뒤덮은 수만 개의 옛 담배 파이프가 상징인 고풍스러운 공간. 20주년 기념 디너 장소.",
+    hours:"월~금 11:45~22:30 / 토 17:00~22:30 / 일 17:00~21:30",price:"$$$ (머튼찹 $60)",
+    pick:"레전더리 머튼찹, 프라임 립, 드라이에이징 스테이크",how:"지하철 B·D·F·M·N·Q·R·W → 34 St-Herald Sq",status:"must",
+    resv:"OpenTable 미등록 → 공식 사이트(keens.com) 또는 전화 예약. 기념일이라고 말해두기",link:"https://www.keens.com/",checked:true},
+  luger:{cat:"eat",sub:"steak",name:"피터 루거",en:"Peter Luger Steak House",addr:"178 Broadway, Brooklyn",
+    desc:"브루클린 윌리엄스버그의 전설적 스테이크하우스. 포터하우스 하나로 140년 가까이.",
+    hours:"방문 전 확인",price:"$$$$",pick:"포터하우스(2인), 베이컨 슬라이스",how:"지하철 J·M·Z → Marcy Av",status:"must",
+    resv:"전화·공식 사이트 예약, 1~2개월 전 마감",link:"https://peterluger.com/",checked:false},
+
+  /* ===== 맛집 : 베이글·델리·브런치 ===== */
+  essa:{cat:"eat",sub:"bagel",name:"에사 베이글",en:"Ess-a-Bagel",addr:"831 3rd Ave",
+    desc:"두툼하고 쫄깃한 뉴욕 베이글의 기준점. 아침 일찍 가면 줄이 짧아요.",
+    hours:"매일 아침~오후",price:"$",pick:"에브리싱 베이글 + 스캘리언 크림치즈, 록스(훈제연어)",how:"지하철 E·M → Lexington Av/53 St",status:"walk",checked:false},
+  russ:{cat:"eat",sub:"bagel",name:"러스 앤 도터스 카페",en:"Russ & Daughters Cafe",addr:"127 Orchard St",
+    desc:"1914년부터 이어온 훈제연어 전문점의 카페. 앉아서 먹는 클래식 유대식 브런치.",
+    hours:"매일 브런치~저녁",price:"$$",pick:"클래식 보드(베이글+훈제연어+크림치즈), 라트케",how:"지하철 F → Delancey St",status:"walk",resv:"주말은 대기 있음",checked:false},
+  katz:{cat:"eat",sub:"bagel",name:"카츠 델리",en:"Katz's Delicatessen",addr:"205 E Houston St",
+    desc:"1888년 개업. 손으로 썬 두툼한 파스트라미 샌드위치의 원조.",
+    hours:"매일 (늦게까지)",price:"$$",pick:"파스트라미 온 라이 1개를 둘이 나눠도 충분",how:"지하철 F → 2 Av",status:"walk",resv:"입장 때 받은 티켓 절대 잃어버리지 말기(분실 시 벌금)",checked:false},
+  sarabeth:{cat:"eat",sub:"bagel",name:"사라베스",en:"Sarabeth's Central Park South",addr:"40 Central Park S",
+    desc:"센트럴파크 바로 앞 브런치 명소. 산책 전후로 좋아요.",hours:"매일 아침~저녁",price:"$$",
+    pick:"레몬 리코타 팬케이크, 에그 베네딕트",how:"센트럴파크 남쪽",status:"rec",resv:"OpenTable 예약 권장",checked:false},
+
+  /* ===== 맛집 : 피자·버거 ===== */
+  julianas:{cat:"eat",sub:"pizza",name:"줄리아나스",en:"Juliana's",addr:"19 Old Fulton St, Brooklyn",
+    desc:"브루클린 브리지 아래 석탄 화덕 피자. 덤보 일정 마무리 저녁으로 딱.",
+    hours:"매일 11:00~23:00",price:"$$ (피자 한 판 약 $20대~)",
+    pick:"클래식 마르게리타, No.1(모차렐라+스카모르차+판체타+화이트 트러플 오일)",how:"지하철 A·C → High St / 덤보에서 도보 3분",status:"rec",
+    resv:"OpenTable 예약 가능. 안 되면 줄 서기(회전 빠름)",link:"https://www.julianaspizza.com/",checked:true},
+  joes:{cat:"eat",sub:"pizza",name:"조스 피자",en:"Joe's Pizza",addr:"1435 Broadway",
+    desc:"뉴욕 조각피자의 정석. 타임스퀘어점이 호텔에서 가까워요(원조는 그리니치빌리지 카민 St).",
+    hours:"매일 늦게까지",price:"$",pick:"치즈 슬라이스, 페퍼로니",how:"호텔에서 도보 8분",status:"walk",checked:false},
+  shack:{cat:"eat",sub:"pizza",name:"쉐이크쉑 매디슨스퀘어파크",en:"Shake Shack Madison Square Park",addr:"Madison Square Park",
+    desc:"쉐이크쉑 1호점. 공원 안 키오스크라 분위기가 남달라요.",hours:"매일",price:"$",pick:"쉑버거 + 블랙앤화이트 셰이크",how:"지하철 R·W → 23 St",status:"walk",checked:false},
+  jgmelon:{cat:"eat",sub:"pizza",name:"J.G. 멜론",en:"J.G. Melon",addr:"1291 3rd Ave",
+    desc:"어퍼이스트의 오래된 버거 펍. 메트 관람 후 들르기 좋아요.",hours:"매일",price:"$$",pick:"치즈버거 + 코티지 프라이",how:"메트에서 도보 15분",status:"walk",checked:false},
+
+  /* ===== 맛집 : 디저트·카페 ===== */
+  levain:{cat:"eat",sub:"cafe",name:"르뱅 베이커리",en:"Levain Bakery",addr:"167 W 74th St",
+    desc:"돌덩이처럼 두꺼운 쿠키로 유명한 원조 매장.",hours:"매일",price:"$",pick:"초코칩 월넛 쿠키(따뜻할 때)",how:"지하철 1·2·3 → 72 St",status:"walk",checked:false},
+  ansel:{cat:"eat",sub:"cafe",name:"도미니크 앙셀 베이커리",en:"Dominique Ansel Bakery",addr:"189 Spring St",
+    desc:"크로넛(크루아상+도넛)이 탄생한 소호의 프렌치 베이커리.",hours:"매일",price:"$",pick:"이달의 크로넛, DKA",how:"지하철 C·E → Spring St",status:"walk",checked:false},
+  magnolia:{cat:"eat",sub:"cafe",name:"매그놀리아 베이커리",en:"Magnolia Bakery Bleecker St",addr:"401 Bleecker St",
+    desc:"'섹스 앤 더 시티'로 유명해진 웨스트빌리지 원조점.",hours:"매일",price:"$",pick:"바나나 푸딩, 컵케이크",how:"웨스트빌리지 산책 중",status:"walk",checked:false},
+  ralph:{cat:"eat",sub:"cafe",name:"랄프스 커피",en:"Ralph's Coffee",addr:"888 Madison Ave",
+    desc:"랄프로렌의 카페. 초록색 인테리어가 예쁜 사진 명소.",hours:"매일",price:"$",pick:"라떼 + 초콜릿 케이크",how:"메트에서 도보 10분",status:"walk",checked:false},
+  juniors:{cat:"eat",sub:"cafe",name:"주니어스",en:"Junior's Restaurant & Bakery",addr:"1515 Broadway",
+    desc:"뉴욕 치즈케이크의 대표 브랜드. 타임스퀘어점.",hours:"매일 늦게까지",price:"$$",pick:"오리지널 치즈케이크",how:"호텔에서 도보 5분",status:"walk",checked:false},
+
+  /* ===== 맛집 : 캐주얼·푸드홀 ===== */
+  chelseamkt:{cat:"eat",sub:"casual",name:"첼시 마켓",en:"Chelsea Market",addr:"75 9th Ave",
+    desc:"옛 오레오 공장을 개조한 실내 푸드홀. 골라 먹는 재미가 있어요.",hours:"매일 (매장별 상이)",price:"$~$$",
+    pick:"로스 타코스 No.1(아도바다 타코), 랍스터 플레이스(랍스터롤)",how:"하이라인 중간에 내려가는 계단",status:"walk",checked:false},
+  lostacos:{cat:"eat",sub:"casual",name:"로스 타코스 No.1",en:"Los Tacos No.1",addr:"229 W 43rd St",
+    desc:"서서 먹는 타코 맛집. 줄은 길어도 회전이 빨라요. 타임스퀘어점이 호텔 근처.",hours:"매일",price:"$",pick:"아도바다(양념 돼지고기) 타코, 수제 토르티야",how:"호텔에서 도보 7분",status:"walk",checked:false},
+  timeout:{cat:"eat",sub:"casual",name:"타임아웃 마켓 뉴욕",en:"Time Out Market New York",addr:"55 Water St, Brooklyn",
+    desc:"덤보의 푸드홀. 꼭대기 루프탑에서 브루클린 브리지가 보여요.",hours:"매일",price:"$$",pick:"루프탑 테라스 자리",how:"덤보 안",status:"walk",checked:false},
+  oyster:{cat:"eat",sub:"casual",name:"그랜드센트럴 오이스터 바",en:"Grand Central Oyster Bar",addr:"89 E 42nd St (Lower Level)",
+    desc:"1913년부터 그랜드센트럴 지하에 있는 굴 요리집. 타일 아치 천장이 멋져요.",hours:"월~토 (일요일 휴무 — 방문 전 확인)",price:"$$$",
+    pick:"오늘의 굴 플래터, 뉴잉글랜드 클램차우더",how:"그랜드센트럴 지하",status:"rec",resv:"OpenTable 예약 권장",checked:false},
+  hk:{cat:"eat",sub:"casual",name:"헬스키친 9번가 식당가",en:"9th Avenue, Hell's Kitchen",addr:"9th Ave & W 46th St",
+    desc:"호텔에서 한 블록. 타이·이탈리안·멕시칸 등 캐주얼 식당이 줄지어 있어 피곤한 날 저녁에 좋아요.",
+    hours:"대부분 늦게까지",price:"$~$$",pick:"구글맵 평점 4.5 이상으로 골라 걷기",how:"호텔에서 도보 3분",status:"walk",checked:false},
+
+  /* ===== 쇼핑 ===== */
+  woodbury:{cat:"shop",sub:"outlet",name:"우드버리 커먼 프리미엄 아울렛",en:"Woodbury Common Premium Outlets",addr:"498 Red Apple Ct, Central Valley, NY",
+    desc:"250여 개 매장의 대형 아울렛. 미국 브랜드 데일리 의류·운동화를 사기 좋아요.",
+    hours:"보통 10:00~21:00 (방문일 공식 사이트 재확인)",price:"정가 대비 30~70%",
+    pick:"가족 데일리웨어: 폴로 랄프로렌, 갭, J.Crew / 운동화·운동복: 나이키, 아디다스, 언더아머 / 가방: 코치, 토리버치. 도착하면 안내센터에서 VIP 쿠폰북(여권 제시) 먼저 받기",
+    how:"버스 약 1시간~1시간 30분 (아래 '예약' 탭 참고)",status:"rec",
+    resv:"버스 왕복 온라인 예매 권장 — 투어아메리카(1651 Broadway 출발, 왕복 약 $42) / CitySights·Shortline(포트오소리티 409번 게이트, 약 $37) / 그레이라인(포트오소리티, 약 $47)",
+    link:"https://www.premiumoutlets.com/outlet/woodbury-common",checked:true},
+  soho:{cat:"shop",sub:"area",name:"소호 & 놀리타",en:"SoHo & Nolita",addr:"Prince St & Greene St",
+    desc:"철제 계단 건물 사이로 편집숍과 브랜드 플래그십이 모인 쇼핑 거리. 걷기만 해도 즐거워요.",
+    hours:"매장 보통 11~20시",price:"$$~$$$",pick:"프린스·스프링·그린 스트리트, 놀리타의 작은 부티크",how:"지하철 R·W → Prince St",status:"free",checked:false},
+  fifthave:{cat:"shop",sub:"area",name:"5번가",en:"Fifth Avenue",addr:"5th Ave & 53rd St",
+    desc:"브랜드 대형 플래그십 거리. MoMA·록펠러센터와 동선이 겹쳐요.",
+    hours:"매장 보통 10~20시",price:"$~$$$$",pick:"나이키, 자라, 세포라, 앤트로폴로지, 삭스 피프스 애비뉴",how:"호텔에서 도보 10분",status:"free",checked:false},
+  eileen:{cat:"shop",sub:"women",name:"아일린 피셔",en:"Eileen Fisher",addr:"Eileen Fisher SoHo, 395 W Broadway",
+    desc:"편안하면서 고급스러운 실루엣, 좋은 소재의 여성복.",hours:"매장별 상이",price:"$$$",pick:"캐시미어·울 니트, 와이드 팬츠",how:"소호",status:"free",checked:false},
+  theory:{cat:"shop",sub:"women",name:"띠어리 / 빈스",en:"Theory / Vince",addr:"Theory Meatpacking, 38 Gansevoort St",
+    desc:"미니멀하고 질 좋은 컨템포러리 브랜드. 한국보다 가격 부담이 적어요.",hours:"매장별 상이",price:"$$$",pick:"울 코트, 니트, 슬랙스",how:"휘트니 근처(미트패킹)",status:"free",checked:false},
+  anthro:{cat:"shop",sub:"women",name:"앤트로폴로지",en:"Anthropologie",addr:"Anthropologie Rockefeller Center, 50 Rockefeller Plaza",
+    desc:"빈티지 무드 의류와 그릇·향초 같은 홈소품. 선물 사기 좋아요.",hours:"매장별 상이",price:"$$",pick:"머그·향초·홈소품",how:"록펠러센터",status:"free",checked:false},
+  bloomies:{cat:"shop",sub:"women",name:"블루밍데일스",en:"Bloomingdale's 59th Street",addr:"1000 3rd Ave",
+    desc:"여성 컨템포러리 브랜드가 한 건물에. 시간 없을 때 한 번에 보기 좋아요.",hours:"매일",price:"$$~$$$$",
+    pick:"관광객 할인 — 1층 안내데스크에서 여권 제시",how:"지하철 N·R·W → Lexington Av/59 St",status:"free",checked:false},
+  nike:{cat:"shop",sub:"active",name:"나이키 하우스 오브 이노베이션",en:"Nike House of Innovation 000",addr:"650 5th Ave",
+    desc:"나이키 뉴욕 플래그십. 한국 미발매 컬러가 종종 있어요.",hours:"매일",price:"$$",pick:"러닝화, 한정 컬러",how:"5번가 52nd St",status:"free",checked:false},
+  lulu:{cat:"shop",sub:"active",name:"룰루레몬 / 알로 요가",en:"lululemon & Alo Yoga",addr:"Alo Yoga SoHo",
+    desc:"요가복·운동복 브랜드. 소호와 5번가에 매장이 많아요.",hours:"매장별 상이",price:"$$",pick:"레깅스, 조거, 경량 패딩",how:"소호",status:"free",checked:false},
+  onrun:{cat:"shop",sub:"active",name:"온러닝 / 호카 / 뉴발란스",en:"On, HOKA, New Balance",addr:"On NYC store",
+    desc:"요즘 인기 러닝화 브랜드들. 소호에 단독 매장이 있어 신어보고 사기 좋아요.",hours:"매장별 상이",price:"$$",pick:"데일리 러닝화, 단화형 스니커즈",how:"소호",status:"free",checked:false},
+  gap:{cat:"shop",sub:"kids",name:"갭 / 갭 키즈 타임스퀘어",en:"Gap Times Square",addr:"1466 Broadway",
+    desc:"아이 데일리 옷은 로고 후디·맨투맨이 무난한 갭이 실패가 적어요. 아울렛(우드버리)에도 매장이 있어 가격 비교 가능.",hours:"매일",price:"$",pick:"갭 키즈 로고 후디, 조거 팬츠, 세일 코너",how:"호텔에서 도보 10분",status:"free",checked:false},
+  sephora:{cat:"shop",sub:"beauty",name:"세포라 / 블루머큐리",en:"Sephora & Bluemercury",addr:"Sephora Times Square, 1500 Broadway",
+    desc:"한국 미입점 니치 화장품·향수. 블루머큐리는 고급 스킨케어 편집숍.",hours:"매일",price:"$$~$$$",pick:"미국 한정 세트, 미니 사이즈 선물용",how:"타임스퀘어",status:"free",checked:false},
+  aesop:{cat:"shop",sub:"beauty",name:"이솝 / 르 라보",en:"Aesop & Le Labo",addr:"Le Labo Nolita, 233 Elizabeth St",
+    desc:"매장 인테리어 자체가 볼거리인 스킨케어·향수 브랜드. 르 라보 놀리타는 1호점.",hours:"매장별 상이",price:"$$$",pick:"르 라보 시티 익스클루시브(뉴욕 한정 향 '튜베로즈 40')",how:"놀리타",status:"free",checked:false},
+
+
+  /* ===== 맛집 : 한식 ===== */
+  bcd:{cat:"eat",sub:"korean",name:"BCD 북창동순두부",en:"BCD Tofu House",addr:"5 W 32nd St",
+    desc:"LA에서 시작한 순두부 체인. 한국 사람들이 '뉴욕에서 한식 당길 때' 가장 많이 가는 곳. 새벽까지 열어요.",
+    hours:"일~목 10:30~01:00 / 금·토 10:30~05:00",price:"$$",pick:"해물·소고기 순두부, 갈비 콤보, 돌솥밥 + 생선구이 반찬",
+    how:"지하철 B·D·F·M·N·Q·R·W → 34 St-Herald Sq (호텔에서 2정거장)",status:"walk",resv:"워크인. 저녁 피크엔 대기",link:"https://bcdtofuhouse.com/locations",checked:true},
+  cote:{cat:"eat",sub:"korean",name:"꽃 (코리안 스테이크하우스)",en:"COTE Korean Steakhouse",addr:"16 W 22nd St",
+    desc:"미쉐린 스타를 받은 한국식 고기구이 스테이크하우스. 직원이 테이블에서 구워줘요. 기념일 디너 대안으로도 인기.",
+    hours:"매일 저녁 (방문 전 확인)",price:"$$$$",pick:"버처스 피스트(4가지 부위 + 반찬·찌개·디저트 세트)",
+    how:"지하철 F·M·R·W → 23 St",status:"must",resv:"Resy 예약, 몇 주 전 마감. 바 좌석 워크인 가능",link:"https://www.cotekoreansteakhouse.com/",checked:false},
+  jongro:{cat:"eat",sub:"korean",name:"종로 BBQ",en:"Jongro BBQ",addr:"22 W 32nd St, 2F",
+    desc:"한인타운 대표 고깃집. 옛 종로 골목 같은 인테리어에 숯불 고기구이.",hours:"매일 늦게까지 (방문 전 확인)",price:"$$$",
+    pick:"양념갈비, 삼겹살, 계란찜",how:"34 St-Herald Sq 도보 3분",status:"walk",resv:"예약 거의 안 받음 → 이른 저녁 방문",checked:false},
+  baekjeong:{cat:"eat",sub:"korean",name:"강호동 백정",en:"Baekjeong NYC",addr:"1 E 32nd St",
+    desc:"직원이 고기를 구워주는 한국식 BBQ. 불판 옆 계란찜·콘치즈가 시그니처.",hours:"매일 (방문 전 확인)",price:"$$$",
+    pick:"우삼겹, 갈비살, 콘치즈·계란찜",how:"34 St-Herald Sq 도보 5분",status:"walk",resv:"웨이팅 길어 앱 대기 등록 권장",checked:false},
+  hername:{cat:"eat",sub:"korean",name:"허 네임 이즈 한",en:"Her Name Is Han",addr:"17 E 31st St",
+    desc:"집밥 스타일 한식을 예쁘게 내는 캐주얼 한식당. 현지인들에게도 인기.",hours:"매일 점심·저녁 (방문 전 확인)",price:"$$",
+    pick:"들기름 막국수, 보쌈, 한상 정식",how:"34 St-Herald Sq 도보 5분",status:"rec",resv:"예약 권장",checked:false},
+  chodanggol:{cat:"eat",sub:"korean",name:"초당골",en:"Chodang Gol",addr:"55 W 35th St",
+    desc:"직접 만든 두부 요리 전문. 2026 뉴욕타임스 뉴욕 100대 레스토랑에 든 한식당 중 하나.",hours:"방문 전 확인",price:"$$",
+    pick:"두부두루치기, 들깨 두부전골, 들깨 메밀비빔면",how:"킨스(36th St)에서 도보 3분",status:"walk",checked:false},
+  moono:{cat:"eat",sub:"korean",name:"무노",en:"Moono",addr:"29 E 32nd St",
+    desc:"솥밥과 냉면이 유명한 모던 한식당.",hours:"방문 전 확인",price:"$$$",pick:"우니 솥밥, 보쌈, 평양냉면",how:"34 St-Herald Sq 도보 6분",status:"rec",checked:false},
+
+  /* ===== 맛집 : 일식 ===== */
+  ippudo:{cat:"eat",sub:"japanese",name:"잇푸도 웨스트사이드",en:"Ippudo Westside",addr:"321 W 51st St",
+    desc:"하카타 돈코츠 라멘의 대표 브랜드. 호텔에서 걸어서 5분이라 늦은 저녁·비 오는 날 딱.",
+    hours:"월~목 11:00~15:30, 17:00~23:30 / 금·토 ~00:30 / 일 11:00~22:30",price:"$$ (라멘 $15~20대)",
+    pick:"시로마루(기본 돈코츠), 아카마루(매운 미소), 포크번",how:"호텔에서 도보 5분",status:"walk",resv:"주로 워크인, 저녁 피크 대기",link:"https://www.ippudony.com/",checked:true},
+  ichiran:{cat:"eat",sub:"japanese",name:"이치란 미드타운",en:"Ichiran Midtown",addr:"132 W 31st St",
+    desc:"1인 칸막이 좌석에서 먹는 돈코츠 라멘. 국물 농도·맵기를 주문서로 골라요.",hours:"늦게까지 (방문 전 확인)",price:"$$",
+    pick:"클래식 돈코츠 + 반숙 계란 추가",how:"34 St-Penn Station 도보 3분",status:"walk",checked:false},
+  raku:{cat:"eat",sub:"japanese",name:"라쿠",en:"Raku",addr:"48 MacDougal St",
+    desc:"쫄깃한 사누키 우동 전문. 소호·웨스트빌리지 산책 동선에 넣기 좋아요(이스트빌리지에도 지점).",
+    hours:"점심·저녁 (방문 전 확인)",price:"$$",pick:"니쿠 우동(소고기), 카레 우동, 냉우동",how:"지하철 C·E → Spring St",status:"walk",resv:"대기 있음, 이른 시간 추천",checked:false},
+  katsuhama:{cat:"eat",sub:"japanese",name:"카츠하마",en:"Katsu-Hama",addr:"11 E 47th St",
+    desc:"미드타운 돈카츠 전문점. 깨를 갈아 소스를 만들어 먹는 정통 스타일.",hours:"점심·저녁 (방문 전 확인)",price:"$$",
+    pick:"로스카츠 정식, 히레카츠",how:"록펠러센터에서 도보 5분",status:"walk",checked:false},
+  nakazawa:{cat:"eat",sub:"japanese",name:"스시 나카자와",en:"Sushi Nakazawa",addr:"23 Commerce St",
+    desc:"'스시 장인: 지로의 꿈'에 나온 셰프 제자의 오마카세. 특별한 날 스시를 원하면.",hours:"저녁 (방문 전 확인)",price:"$$$$",
+    pick:"카운터석 오마카세",how:"웨스트빌리지",status:"must",resv:"공식 사이트 예약, 몇 주 전 마감",link:"https://www.sushinakazawa.com/",checked:false},
+  sushibou:{cat:"eat",sub:"japanese",name:"스시 바이 보우",en:"Sushi by Bou",addr:"Sushi by Bou Times Square",
+    desc:"30분·12피스 정도로 짧고 합리적인 오마카세. 호텔 근처 지점이 있어 공연 전후로 좋아요.",hours:"저녁 타임 (방문 전 확인)",price:"$$$",
+    pick:"12피스 오마카세",how:"타임스퀘어 인근",status:"must",resv:"공식 사이트 시간대 예약",checked:false},
+
+  /* ===== 맛집 : 중식·아시안·기타 인기 ===== */
+  halal:{cat:"eat",sub:"asian",name:"할랄 가이즈 (53번가 카트)",en:"The Halal Guys",addr:"W 53rd St & 6th Ave",
+    desc:"길거리 푸드카트의 전설. 한국 여행자 필수 코스로 유명. MoMA에서 1분.",hours:"점심~새벽",price:"$",
+    pick:"치킨&자이로 콤보 플래터 + 화이트소스 듬뿍, 핫소스는 조금만(매우 매움)",how:"MoMA 바로 앞",status:"walk",checked:false},
+  joes_sh:{cat:"eat",sub:"asian",name:"조스 상하이",en:"Joe's Shanghai",addr:"46 Bowery",
+    desc:"뉴욕 샤오롱바오의 원조격. 차이나타운 본점(미드타운에도 지점).",hours:"매일 (방문 전 확인)",price:"$$",
+    pick:"게살+돼지고기 샤오롱바오, 상하이 볶음면",how:"지하철 J·Z → Canal St",status:"walk",checked:false},
+  xian:{cat:"eat",sub:"asian",name:"시안 페이머스 푸드",en:"Xi'an Famous Foods",addr:"Xi'an Famous Foods Midtown",
+    desc:"손으로 뽑은 넓은 면에 쯔란 양고기. 저렴하고 빠른 한 끼.",hours:"매일",price:"$",pick:"쯔란 양고기 비앙비앙면",how:"미드타운 곳곳",status:"walk",checked:false},
+  thaidiner:{cat:"eat",sub:"asian",name:"타이 다이너",en:"Thai Diner",addr:"186 Mott St",
+    desc:"놀리타의 힙한 태국 식당. 소호 쇼핑 날 점심·저녁으로.",hours:"매일 (방문 전 확인)",price:"$$",
+    pick:"타이 티 프렌치토스트, 카오소이, 크랩 프라이드라이스",how:"소호에서 도보 10분",status:"rec",resv:"Resy 예약 권장",checked:false},
+  ellens:{cat:"eat",sub:"asian",name:"엘렌스 스타더스트 다이너",en:"Ellen's Stardust Diner",addr:"1650 Broadway",
+    desc:"브로드웨이 지망생 웨이터들이 서빙하다 노래를 부르는 50년대 다이너. 음식보단 분위기, 호텔에서 3분.",hours:"매일 아침~밤",price:"$$",
+    pick:"버거·셰이크 + 라이브 노래 구경",how:"호텔에서 도보 3분",status:"walk",resv:"예약 안 받음, 오전이 덜 붐빔",checked:false},
+  balthazar:{cat:"eat",sub:"asian",name:"발타자르",en:"Balthazar",addr:"80 Spring St",
+    desc:"소호의 파리풍 브라스리. 브런치와 빵이 유명해요.",hours:"매일 아침~밤",price:"$$$",
+    pick:"브런치 에그 베네딕트, 프렌치 어니언 수프, 베이커리 빵",how:"지하철 6 → Spring St",status:"rec",resv:"OpenTable·전화 예약 권장",checked:false},
+  eataly:{cat:"eat",sub:"asian",name:"이탈리 플랫아이언",en:"Eataly NYC Flatiron",addr:"200 5th Ave",
+    desc:"이탈리안 푸드마켓 + 레스토랑. 파스타·젤라토, 식재료 쇼핑까지.",hours:"매일",price:"$$",
+    pick:"생면 파스타, 젤라토, 카페",how:"플랫아이언 빌딩 바로 앞",status:"walk",checked:false},
+
+  /* ===== 맛집 : 디저트·카페 추가 ===== */
+  ladym:{cat:"eat",sub:"cafe",name:"레이디 엠",en:"Lady M Cake Boutique",addr:"Lady M Bryant Park",
+    desc:"얇은 크레이프를 20겹 쌓은 밀크레이프 케이크. 한국인 최애 디저트 중 하나.",hours:"매일",price:"$",
+    pick:"시그니처 밀크레이프, 말차 밀크레이프",how:"브라이언트파크 근처",status:"walk",checked:false},
+  breads:{cat:"eat",sub:"cafe",name:"브레즈 베이커리",en:"Breads Bakery",addr:"Breads Bakery Bryant Park",
+    desc:"초콜릿 바브카로 유명한 베이커리. 브라이언트파크·유니언스퀘어에 매장.",hours:"매일",price:"$",
+    pick:"초콜릿 바브카(선물용으로도 좋음), 루겔라흐",how:"브라이언트파크",status:"walk",checked:false},
+
+  /* ===== 쇼핑 : 뷰티·패션 추가 ===== */
+  glossier:{cat:"shop",sub:"beauty",name:"글로시에 소호 플래그십",en:"Glossier SoHo",addr:"72 Spring St",
+    desc:"뉴욕에서 시작한 뷰티 브랜드의 플래그십. 지하철 타일 모자이크 인테리어와 셀피룸이 있어 매장 자체가 포토스팟.",
+    hours:"매일 (방문 전 확인)",price:"$$",
+    pick:"보이 브로우(눈썹), 밤닷컴(립밤), 클라우드 페인트(블러셔), 향수 '글로시에 유', 매장 한정 NYC 후디",
+    how:"지하철 6 → Spring St / C·E → Spring St",status:"walk",resv:"워크인. 주말 오후엔 입장 대기 줄",link:"https://www.glossier.com/",checked:true},
+  aritzia:{cat:"shop",sub:"women",name:"아릿지아 플랫아이언 플래그십",en:"Aritzia Flatiron",addr:"89 5th Ave",
+    desc:"캐나다 여성복 브랜드. 한국 미입점이라 뉴욕에서 가장 많이 사는 브랜드 중 하나. 플랫아이언 플래그십이 가장 크고 소호·미드타운에도 매장.",
+    hours:"매일 (방문 전 확인)",price:"$$~$$$",
+    pick:"슈퍼퍼프(패딩), 바바톤·윌프레드 라인 블라우스·니트, 이펙트리스 팬츠",
+    how:"지하철 4·5·6·L·N·Q·R·W → 14 St-Union Sq 도보 5분 / 누벨루즈에서 도보 15분",status:"walk",link:"https://www.aritzia.com/",checked:true},
+
+  /* ===== 쇼핑 : 마트·장보기 ===== */
+  hmart:{cat:"shop",sub:"mart",name:"H마트 한인타운점",en:"H Mart 32nd Street",addr:"38 W 32nd St",
+    desc:"호텔에서 가장 가까운 대형 한인마트. 컵라면·김치·반찬·즉석밥, 한국 과자까지 다 있어요. 여행 중 한식이 그리울 때 숙소용 간식 쇼핑.",
+    hours:"매일 (방문 전 확인)",price:"$",pick:"컵라면·햇반·김치, 즉석 김밥·반찬, 붕어빵·호떡 등 베이커리",
+    how:"지하철 N·Q·R·W 49 St → 34 St-Herald Sq (2정거장) 도보 3분. 킨스 디너(D8) 가는 길과 가까워요",status:"walk",link:"https://www.hmart.com/",checked:true},
+  tj:{cat:"shop",sub:"mart",name:"트레이더 조스",en:"Trader Joe's",addr:"Trader Joe's",
+    desc:"저렴하고 귀여운 PB 상품으로 유명한 마트. 에코백·핸드크림·간식이 대표 기념품. 맨해튼에 여러 지점이 있어 구글지도로 가까운 곳 확인.",
+    hours:"보통 매일 8:00~21:00 (지점별 확인)",price:"$",pick:"아래 '트레이더 조스 인기템' 참고. 핸드크림 등 인기템은 오후엔 품절이 잦아 오전 방문 추천",
+    how:"첼시 플리마켓(D2)과 가까운 6번가 지점, 어퍼웨스트·유니언스퀘어 지점 등",status:"walk",link:"https://locations.traderjoes.com/ny/new-york/",checked:false},
+  target:{cat:"shop",sub:"mart",name:"타깃 헤럴드스퀘어",en:"Target Herald Square",addr:"112 W 34th St",
+    desc:"미국 대형마트. H마트와 같은 34번가라 한 번에 들르기 좋아요.",hours:"매일",price:"$",
+    pick:"미국 과자·영양제·생활용품, 아이 옷(캣앤잭)",how:"34 St-Herald Sq",status:"walk",checked:false},
+  /* ===== 대안 일정 ===== */
+  dia:{cat:"alt",sub:"alt",name:"디아비콘",en:"Dia Beacon",addr:"3 Beekman St, Beacon, NY",
+    desc:"옛 나비스코 공장을 개조한 초대형 현대미술관. 리처드 세라의 거대한 강철 조각이 압권.",
+    hours:"겨울엔 주 4~5일 운영(화·수 휴관이 일반적) — 공식 사이트 확인",price:"성인 약 $20",pick:"리처드 세라, 댄 플래빈, 앤디 워홀 〈그림자〉",
+    how:"그랜드센트럴 → 메트로노스 허드슨선 비콘역(약 1시간 25분) → 도보 5분",status:"rec",resv:"시간지정 예약 권장",link:"https://www.diaart.org/visit/visit-our-locations-sites/dia-beacon-beacon-united-states",checked:false},
+  coldspring:{cat:"alt",sub:"alt",name:"콜드스프링",en:"Cold Spring",addr:"Main St, Cold Spring, NY",
+    desc:"허드슨강변의 200년 된 작은 마을. 앤티크숍과 카페가 모인 메인스트리트, 강변 산책.",
+    hours:"상점 보통 11~17시",price:"무료",pick:"메인스트리트, 강변 부두 공원",how:"비콘에서 메트로노스 10분 / 그랜드센트럴에서 직행 약 1시간 10분",status:"free",checked:false}
+};
+
+/* ---------------- ITINERARY ---------------- */
+const DAYS = [
+ {d:1,date:"11/13 (금)",title:"도착 & 미드타운 워밍업",theme:"미드타운",
+  tag:"짐 풀고 가볍게 걸으며 크리스마스 분위기부터. 시차 적응을 위해 일찍 쉬는 날.",
+  items:[
+   {t:"10:00",title:"JFK 도착 → 호텔",note:"지하철 약 1시간 15분 / 택시 약 1시간. 방법은 '실전' 탭. 체크인은 보통 15시, 먼저 짐만 맡기기"},
+   {t:"12:30",p:"lostacos",note:"호텔 근처에서 가벼운 첫 끼"},
+   {t:"14:00",p:"rock",note:"록펠러센터 → 바로 건너편 세인트패트릭 대성당 → 5번가 구경"},
+   {t:"15:00",title:"호텔 체크인 & 휴식"},
+   {t:"16:30",p:"times",note:"해 질 무렵 전광판이 켜지는 시간"},
+   {t:"17:15",p:"winter",note:"핫초코 들고 마켓 한 바퀴"},
+   {t:"18:30",p:"gcfair",note:"금요일 19시 마감이니 먼저 마켓, 그다음 천장 구경"},
+   {t:"19:30",p:"oyster",alt:"캐주얼하게 먹고 싶으면 호텔 앞 9번가 식당가"}
+  ],
+  route:["Times Square","Rockefeller Center","Bryant Park","Grand Central Terminal"]},
+ {d:2,date:"11/14 (토)",title:"플리마켓 · 센트럴파크 · 갤러거스",theme:"첼시·센트럴파크",
+  tag:"주말에만 여는 벼룩시장으로 시작해 단풍길을 걷고, 예약해 둔 스테이크로 늦은 점심.",
+  items:[
+   {t:"09:00",p:"chelseaflea",note:"입장료 $1 현금 준비"},
+   {t:"10:45",title:"센트럴파크로 이동",note:"지하철 N·R·W 23 St → 5 Av/59 St (약 20분)"},
+   {t:"11:15",p:"cpark",note:"갭스토 브리지 → 더 몰 → 베데스다 → 보우 브리지. 남쪽으로 다시 나와 걸어서 갤러거스까지 15분"},
+   {t:"14:00",p:"gallaghers",note:"✔ 예약 완료"},
+   {t:"16:00",title:"호텔 휴식"},
+   {t:"저녁",title:"자유 저녁",note:"점심이 든든하니 가볍게. 선택지: 호텔 앞 9번가 산책 / 주니어스 치즈케이크 / 라디오시티 크리스마스 공연(두 번째 공연을 원하면)"}
+  ],
+  route:["Chelsea Flea, 29 W 25th St","Gapstow Bridge, Central Park","Bethesda Terrace","Gallaghers Steakhouse, 228 W 52nd St"]},
+ {d:3,date:"11/15 (일)",title:"브루클린 하루",theme:"브루클린",
+  tag:"다리를 걸어 건너 덤보에서 놀고, 강변 일몰 → 피자 → 64층 야경으로 마무리.",
+  items:[
+   {t:"09:30",p:"bbridge",note:"맨해튼 시청 쪽 입구에서 출발"},
+   {t:"10:30",p:"dumbo",note:"워싱턴 스트리트 포토스팟 → 제인스 캐러셀 → 강변 공원"},
+   {t:"12:30",p:"timeout",note:"점심 + 루프탑 뷰"},
+   {t:"14:00",p:"promenade",note:"브라운스톤 골목 산책 후 덤보로 천천히 복귀(카페 휴식)"},
+   {t:"16:15",title:"페블 비치에서 일몰",note:"일몰 약 16:37. 맨해튼 스카이라인에 불 들어오는 시간"},
+   {t:"17:00",p:"julianas",note:"저녁 이른 시간이라 웨이팅이 짧아요"},
+   {t:"19:00",p:"overstory",note:"야경 ① · 지하철 A·C High St → Fulton St 또는 택시 10분"}
+  ],
+  route:["Brooklyn Bridge City Hall","Washington St & Water St, Brooklyn","Brooklyn Heights Promenade","Pebble Beach, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Overstory, 70 Pine St"]},
+ {d:4,date:"11/16 (월)",title:"웨스트사이드 산책 & 댄스",theme:"미트패킹·첼시·웨스트빌리지",
+  tag:"미술관 → 공중정원 → 강 위의 섬 → 골목 산책. 월요일은 브로드웨이가 쉬는 날이라 댄스 수업.",
+  items:[
+   {t:"10:30",p:"whitney",note:"화요일 휴관이라 월요일 배치. 테라스 꼭 나가보기"},
+   {t:"12:30",p:"highline",note:"북쪽으로 15분 걷다 16th St 계단으로 내려가면 첼시마켓"},
+   {t:"13:00",p:"chelseamkt"},
+   {t:"14:30",p:"little"},
+   {t:"15:15",p:"wvillage",note:"매그놀리아 베이커리에서 바나나 푸딩"},
+   {t:"17:00",title:"호텔 휴식"},
+   {t:"19:00",p:"bdc",note:"이번 여행 유일한 댄스 수업. 편한 옷·실내화 준비"},
+   {t:"20:30",p:"hk",note:"수업 후 호텔 앞에서 늦은 저녁"}
+  ],
+  route:["Whitney Museum","Chelsea Market","Little Island","Magnolia Bakery, 401 Bleecker St"]},
+ {d:5,date:"11/17 (화)",title:"MoMA · 탑오브더락 · 뮤지컬",theme:"미드타운",
+  tag:"모두 호텔에서 걸어서 가는 하루. 일몰 전망대 → 이른 저녁 → 브로드웨이.",
+  items:[
+   {t:"10:30",p:"moma",note:"오픈 시간 입장, 5층부터"},
+   {t:"13:00",title:"점심 (MoMA 근처)",note:"선택: 에사 베이글 / MoMA 카페 / 5번가 근처 캐주얼"},
+   {t:"14:00",p:"fifthave",note:"나이키·세포라·앤트로폴로지 등"},
+   {t:"15:45",p:"totr",note:"야경 ② · 일몰 약 16:35"},
+   {t:"17:30",p:"hk",note:"공연 전 빠른 저녁. 극장 도보권"},
+   {t:"19:00",title:"브로드웨이 뮤지컬",note:"1순위 위키드(거슈윈 극장). 비교·할인 방법은 '공연' 탭",link:"#show"}
+  ],
+  route:["MoMA, 11 W 53rd St","Fifth Avenue & 53rd St","Top of the Rock","Gershwin Theatre"]},
+ {d:6,date:"11/18 (수)",title:"우드버리 아울렛",theme:"근교 쇼핑",
+  tag:"메트가 쉬는 수요일에 쇼핑 데이. 가족 데일리웨어·운동화 위주.",
+  items:[
+   {t:"08:30",title:"버스 출발",note:"투어아메리카(1651 Broadway, 호텔에서 도보 7분) 또는 포트오소리티. '예약' 탭 참고"},
+   {t:"10:00",p:"woodbury",note:"안내센터에서 쿠폰북 → 지도에 살 브랜드 표시하고 시작"},
+   {t:"17:30",title:"복귀 버스",note:"저녁 시간 버스는 붐비니 예약한 시간 지키기"},
+   {t:"19:30",title:"호텔 앞 가벼운 저녁 & 짐 정리"}
+  ],
+  route:["1651 Broadway","Woodbury Common Premium Outlets"]},
+ {d:7,date:"11/19 (목)",title:"다운타운 랜드마크 · 소호 · 재즈",theme:"로어맨해튼·소호",
+  tag:"자유의 여신상을 배에서 보고, 9/11 메모리얼 → 소호 쇼핑 → 빌리지 재즈클럽.",
+  items:[
+   {t:"09:30",p:"ferry",note:"왕복 약 1시간"},
+   {t:"10:45",p:"wall"},
+   {t:"11:30",p:"m911",note:"연못만 보면 30분 / 뮤지엄까지 2시간"},
+   {t:"13:00",p:"oculus",note:"점심은 오큘러스·브룩필드 플레이스 푸드홀"},
+   {t:"14:30",p:"soho",note:"글로시에(72 Spring St)·아릿지아 소호점·러닝화 매장·르 라보 등. '쇼핑' 탭에서 미리 찜"},
+   {t:"17:00",p:"ansel",note:"쇼핑 중 당 충전"},
+   {t:"19:00",title:"웨스트빌리지 저녁"},
+   {t:"20:30",p:"vanguard",alt:"호텔 근처가 편하면 버드랜드"}
+  ],
+  route:["Staten Island Ferry Whitehall Terminal","Charging Bull","9/11 Memorial","Prince St & Greene St","Village Vanguard"]},
+ {d:8,date:"11/20 (금)",title:"메트 & 20주년 기념 디너",theme:"어퍼이스트·노매드",
+  tag:"여행의 하이라이트. 명작을 보고, 50층 노을 한 잔, 클래식 스테이크하우스에서 자축.",
+  items:[
+   {t:"10:00",p:"met",note:"명작 위주 2~3시간"},
+   {t:"13:00",p:"ralph",note:"매디슨 애비뉴 쪽으로 걸어 커피·디저트"},
+   {t:"14:00",title:"호텔 휴식 & 디너 차림 준비"},
+   {t:"16:15",p:"nubeluz",note:"선택 · 오픈 직후 창가에서 일몰(약 16:32). 야경이 3번째라 빼도 괜찮아요"},
+   {t:"18:30",p:"keens",note:"20주년 기념 디너 · 누벨루즈에서 도보 10분"},
+   {t:"20:30",title:"호텔 복귀 · 짐 정리",note:"다음 날 이른 출발. 한국 갈 간식이 필요하면 킨스에서 4블록 거리인 H마트·타깃(34th St)에 잠깐"}
+  ],
+  route:["The Met Fifth Avenue","Ralph's Coffee, 888 Madison Ave","Nubeluz, 25 W 28th St","Keens Steakhouse, 72 W 36th St"]},
+ {d:9,date:"11/21 (토)",title:"출국",theme:"",
+  tag:"낮 12시 비행기. 국제선은 3시간 전 도착 권장.",
+  items:[
+   {t:"07:30",title:"아침 & 체크아웃",note:"근처 베이글로 간단히"},
+   {t:"08:30",title:"공항 출발",note:"토요일 오전이라 택시 약 1시간. 지하철이면 8시 출발"},
+   {t:"12:00",title:"JFK 출발 ✈"}
+  ],
+  route:[]}
+];
+
+/* ---------------- RESERVATION CHECKLIST ---------------- */
+const RESV = [
+ {id:"r1",day:"11/14 14:00",what:"갤러거스 스테이크하우스",status:"done",how:"예약 완료",when:"-",p:"gallaghers"},
+ {id:"r2",day:"11/20 18:30",what:"킨스 스테이크하우스 (20주년 디너)",status:"must",how:"keens.com 또는 전화 (OpenTable 없음). 기념일 메모",when:"지금 바로",p:"keens"},
+ {id:"r3",day:"11/17 19:00",what:"브로드웨이 뮤지컬 (위키드 1순위)",status:"must",how:"공식 사이트 정가 예매 + 할인 로터리 병행 ('공연' 탭)",when:"출국 전",p:null,link:"#show"},
+ {id:"r4",day:"11/17 15:45",what:"탑 오브 더 락 일몰 슬롯",status:"must",how:"공식 사이트 시간지정 예매",when:"출국 전 (일몰 슬롯 매진 잦음)",p:"totr"},
+ {id:"r5",day:"11/20 16:15",what:"누벨루즈 (선택)",status:"must",how:"OpenTable, 창가석 요청",when:"1~2주 전",p:"nubeluz"},
+ {id:"r6",day:"11/15 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
+ {id:"r7",day:"11/18 08:30",what:"우드버리 왕복 버스",status:"rec",how:"투어아메리카 / CitySights / 그레이라인 온라인",when:"1주 전",p:"woodbury"},
+ {id:"r8",day:"11/19 20:30",what:"재즈클럽 (빌리지 뱅가드 or 버드랜드)",status:"rec",how:"공식 사이트 예매",when:"라인업 보고 1~2주 전",p:"vanguard"},
+ {id:"r9",day:"11/17 10:30",what:"MoMA 시간지정권",status:"rec",how:"moma.org",when:"전날까지",p:"moma"},
+ {id:"r10",day:"11/16 10:30",what:"휘트니 입장권",status:"rec",how:"whitney.org",when:"전날까지",p:"whitney"},
+ {id:"r11",day:"11/20 10:00",what:"메트 입장권",status:"rec",how:"metmuseum.org (현장 구매도 가능)",when:"전날까지",p:"met"},
+ {id:"r12",day:"11/15 17:00",what:"줄리아나스",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
+ {id:"r13",day:"11/16 19:00",what:"브로드웨이 댄스 센터 클래스",status:"rec",how:"공식 사이트 시간표 확인 후 결제",when:"전날",p:"bdc"},
+ {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
+ {id:"r15",day:"11/19 11:30",what:"9/11 뮤지엄 (들어갈 경우)",status:"rec",how:"911memorial.org",when:"전날까지",p:"m911"}
+];
+
+/* ---------------- MUSICALS ---------------- */
+const SHOWS = [
+ {name:"위키드",en:"Wicked",theatre:"Gershwin Theatre, 222 W 51st St",eng:1,pick:true,
+  why:"오즈의 마법사 속 두 마녀의 우정 이야기. 영화로 줄거리를 이미 알아서 영어 부담이 가장 적고, 우정 여행 테마와도 딱 맞아요.",
+  look:"초대형 무대, 'Defying Gravity' 1막 피날레",
+  deal:"디지털 로터리(Broadway Direct) / 매 공연 $45 현장 러시(박스오피스 오픈 시, 1인 2매)",
+  link:"https://wickedthemusical.com/"},
+ {name:"어쩌면 해피엔딩",en:"Maybe Happy Ending",theatre:"Belasco Theatre, 111 W 44th St",eng:2,
+  why:"한국 창작 뮤지컬이 원작인 토니상 작품상 수상작. 서울을 배경으로 한 헬퍼 로봇 둘의 이야기라 한국인에게 특별해요. 잔잔하고 따뜻한 소극장 감성.",
+  look:"서정적인 음악, 정교한 무대 장치",
+  deal:"Telecharge 디지털 로터리·러시",link:"https://www.google.com/search?q=Maybe+Happy+Ending+Broadway+tickets"},
+ {name:"라이온 킹",en:"The Lion King",theatre:"Minskoff Theatre, 200 W 45th St",eng:1,
+  why:"대사보다 비주얼과 음악이 중심. 동물 퍼펫이 객석 통로로 들어오는 오프닝 하나로도 값어치를 해요.",
+  look:"'Circle of Life' 오프닝",deal:"Broadway Direct 디지털 로터리",link:"https://www.lionking.com/"},
+ {name:"MJ",en:"MJ the Musical",theatre:"Neil Simon Theatre, 250 W 52nd St",eng:1,
+  why:"마이클 잭슨의 히트곡과 춤으로 꾸민 공연. 아는 노래가 많아 신나고, 댄스 수업 테마와도 연결돼요.",
+  look:"문워크·'Smooth Criminal' 군무",deal:"Broadway Direct 디지털 로터리",link:"https://mjthemusical.com/"},
+ {name:"& 줄리엣",en:"& Juliet",theatre:"Stephen Sondheim Theatre, 124 W 43rd St",eng:1,
+  why:"'로미오가 죽지 않았다면?' 브리트니·케이티 페리·백스트리트 보이즈 히트곡으로 만든 팝 콘서트형 뮤지컬. 40대 친구 둘에게 추억 소환.",
+  look:"따라 부르게 되는 2000년대 팝",deal:"TodayTix 앱 러시",link:"https://andjulietbroadway.com/"},
+ {name:"SIX",en:"SIX the Musical",theatre:"Lena Horne Theatre, 256 W 47th St",eng:2,
+  why:"헨리 8세의 여섯 왕비가 걸그룹이 되어 경연하는 80분짜리 공연. 짧고 신나요. 호텔에서 1분.",
+  look:"콘서트 같은 조명과 노래",deal:"Broadway Direct 디지털 로터리",link:"https://www.sixonbroadway.com/"},
+ {name:"위대한 개츠비",en:"The Great Gatsby",theatre:"Broadway Theatre, 1681 Broadway",eng:2,
+  why:"1920년대 의상과 세트가 화려한 작품. 줄거리를 알아서 따라가기 쉬워요.",
+  look:"파티 장면 의상·세트",deal:"Telecharge 디지털 로터리·러시",link:"https://www.google.com/search?q=The+Great+Gatsby+Broadway+musical+tickets"},
+ {name:"하데스타운",en:"Hadestown",theatre:"Walter Kerr Theatre, 219 W 48th St",eng:3,
+  why:"그리스 신화를 재즈·포크로 풀어낸 토니상 작품상 수상작. 음악성이 최고지만 가사로 이야기가 진행돼서 영어 비중이 커요. 호텔 바로 옆 블록.",
+  look:"라이브 밴드, 뉴올리언스풍 음악",deal:"Lucky Seat 디지털 로터리",link:"https://hadestown.com/"},
+ {name:"해밀턴",en:"Hamilton",theatre:"Richard Rodgers Theatre, 226 W 46th St",eng:3,
+  why:"브로드웨이 최고 명작 중 하나지만 빠른 랩으로 이야기가 진행돼 처음 보기엔 어려운 편. 미국 역사 배경지식이 있으면 훨씬 재밌어요.",
+  look:"힙합·R&B로 그린 미국 건국사",deal:"공식 앱 로터리 $10 (앞줄)",link:"https://hamiltonmusical.com/"},
+ {name:"라디오시티 크리스마스 스펙태큘러",en:"Christmas Spectacular",theatre:"Radio City Music Hall, 1260 6th Ave",eng:1,season:true,
+  why:"로켓츠의 칼군무와 산타가 나오는 연말 시즌 공연(11/4~1/4). 영어를 몰라도 100% 즐길 수 있어 두 번째 공연으로 추천.",
+  look:"로켓츠 라인댄스, 3D 산타 비행",deal:"공식 사이트·박스오피스 정가",link:"https://www.rockettes.com/christmas/"}
+];
+
+/* ---------------- 대안 일정 ---------------- */
+const ALT = [
+ {title:"허드슨강 당일치기: 디아비콘 + 콜드스프링",desc:"일정에서 빼둔 근교 코스. Day4(월)나 Day7(목)과 바꿀 수 있어요. 기차 창밖 허드슨강 뷰가 좋아 진행방향 왼쪽 좌석 추천.",
+  steps:["08:00 그랜드센트럴 → 메트로노스 허드슨선 (비콘역 약 1시간 25분)","09:40~13:00 디아비콘 (역에서 도보 5분)","13:30 기차로 콜드스프링 이동 (약 10분)","14:00~17:00 메인스트리트·강변 산책·카페","17:30 콜드스프링 → 그랜드센트럴 (약 1시간 10분)"],
+  tips:"기차표는 MTA TrainTime 앱으로 구매(역에 매표소가 없을 수 있음). 디아비콘은 겨울 운영요일이 줄어드니 목·금·토·일·월 중 운영일을 꼭 확인.",
+  places:["dia","coldspring"]}
+];
+
+/* ---------------- TRADER JOE'S ---------------- */
+const TJ = [
+ {g:"기념품·잡화",items:[
+  ["캔버스 토트백 / 에코백","$3.99~4.99","가장 유명한 기념품. 미니 토트는 품절이 잦아요"],
+  ["보냉백 (Insulated Bag)","$5.99","튼튼하고 넉넉해서 선물용으로 인기"]]},
+ {g:"뷰티",items:[
+  ["울트라 모이스처라이징 핸드크림","$4.99","승무원 사이에서 유명해진 대용량 핸드크림. 오후엔 품절 잦음"],
+  ["시즌 향 핸드크림","$4.99","계절마다 바뀌는 향, 고급 브랜드 못지않다는 평"],
+  ["SPF 립밤","$2.99","꾸준한 베스트셀러, 끈적임 없음"]]},
+ {g:"간식",items:[
+  ["콘 팁스 (Cone Tips)","$4.49","아이스크림 콘 끝 초콜릿 부분만 모은 과자 — SNS 인기템"],
+  ["미니 스트룹와플","$3.69","커피 잔 위에 올려 데워 먹는 카라멜 와플"],
+  ["100% 망고 주스","$2.99","시럽 없이 망고만 갈아 만든 주스"],
+  ["레몬 커드","$3.99","인기 많지만 유리병이라 짐 무게 주의"]]},
+ {g:"조미료·식료품",items:[
+  ["에브리싱 벗 더 베이글 시즈닝","$2.99","베이글 토핑 맛 시즈닝. 가볍고 저렴해서 선물로 최고"],
+  ["냉동 김밥","$3.99","틱톡에서 화제가 된 미국 트레이더 조스 김밥 — 숙소 전자레인지 있으면 경험 삼아"]]}
+];
+
 </script>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mapUrl=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q+", New York");
+const routeUrl=stops=>"https://www.google.com/maps/dir/"+stops.map(s=>encodeURIComponent(s+", New York")).join("/");
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
+$("#hotelMap").href=mapUrl(HOTEL);
+
+function badge(st){const s=STATUS[st];return s?`<span class="badge b-${s.c}">${s.t}</span>`:""}
+function chk(p){return p.checked?`<span class="badge b-chk">· ${CHECKED}</span>`:`<span class="badge b-chk">· 방문 전 확인</span>`}
+
+function cardInner(p,{compact}={}){
+  const rows=[];
+  if(p.addr) rows.push(["위치",esc(p.addr)]);
+  if(p.hours) rows.push(["운영",esc(p.hours)]);
+  if(p.price) rows.push(["가격",esc(p.price).replace(/(\${1,4})(?=$|\s|\()/,'<span class="price">$1</span>')]);
+  if(p.pick) rows.push(["추천",esc(p.pick)]);
+  if(p.how) rows.push(["가는 법",esc(p.how)]);
+  if(p.resv) rows.push(["예약",esc(p.resv)]);
+  return `${compact?"":`<h4>${esc(p.name)}</h4><div class="en">${esc(p.en||"")}</div><div style="margin-top:6px">${badge(p.status)}${chk(p)}</div>`}
+   <p class="desc">${esc(p.desc)}</p>
+   <dl class="meta">${rows.map(r=>`<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join("")}</dl>
+   <div class="btns">
+     <a class="btn map" target="_blank" rel="noopener" href="${mapUrl(p.en+" "+p.addr)}">📍 구글지도</a>
+     ${p.link?`<a class="btn res" target="_blank" rel="noopener" href="${esc(p.link)}">${p.status==="must"||p.status==="rec"||p.status==="done"?"예약·공식 ↗":"공식 사이트 ↗"}</a>`:""}
+   </div>`;
+}
+function card(p){return `<article class="card">${cardInner(p)}</article>`}
+
+/* ---------- tabs ---------- */
+const tabs=[...document.querySelectorAll(".tab")];
+function openTab(id,push){
+  if(!document.getElementById(id)) id="plan";
+  tabs.forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===id));
+  document.querySelectorAll("section.panel").forEach(s=>s.classList.toggle("on",s.id===id));
+  if(push) history.replaceState(null,"","#"+id);
+  const sel=document.querySelector(`.tab[data-tab="${id}"]`); if(sel) sel.scrollIntoView({inline:"center",block:"nearest"});
+}
+tabs.forEach(t=>t.addEventListener("click",()=>{openTab(t.dataset.tab,true);window.scrollTo({top:$(".tabs").offsetTop,behavior:"smooth"})}));
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute("href").slice(1);if(document.getElementById(id)&&document.getElementById(id).classList.contains("panel")){e.preventDefault();openTab(id,true);window.scrollTo({top:$(".tabs").offsetTop})}});
+
+function chips(el,list,cur,onPick){
+  el.innerHTML=list.map(c=>`<button class="chip" aria-pressed="${c.k===cur}" data-k="${c.k}">${c.t}${c.n!=null?`<small>${c.n}</small>`:""}</button>`).join("");
+  el.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{el.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));onPick(b.dataset.k)});
+}
+
+/* ---------- plan ---------- */
+function dayFromDate(){
+  const now=new Date(); const ny=new Date(now.toLocaleString("en-US",{timeZone:"America/New_York"}));
+  if(ny.getFullYear()===2026&&ny.getMonth()===10&&ny.getDate()>=13&&ny.getDate()<=21) return ny.getDate()-12;
+  return 0;
+}
+function renderDay(n){
+  const d=DAYS[n-1];
+  const items=d.items.map(it=>{
+    const p=it.p?P[it.p]:null;
+    const title=p?p.name:it.title;
+    const note=[it.note,it.alt?("대안: "+it.alt):""].filter(Boolean).map(esc).join("<br>");
+    const bd=p&&p.status!=="free"?`<div class="badges">${badge(p.status)}</div>`:"";
+    if(p) return `<li><div class="time">${esc(it.t)}</div><details class="ti"><summary><div class="nm"><span>${esc(title)}</span><span class="chev">▼</span></div>${note?`<div class="nt">${note}</div>`:""}${bd}</summary><div class="body">${cardInner(p,{compact:true})}</div></details></li>`;
+    return `<li><div class="time">${esc(it.t)}</div><div class="ti"><div class="plain"><div class="nm"><span>${esc(title)}</span></div>${note?`<div class="nt">${note}</div>`:""}${it.link?`<div style="margin-top:6px"><a class="btn res" href="${it.link}">자세히 보기</a></div>`:""}</div></div></li>`;
+  }).join("");
+  $("#dayView").innerHTML=`<div class="dayhead"><span class="k">DAY ${d.d} · ${esc(d.date)}${d.theme?" · "+esc(d.theme):""}</span><h3>${esc(d.title)}</h3><p>${esc(d.tag)}</p>
+   ${d.route.length?`<a class="routebtn" target="_blank" rel="noopener" href="${routeUrl(d.route)}">🧭 오늘 동선 구글지도로 보기</a>`:""}</div>
+   <ul class="tl">${items}</ul>
+   <p class="lead" style="margin-top:14px">▼ 표시를 누르면 장소 정보·지도·예약 링크가 펼쳐져요.</p>`;
+  store.set("ny_day",n);
+}
+const startDay=dayFromDate()||store.get("ny_day",1);
+chips($("#dayChips"),DAYS.map(d=>({k:String(d.d),t:`D${d.d} ${d.date.replace(" ","")}`})),String(startDay),k=>renderDay(+k));
+renderDay(startDay);
+const td=dayFromDate(); if(td) $("#today").textContent=`오늘은 DAY ${td} — ${DAYS[td-1].title}`;
+
+/* ---------- reservation ---------- */
+const done=store.get("ny_resv",{});
+function renderResv(){
+  const order={must:0,rec:1,done:2};
+  const list=[...RESV].sort((a,b)=>(order[a.status]-order[b.status]));
+  $("#rlist").innerHTML=list.map(r=>{
+    const isDone=r.status==="done"||done[r.id];
+    const p=r.p?P[r.p]:null;
+    const lk=r.link?`<a class="btn res" href="${r.link}">방법 보기</a>`:(p&&p.link?`<a class="btn res" target="_blank" rel="noopener" href="${esc(p.link)}">예약 사이트 ↗</a>`:"");
+    return `<li class="ritem ${isDone?"checked":""}"><input type="checkbox" data-id="${r.id}" ${isDone?"checked":""} ${r.status==="done"?"disabled":""} aria-label="${esc(r.what)} 완료">
+     <div><div class="w">${esc(r.what)}</div><div class="d">${badge(r.status)} ${esc(r.day)} · 언제까지: ${esc(r.when)}</div><div class="h">${esc(r.how)}</div>${lk?`<div style="margin-top:6px">${lk}</div>`:""}</div></li>`;
+  }).join("");
+  $("#rlist").querySelectorAll("input").forEach(i=>i.onchange=()=>{done[i.dataset.id]=i.checked;store.set("ny_resv",done);renderResv()});
+  const total=RESV.length, n=RESV.filter(r=>r.status==="done"||done[r.id]).length;
+  $("#pbar").style.width=(n/total*100)+"%"; $("#ptext").textContent=`${total}개 중 ${n}개 완료`;
+}
+renderResv();
+$("#legend").innerHTML=Object.keys(STATUS).map(k=>badge(k)).join("")+"<span style='margin-left:4px'>배지는 모든 탭에서 같은 의미예요.</span>";
+
+/* ---------- category views ---------- */
+function catView(cat,el,chipEl,subs,intro){
+  const items=Object.values(P).filter(p=>p.cat===cat);
+  const list=[{k:"all",t:"전체",n:items.length}].concat(subs.map(s=>({k:s.k,t:s.t,n:items.filter(p=>p.sub===s.k).length})));
+  const draw=k=>{
+    const groups=k==="all"?subs:subs.filter(s=>s.k===k);
+    el.innerHTML=(intro?intro(k):"")+groups.map(g=>{
+      const arr=items.filter(p=>p.sub===g.k); if(!arr.length) return "";
+      return `<h2 class="sec">${g.t}</h2>${g.lead?`<p class="lead">${g.lead}</p>`:""}<div class="grid">${arr.map(card).join("")}</div>${g.extra?g.extra():""}`;
+    }).join("");
+  };
+  chips(chipEl,list,"all",draw); draw("all");
+}
+const legendNote=`<div class="legend">${["done","must","rec","walk","free"].map(badge).join("")}</div>`;
+
+catView("see",$("#seeView"),$("#seeChips"),[
+  {k:"museum",t:"미술관·박물관",lead:"메트는 수요일, 휘트니·9/11 뮤지엄은 화요일 휴관."},
+  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 야경은 오버스토리(D3) · 탑오브더락(D5) · 누벨루즈(D8, 선택)."},
+  {k:"market",t:"크리스마스 마켓·플리마켓",lead:"록펠러 트리는 12월 초 점등이라 11월 중순엔 설치 중이에요."},
+  {k:"landmark",t:"랜드마크·공원"}
+],k=>k==="all"?legendNote:"");
+
+/* shows */
+const showSubs=[{k:"musical",t:"뮤지컬 고르기"},{k:"ticket",t:"티켓 가이드"},{k:"jazz",t:"재즈바"},{k:"dance",t:"댄스 수업"}];
+function engDots(n){return `영어 부담 <b>${"●".repeat(n)}${"○".repeat(3-n)}</b>`}
+function drawShow(k){
+  const v=$("#showView"); let h="";
+  if(k==="musical"){
+    h+=`<h2 class="sec">11월에 볼 수 있는 뮤지컬</h2><p class="lead">영어 부담이 적은 순서. 공연일은 D5(화) 19:00 기준이에요. 모든 작품이 11월 공연 목록에서 확인됐어요.</p>
+    <div class="grid">${SHOWS.map(s=>`<article class="card show"><div class="top"><div><h4>${esc(s.name)}</h4><div class="en">${esc(s.en)}</div></div><span class="eng">${engDots(s.eng)}</span></div>
+     <div style="margin-top:6px">${s.pick?'<span class="badge b-pick">1순위</span>':""}${s.season?'<span class="badge b-rec">연말 한정</span>':""}</div>
+     <p class="desc">${esc(s.why)}</p>
+     <dl class="meta"><div><dt>볼거리</dt><dd>${esc(s.look)}</dd></div><div><dt>할인</dt><dd>${esc(s.deal)}</dd></div><div><dt>극장</dt><dd>${esc(s.theatre)}</dd></div></dl>
+     <div class="btns"><a class="btn map" target="_blank" rel="noopener" href="${mapUrl(s.theatre)}">📍 극장 지도</a><a class="btn res" target="_blank" rel="noopener" href="${esc(s.link)}">공식·예매 ↗</a></div></article>`).join("")}</div>`;
+  }
+  if(k==="ticket"){
+    h+=`<h2 class="sec">브로드웨이 티켓 구하는 법</h2><p class="lead">정가로 원하는 날·좌석을 먼저 확보하고, 할인은 "되면 좋고" 방식으로 병행하는 걸 추천해요.</p>
+    <ol class="steps">
+     <li><b>정가 예매 — 가장 확실</b>공연 공식 사이트에서 들어가면 공식 판매처(Ticketmaster·Telecharge·Broadway Direct)로 연결돼요.
+       <ul><li>좌석: 위키드·라이온킹처럼 무대가 큰 공연은 오케스트라 중앙 또는 프런트 메자닌(2층 앞쪽)이 좋아요.</li>
+       <li>가격은 날짜·좌석마다 달라요. 화요일 저녁은 주말보다 저렴한 편.</li>
+       <li>구글 검색 상단의 재판매 사이트는 수수료가 크니 공식 링크로 들어가기.</li></ul></li>
+     <li><b>디지털 로터리 — 무료 응모, 당첨되면 저렴하게</b>보통 $20~60대. 공연 전날 응모하고 당첨되면 짧은 시간 안에 결제해야 해요.
+       <ul><li><b>Broadway Direct</b>: 위키드, 라이온킹, MJ, SIX, 알라딘</li>
+       <li><b>Telecharge</b>: 어쩌면 해피엔딩, 위대한 개츠비, 아웃사이더스 — 전날 0시~15시 응모</li>
+       <li><b>Lucky Seat</b>: 하데스타운, 북 오브 몰몬</li>
+       <li><b>해밀턴 공식 앱</b>: 앞줄 $10</li></ul></li>
+     <li><b>러시 — 당일 선착순</b>
+       <ul><li><b>위키드</b>: 매 공연 $45 현장 러시, 박스오피스 오픈 시 줄 선 순서대로 1인 2매(시야 제한석일 수 있음)</li>
+       <li><b>TodayTix 앱 러시</b>: & 줄리엣, 북 오브 몰몬 — 당일 오전 앱에서 오픈</li></ul></li>
+     <li><b>TKTS 부스 — 당일 할인</b>타임스퀘어 빨간 계단 아래. 당일 남은 좌석을 할인 판매해요. 인기작은 잘 안 나와요(운영시간 방문 전 확인).</li>
+    </ol>
+    <div class="note"><b>출국 전 할 일</b> — TodayTix 앱 설치, Broadway Direct·Telecharge·Lucky Seat 계정 만들기. 응모는 둘이 각자 하면 당첨 확률 2배 (1인 2매씩).</div>
+    <h2 class="sec">위키드 한눈에</h2>
+    <table class="mini"><tr><th>방법</th><th>가격</th><th>어디서·언제</th></tr>
+     <tr><td>정가</td><td>좌석별 상이</td><td>wickedthemusical.com → 공식 판매처</td></tr>
+     <tr><td>디지털 로터리</td><td>할인가</td><td>Broadway Direct, 공연 전날 응모</td></tr>
+     <tr><td>현장 러시</td><td>$45</td><td>거슈윈 극장 박스오피스 오픈 시, 1인 2매</td></tr></table>
+    <p class="lead" style="margin-top:8px">로터리 가격·응모 시간은 바뀌는 경우가 많아 응모 페이지에서 최종 확인하세요.</p>`;
+  }
+  if(k==="jazz"||k==="dance"){
+    const arr=Object.values(P).filter(p=>p.cat==="show"&&p.sub===k);
+    h+=`<h2 class="sec">${k==="jazz"?"재즈바":"댄스 수업 (1회)"}</h2><p class="lead">${k==="jazz"?"일정은 D7(목) 저녁. 다운타운에 있으니 빌리지 뱅가드가 동선상 편하고, 피곤하면 호텔 근처 버드랜드.":"일정은 D4(월) 19:00. 월요일은 브로드웨이 공연이 대부분 쉬는 날이에요."}</p><div class="grid">${arr.map(card).join("")}</div>`;
+  }
+  v.innerHTML=h;
+}
+chips($("#showChips"),showSubs,"musical",drawShow); drawShow("musical");
+
+catView("eat",$("#eatView"),$("#eatChips"),[
+  {k:"steak",t:"스테이크·기념 디너"},
+  {k:"korean",t:"한식",lead:"한인타운(32nd St)은 호텔에서 지하철 2정거장. 킨스(D8)·H마트와 같은 동네예요."},
+  {k:"japanese",t:"일식 (라멘·우동·스시)",lead:"잇푸도는 호텔에서 걸어서 5분. 오마카세는 예약 필수."},
+  {k:"asian",t:"중식·아시안·인기 명소"},
+  {k:"bagel",t:"베이글·델리·브런치"},
+  {k:"pizza",t:"피자·버거"},
+  {k:"cafe",t:"디저트·카페"},
+  {k:"casual",t:"캐주얼·푸드홀"}
+],k=>k==="all"?`<div class="note">가격대(1인): <span class="price">$</span> ~$20 · <span class="price">$$</span> $20~50 · <span class="price">$$$</span> $50~100 · <span class="price">$$$$</span> $100+ &nbsp;|&nbsp; 팁 18~22% 별도</div>${legendNote}`:"");
+
+const tjBox=()=>`<h2 class="sec">트레이더 조스 인기템</h2><p class="lead">가격은 2026년 기준 대략치예요. 매장마다 재고가 달라요.</p>
+  ${TJ.map(g=>`<table class="mini" style="margin-top:10px"><tr><th colspan="3">${esc(g.g)}</th></tr>${g.items.map(i=>`<tr><td style="width:38%"><b>${esc(i[0])}</b></td><td style="width:16%;white-space:nowrap" class="price">${esc(i[1])}</td><td>${esc(i[2])}</td></tr>`).join("")}</table>`).join("")}
+  <div class="note" style="margin-top:12px">💡 액체·크림류는 기내 반입 제한(100ml)이 있으니 위탁 수하물에 넣기.</div>`;
+catView("shop",$("#shopView"),$("#shopChips"),[
+  {k:"outlet",t:"아울렛"},
+  {k:"mart",t:"마트·장보기",extra:tjBox},
+  {k:"area",t:"쇼핑 거리"},
+  {k:"women",t:"여성 컨템포러리"},
+  {k:"active",t:"운동복·운동화"},
+  {k:"kids",t:"아이 옷·마트"},
+  {k:"beauty",t:"뷰티·향수",lead:"글로시에 소호는 도미니크 앙셀·발타자르와 같은 스프링 스트리트라 D7 소호 쇼핑 때 함께."}
+],k=>k==="all"?`<div class="note">뉴욕 의류 판매세는 $110 미만 품목 면제, 그 이상은 약 8.875%. 가격표엔 세금이 빠져 있어요.</div>`:"");
+
+/* ---------- info ---------- */
+const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"alt",t:"대안 일정"},{k:"sos",t:"비상 연락"}];
+function drawInfo(k){
+  let h="";
+  if(k==="air") h=`<h3>JFK → 호텔 (지하철, 1인 $11.75)</h3>
+   <ol class="steps">
+    <li><b>에어트레인 타기</b>짐 찾고 "AirTrain" 표지판 따라가기. <b>Jamaica행(빨간 노선)</b> 탑승 — Howard Beach행(초록)은 반대 방향이에요. 공항 안 이동은 무료.</li>
+    <li><b>Jamaica역에서 결제하고 나가기</b>개찰구에서 $8.75. 컨택리스 카드·휴대폰을 탭하면 돼요(각자 카드로 1번씩).</li>
+    <li><b>지하철 E선 타기</b>표지판 따라 지하철로 이동해 <b>E선 World Trade Center 방면</b> 탑승. 다시 탭해서 $3.00.</li>
+    <li><b>50 St역 하차 → 호텔 도보 3분</b>8th Ave 출구로 나와 남쪽으로 두 블록. 전체 약 1시간 15분.</li>
+   </ol>
+   <div class="note"><b>짐이 크다면</b> — Jamaica역 환승 구간에 에스컬레이터·긴 통로가 있어요. 큰 캐리어 2개 이상이면 한인택시나 우버(약 1시간, 톨비·팁 포함 $90~120 수준)가 편해요. 돌아가는 날(토요일 오전)도 같은 기준으로 결정.</div>
+   <a class="btn map" target="_blank" rel="noopener" href="${routeUrl(["JFK Airport","Jamaica Station","50 St Station 8th Ave",HOTEL])}">🧭 공항→호텔 경로 보기</a>`;
+  if(k==="metro") h=`<h3>지하철·버스</h3><div class="card"><ul>
+    <li>요금 $3.00. 개찰구에 <b>컨택리스 카드나 휴대폰을 탭</b>(OMNY). 둘이 한 카드로 두 번 탭하면 안 되고, 각자 결제.</li>
+    <li>같은 카드로 7일 안에 12번 타면 이후는 무료(요금 상한제). 한 카드만 계속 쓰기.</li>
+    <li>호텔 근처 역: <b>50 St</b>(C·E) · <b>49 St</b>(N·Q·R·W) · <b>50 St</b>(1). 같은 이름이라도 노선마다 역이 달라요.</li>
+    <li>Uptown(북쪽)/Downtown(남쪽) 입구가 따로인 역이 있으니 계단 입구 표지 확인.</li>
+    <li>구글지도 대중교통 길찾기가 가장 정확해요. 밤 늦게는 택시·우버 추천.</li></ul></div>`;
+  if(k==="wear") h=`<h3>11월 중순 뉴욕</h3><div class="card"><ul>
+    <li>기온 4~12°C, 빌딩 사이 바람이 세서 체감은 더 추워요. 서울 11월 말 옷차림 기준.</li>
+    <li>롱패딩까진 아니어도 <b>경량 패딩 + 울 코트</b> 레이어드, 목도리·장갑.</li>
+    <li>하루 1~2만 보 걷는 일정이라 <b>쿠션 좋은 운동화</b> 필수.</li>
+    <li>디너(킨스)·루프탑(오버스토리·누벨루즈)용 <b>단정한 옷 한 벌</b>. 운동복·슬리퍼·야구모자는 입장 제한될 수 있어요.</li>
+    <li>댄스 수업용 편한 옷과 깨끗한 실내화.</li>
+    <li>일몰 16:30 전후라 오후 4시면 어둑해져요. 야외 일정은 오전~이른 오후에.</li></ul></div>`;
+  if(k==="money") h=`<h3>결제·팁</h3><div class="card"><ul>
+    <li>대부분 카드 결제 가능. 현금은 플리마켓·작은 가게·팁용으로 조금만.</li>
+    <li>현금은 시내 은행 ATM에서 트래블월렛으로 인출(편의점 ATM은 수수료가 큼).</li>
+    <li>식당 팁 <b>18~22%</b>, 바 1잔당 $1~2, 택시 15~20%. 계산서에 이미 서비스료가 붙어 있으면 생략.</li>
+    <li>카드 단말기에서 "USD로 결제" 선택(원화 결제는 수수료가 붙어요).</li>
+    <li>판매세 8.875%는 가격표에 없어요. $110 미만 의류·신발은 면세.</li></ul></div>`;
+  if(k==="alt") h=ALT.map(a=>`<h3>${esc(a.title)}</h3><p class="lead">${esc(a.desc)}</p>
+    <ol class="steps">${a.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
+    <div class="note">${esc(a.tips)}</div>
+    <div class="grid">${a.places.map(id=>card(P[id])).join("")}</div>
+    <div class="btns"><a class="btn res" target="_blank" rel="noopener" href="https://new.mta.info/agency/metro-north-railroad">메트로노스 ↗</a></div>`).join("");
+  if(k==="sos") h=`<h3>비상 연락</h3><div class="card"><ul>
+    <li>긴급(경찰·구급·화재): <b>911</b></li>
+    <li>주뉴욕 대한민국 총영사관: 460 Park Ave (57th St) — 여권 분실 등. 연락처는 출국 전 영사관 홈페이지에서 저장해두기.</li>
+    <li>영사콜센터(24시간): +82-2-3210-0404</li>
+    <li>여권은 사본·사진을 휴대폰에 저장, 원본은 호텔 금고.</li>
+    <li>호텔: Kimpton Hotel Theta (48th St & 8th Ave) — <a href="${mapUrl(HOTEL)}" target="_blank" rel="noopener">지도</a></li></ul></div>`;
+  $("#infoView").innerHTML=h;
+}
+chips($("#infoChips"),infoSubs,"air",drawInfo); drawInfo("air");
+
+openTab((location.hash||"#plan").slice(1),false);
+})();
+
+</script>
 </body>
 </html>
