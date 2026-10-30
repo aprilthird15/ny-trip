@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NEW YORK 2026 — 20주년 기념 뉴욕 여행</title>
 <meta name="description" content="2026.11.13–21 뉴욕 8박9일 우정여행 가이드북: 일정, 예약, 볼거리, 공연, 맛집, 쇼핑, 실전 정보">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -138,6 +139,19 @@ table.mini tr:last-child td{border-bottom:0}
 .info li{margin:3px 0}
 footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);text-align:center}
 .hide{display:none!important}
+/* day map */
+.daymap-wrap{margin:12px 0 4px}
+.daymap{height:280px;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;background:#eef0f3;z-index:0;position:relative}
+@media(min-width:620px){.daymap{height:340px}}
+.mapfail{display:flex;align-items:center;justify-content:center;height:100%;font-size:13px;color:var(--dim);padding:16px;text-align:center}
+.mk{width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font:700 12px/26px 'Noto Sans KR',sans-serif;text-align:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.mk.hotel{background:var(--ink)}
+.stoplist{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12.5px;color:var(--dim)}
+.stoplist li{display:flex;align-items:center;gap:4px}
+.stoplist .num{display:inline-flex;width:17px;height:17px;border-radius:50%;background:var(--red);color:#fff;font-size:10px;font-weight:700;align-items:center;justify-content:center}
+.stoplist .num.hotel{background:var(--ink)}
+.leaflet-popup-content{font-family:'Noto Sans KR',sans-serif;font-size:13px}
+.tabs{z-index:1000}
 </style>
 </head>
 <body>
@@ -214,6 +228,7 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px soli
   운영시간·가격은 2026.10.30 기준. "방문 전 확인" 표시가 있는 곳은 공식 사이트에서 다시 확인하세요.
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 const HOTEL = "Kimpton Hotel Theta New York";
 const CHECKED = "2026.10.30 확인";
@@ -827,6 +842,20 @@ const TJ = [
   ["냉동 김밥","$3.99","틱톡에서 화제가 된 미국 트레이더 조스 김밥 — 숙소 전자레인지 있으면 경험 삼아"]]}
 ];
 
+/* ---------------- DAY MAP STOPS [이름, 위도, 경도] ---------------- */
+const HOTEL_LL = [40.7613,-73.9873];
+const DAYMAP = {
+ 1:[["로스 타코스 No.1",40.7571,-73.9881],["록펠러 센터",40.7587,-73.9787],["세인트 패트릭 대성당",40.7585,-73.9760],["타임스퀘어",40.7580,-73.9855],["브라이언트파크 윈터빌리지",40.7536,-73.9832],["그랜드 센트럴",40.7527,-73.9772]],
+ 2:[["첼시 플리마켓",40.7438,-73.9908],["갭스토 브리지",40.7660,-73.9740],["더 몰",40.7700,-73.9715],["베데스다 테라스",40.7740,-73.9708],["보우 브리지",40.7755,-73.9718],["갤러거스",40.7632,-73.9835]],
+ 3:[["덤보 포토스팟",40.7033,-73.9894],["제인스 캐러셀",40.7045,-73.9916],["줄리아나스",40.7027,-73.9934],["브루클린 하이츠 프롬나드",40.6965,-73.9973],["타임아웃 마켓",40.7035,-73.9905],["브루클린 브리지 입구",40.6995,-73.9897],["브리지 맨해튼 도착",40.7127,-74.0040],["조스 상하이",40.7157,-73.9968],["오버스토리",40.7065,-74.0078]],
+ 4:[["데보시온",40.7140,-73.9620],["베드포드 애비뉴",40.7178,-73.9576],["선데이 인 브루클린",40.7137,-73.9655],["도미노 파크",40.7145,-73.9688],["첼시 마켓",40.7424,-74.0061],["하이라인 16th St 입구",40.7425,-74.0080],["허드슨 야드",40.7538,-74.0022],["브로드웨이 댄스 센터",40.7598,-73.9893]],
+ 5:[["MoMA",40.7614,-73.9776],["5번가",40.7606,-73.9757],["탑 오브 더 락",40.7593,-73.9794],["거슈윈 극장 (위키드)",40.7625,-73.9850]],
+ 6:[["버스 출발 (1651 Broadway)",40.7628,-73.9831],["우드버리 아울렛",41.3150,-74.1250]],
+ 7:[["9/11 메모리얼",40.7115,-74.0134],["오큘러스",40.7115,-74.0110],["소호 (프린스 St)",40.7246,-73.9989],["글로시에",40.7224,-73.9977],["발타자르",40.7226,-73.9981],["도미니크 앙셀",40.7253,-74.0030],["매그놀리아 베이커리",40.7359,-74.0050],["워싱턴스퀘어",40.7308,-73.9973],["빌리지 뱅가드",40.7360,-74.0016]],
+ 8:[["메트로폴리탄 미술관",40.7794,-73.9632],["랄프스 커피",40.7716,-73.9670],["누벨루즈",40.7454,-73.9884],["킨스 스테이크하우스",40.7508,-73.9871]],
+ 9:[["JFK 공항",40.6413,-73.7781]]
+};
+
 </script>
 <script>
 (function(){
@@ -866,6 +895,7 @@ function openTab(id,push){
   tabs.forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===id));
   document.querySelectorAll("section.panel").forEach(s=>s.classList.toggle("on",s.id===id));
   if(push) history.replaceState(null,"","#"+id);
+  if(id==="plan"&&mapObj) setTimeout(()=>{try{mapObj.invalidateSize()}catch(e){}},50);
   const sel=document.querySelector(`.tab[data-tab="${id}"]`); if(sel) sel.scrollIntoView({inline:"center",block:"nearest"});
 }
 tabs.forEach(t=>t.addEventListener("click",()=>{openTab(t.dataset.tab,true);window.scrollTo({top:$(".tabs").offsetTop,behavior:"smooth"})}));
@@ -893,10 +923,35 @@ function renderDay(n){
     return `<li><div class="time">${esc(it.t)}</div><div class="ti"><div class="plain"><div class="nm"><span>${esc(title)}</span></div>${note?`<div class="nt">${note}</div>`:""}${it.link?`<div style="margin-top:6px"><a class="btn res" href="${it.link}">자세히 보기</a></div>`:""}</div></div></li>`;
   }).join("");
   $("#dayView").innerHTML=`<div class="dayhead"><span class="k">DAY ${d.d} · ${esc(d.date)}${d.theme?" · "+esc(d.theme):""}</span><h3>${esc(d.title)}</h3><p>${esc(d.tag)}</p>
-   ${d.route.length?`<a class="routebtn" target="_blank" rel="noopener" href="${routeUrl(d.route)}">🧭 오늘 동선 구글지도로 보기</a>`:""}</div>
+   </div>
+   <div class="daymap-wrap"><div id="daymap" class="daymap" role="img" aria-label="DAY ${d.d} 동선 지도"></div>
+   <ol class="stoplist">${(DAYMAP[d.d]||[]).map((s,i)=>`<li><span class="num">${i+1}</span>${esc(s[0])}</li>`).join("")}<li><span class="num hotel">H</span>호텔</li></ol>
+   ${d.route.length?`<a class="routebtn" target="_blank" rel="noopener" href="${routeUrl(d.route)}">🧭 구글지도 앱에서 길찾기</a>`:""}</div>
    <ul class="tl">${items}</ul>
    <p class="lead" style="margin-top:14px">▼ 표시를 누르면 장소 정보·지도·예약 링크가 펼쳐져요.</p>`;
   store.set("ny_day",n);
+  drawMap(d.d);
+}
+let mapObj=null;
+function drawMap(n){
+  const el=document.getElementById("daymap"); if(!el) return;
+  if(typeof L==="undefined"){ el.innerHTML='<div class="mapfail">지도를 불러오지 못했어요. 아래 구글지도 버튼을 이용하세요.</div>'; return; }
+  if(mapObj){ try{mapObj.remove()}catch(e){} mapObj=null; }
+  const stops=DAYMAP[n]||[];
+  const m=L.map(el,{scrollWheelZoom:false,tap:true,attributionControl:true,zoomControl:true});
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{maxZoom:19,subdomains:"abcd",
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'}).addTo(m);
+  const pts=stops.map(s=>[s[1],s[2]]);
+  if(pts.length>1) L.polyline(pts,{color:"#c62a44",weight:3,opacity:.75,dashArray:"6 7"}).addTo(m);
+  stops.forEach((s,i)=>{
+    const ic=L.divIcon({className:"",html:`<div class="mk">${i+1}</div>`,iconSize:[26,26],iconAnchor:[13,13]});
+    L.marker([s[1],s[2]],{icon:ic}).addTo(m).bindPopup(`<b>${i+1}. ${esc(s[0])}</b><br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${s[1]},${s[2]}">구글지도에서 열기 ↗</a>`);
+  });
+  const hic=L.divIcon({className:"",html:'<div class="mk hotel">H</div>',iconSize:[26,26],iconAnchor:[13,13]});
+  L.marker(HOTEL_LL,{icon:hic}).addTo(m).bindPopup("<b>Kimpton Hotel Theta</b><br>48th St & 8th Ave");
+  const fitPts=n===6?pts:pts.concat([HOTEL_LL]);
+  if(fitPts.length>1) m.fitBounds(fitPts,{padding:[24,24],maxZoom:15}); else m.setView(fitPts[0]||HOTEL_LL,13);
+  mapObj=m;
 }
 const startDay=dayFromDate()||store.get("ny_day",1);
 chips($("#dayChips"),DAYS.map(d=>({k:String(d.d),t:`D${d.d} ${d.date.replace(" ","")}`})),String(startDay),k=>renderDay(+k));
