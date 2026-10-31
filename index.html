@@ -803,15 +803,19 @@ const SHOWS = [
  {name:"SIX",en:"SIX the Musical",theatre:"Lena Horne Theatre, 256 W 47th St",eng:2,
   why:"헨리 8세의 여섯 왕비가 걸그룹이 되어 경연하는 80분짜리 공연. 짧고 신나요. 호텔에서 1분.",
   look:"콘서트 같은 조명과 노래",deal:"Broadway Direct 디지털 로터리",link:"https://www.sixonbroadway.com/"},
+ {name:"알라딘",en:"Disney's Aladdin",theatre:"New Amsterdam Theatre, 214 W 42nd St",eng:1,
+  why:"디즈니 애니메이션 그대로의 줄거리라 영어를 몰라도 다 따라가요. 지니의 쇼 넘버와 반짝이는 무대가 화려하고, 날아다니는 양탄자 장면이 압권.",
+  look:"'Friend Like Me' 지니 쇼 넘버, 'A Whole New World' 양탄자 비행",
+  deal:"Broadway Direct 디지털 로터리 $35 (공연 전날 응모) / TKTS 당일 할인이 자주 나오는 편",
+  link:"https://aladdinthemusical.com/"},
+ {name:"시카고",en:"Chicago",theatre:"Ambassador Theatre, 219 W 49th St",eng:2,
+  why:"1920년대 시카고 재즈 시대, 살인 혐의로 갇힌 두 여자의 이야기. 브로드웨이 최장수 리바이벌 작품으로, 검은 의상과 의자 하나로 만드는 밥 포시 스타일 안무가 핵심이에요. 대사보다 재즈 넘버와 춤이 중심이라 영화를 봤다면 쉽고, 호텔에서 1블록이에요.",
+  look:"'All That Jazz', 'Cell Block Tango' 군무, 무대 위 라이브 재즈 밴드",
+  deal:"현장 러시 $49 (박스오피스 오픈 시, 1인 2매) / 매진 공연은 입석 $39",
+  link:"https://chicagothemusical.com/"},
  {name:"위대한 개츠비",en:"The Great Gatsby",theatre:"Broadway Theatre, 1681 Broadway",eng:2,
   why:"1920년대 의상과 세트가 화려한 작품. 줄거리를 알아서 따라가기 쉬워요.",
   look:"파티 장면 의상·세트",deal:"Telecharge 디지털 로터리·러시",link:"https://www.google.com/search?q=The+Great+Gatsby+Broadway+musical+tickets"},
- {name:"하데스타운",en:"Hadestown",theatre:"Walter Kerr Theatre, 219 W 48th St",eng:3,
-  why:"그리스 신화를 재즈·포크로 풀어낸 토니상 작품상 수상작. 음악성이 최고지만 가사로 이야기가 진행돼서 영어 비중이 커요. 호텔 바로 옆 블록.",
-  look:"라이브 밴드, 뉴올리언스풍 음악",deal:"Lucky Seat 디지털 로터리",link:"https://hadestown.com/"},
- {name:"해밀턴",en:"Hamilton",theatre:"Richard Rodgers Theatre, 226 W 46th St",eng:3,
-  why:"브로드웨이 최고 명작 중 하나지만 빠른 랩으로 이야기가 진행돼 처음 보기엔 어려운 편. 미국 역사 배경지식이 있으면 훨씬 재밌어요.",
-  look:"힙합·R&B로 그린 미국 건국사",deal:"공식 앱 로터리 $10 (앞줄)",link:"https://hamiltonmusical.com/"},
  {name:"라디오시티 크리스마스 스펙태큘러",en:"Christmas Spectacular",theatre:"Radio City Music Hall, 1260 6th Ave",eng:1,season:true,
   why:"로켓츠의 칼군무와 산타가 나오는 연말 시즌 공연(11/4~1/4). 영어를 몰라도 100% 즐길 수 있어 두 번째 공연으로 추천.",
   look:"로켓츠 라인댄스, 3D 산타 비행",deal:"공식 사이트·박스오피스 정가",link:"https://www.rockettes.com/christmas/"}
@@ -1018,7 +1022,7 @@ function drawShow(k){
   const v=$("#showView"); let h="";
   if(k==="musical"){
     h+=`<h2 class="sec">11월에 볼 수 있는 뮤지컬</h2><p class="lead">영어 부담이 적은 순서. 공연일은 D5(화) 19:00 기준이에요. 모든 작품이 11월 공연 목록에서 확인됐어요.</p>
-    <div class="grid">${SHOWS.map(s=>`<article class="card show"><div class="top"><div><h4>${esc(s.name)}</h4><div class="en">${esc(s.en)}</div></div><span class="eng">${engDots(s.eng)}</span></div>
+    <div class="grid">${[...SHOWS].sort((x,y)=>(y.pick?1:0)-(x.pick?1:0)||(x.season?1:0)-(y.season?1:0)||x.eng-y.eng).map(s=>`<article class="card show"><div class="top"><div><h4>${esc(s.name)}</h4><div class="en">${esc(s.en)}</div></div><span class="eng">${engDots(s.eng)}</span></div>
      <div style="margin-top:6px">${s.pick?'<span class="badge b-pick">1순위</span>':""}${s.season?'<span class="badge b-rec">연말 한정</span>':""}</div>
      <p class="desc">${esc(s.why)}</p>
      <dl class="meta"><div><dt>볼거리</dt><dd>${esc(s.look)}</dd></div><div><dt>할인</dt><dd>${esc(s.deal)}</dd></div><div><dt>극장</dt><dd>${esc(s.theatre)}</dd></div></dl>
@@ -1032,13 +1036,13 @@ function drawShow(k){
        <li>가격은 날짜·좌석마다 달라요. 화요일 저녁은 주말보다 저렴한 편.</li>
        <li>구글 검색 상단의 재판매 사이트는 수수료가 크니 공식 링크로 들어가기.</li></ul></li>
      <li><b>디지털 로터리 — 무료 응모, 당첨되면 저렴하게</b>보통 $20~60대. 공연 전날 응모하고 당첨되면 짧은 시간 안에 결제해야 해요.
-       <ul><li><b>Broadway Direct</b>: 위키드, 라이온킹, MJ, SIX, 알라딘</li>
+       <ul><li><b>Broadway Direct</b>: 위키드, 라이온킹, MJ, SIX</li>
        <li><b>Telecharge</b>: 어쩌면 해피엔딩, 위대한 개츠비, 아웃사이더스 — 전날 0시~15시 응모</li>
-       <li><b>Lucky Seat</b>: 하데스타운, 북 오브 몰몬</li>
-       <li><b>해밀턴 공식 앱</b>: 앞줄 $10</li></ul></li>
+       <li><b>Broadway Direct</b> 알라딘: $35, 공연 전날 응모</li></ul></li>
      <li><b>러시 — 당일 선착순</b>
        <ul><li><b>위키드</b>: 매 공연 $45 현장 러시, 박스오피스 오픈 시 줄 선 순서대로 1인 2매(시야 제한석일 수 있음)</li>
-       <li><b>TodayTix 앱 러시</b>: & 줄리엣, 북 오브 몰몬 — 당일 오전 앱에서 오픈</li></ul></li>
+       <li><b>시카고</b>: $49 현장 러시, 앰배서더 극장 박스오피스 오픈 시(보통 10시, 일요일 정오) 1인 2매. 매진이면 입석 $39</li>
+       <li><b>TodayTix 앱 러시</b>: & 줄리엣 — 당일 오전 앱에서 오픈</li></ul></li>
      <li><b>TKTS 부스 — 당일 할인</b>타임스퀘어 빨간 계단 아래. 당일 남은 좌석을 할인 판매해요. 인기작은 잘 안 나와요(운영시간 방문 전 확인).</li>
     </ol>
     <div class="note"><b>출국 전 할 일</b> — TodayTix 앱 설치, Broadway Direct·Telecharge·Lucky Seat 계정 만들기. 응모는 둘이 각자 하면 당첨 확률 2배 (1인 2매씩).</div>
