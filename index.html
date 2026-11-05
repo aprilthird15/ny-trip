@@ -277,6 +277,12 @@ const P = {
     hours:"뮤지엄 수~월 9:00~19:00 (입장마감 17:30) / 화요일 휴관 · 메모리얼 연못은 상시 개방",price:"연못 무료 / 뮤지엄 성인 $28",
     pick:"남·북 추모 연못, 바로 옆 오큘러스 역사(驛舍)",how:"지하철 E → World Trade Center",status:"rec",
     resv:"뮤지엄만 시간지정 예매 권장",link:"https://www.911memorial.org/visit",checked:true},
+  frick:{cat:"see",sub:"museum",name:"프릭 컬렉션",en:"The Frick Collection",addr:"1 E 70th St",
+    desc:"철강 부호 헨리 클레이 프릭의 5번가 저택을 그대로 미술관으로 쓰는 곳. 2025년 대대적인 리노베이션을 마치고 재개관했어요. 규모가 작아 2시간이면 여유롭게 볼 수 있고, 실제 대저택 안에서 거장들의 그림을 보는 경험이 특별해요.",
+    hours:"수~월 10:30~17:30 / 화요일 휴관 · 수 13:30~17:30 기부입장",price:"성인 $30 (수요일 오후 기부입장 — 온라인 최소 $5)",
+    pick:"페르메이르, 렘브란트, 티치아노, 엘 그레코, 고야, 터너, 모네 · 프라고나르 방, 부셰 방, 2층 새로 공개된 시계·메달 전시 · 실내 정원 '가든 코트' · 영수증 QR로 무료 오디오가이드(이어폰 지참)",
+    how:"메트에서 5번가 따라 남쪽으로 도보 약 12분 / 지하철 6 → 68 St-Hunter College 도보 5분",status:"rec",
+    resv:"시간지정 티켓 권장(공식 사이트). 사진은 가든 코트 등 공용 공간만 가능 · 10세 이상만 입장",link:"https://www.frick.org/visit",checked:true},
   gugg:{cat:"see",sub:"museum",name:"구겐하임 미술관",en:"Solomon R. Guggenheim Museum",addr:"1071 5th Ave",
     desc:"달팽이 모양 나선형 건물 자체가 작품. 메트에서 도보 10분이라 같은 날 외관만 봐도 좋아요.",
     hours:"요일별 상이 — 방문 전 공식 사이트 확인",price:"성인 약 $30",pick:"나선형 로툰다, 외관 사진",
@@ -893,6 +899,7 @@ const DAYMAP = {
 
 /* ---------------- 가볼 만한 곳 (일정 외 선택지) ---------------- */
 const EXTRA = [
+ {p:"frick",when:"동료 추천 · 메트(D8)와 도보 12분 — 메트를 2시간으로 줄이고 오후에 프릭, 또는 메트 대신 · 화요일 휴관"},
  {p:"esb",when:"추천: D1 저녁 — 그랜드센트럴 다음 도보 10분, 끝나고 한인타운 저녁"},
  {p:"edge",when:"추천: 하이라인을 걷는 날 북쪽 끝(허드슨야드)과 연결"},
  {p:"summit",when:"밤 시간대(19~20시대)도 남아 있으면 거울방 야경으로 한 번 더"},
@@ -1041,7 +1048,7 @@ function catView(cat,el,chipEl,subs,intro){
 const legendNote=`<div class="legend">${["done","must","rec","walk","free"].map(badge).join("")}</div>`;
 
 catView("see",$("#seeView"),$("#seeChips"),[
-  {k:"museum",t:"미술관·박물관",lead:"🎫 MoMA·메트는 회사 사원증으로 무료 입장. 메트는 수요일, 휘트니·9/11 뮤지엄은 화요일 휴관."},
+  {k:"museum",t:"미술관·박물관",lead:"🎫 MoMA·메트는 회사 사원증으로 무료 입장. 메트는 수요일, 휘트니·9/11 뮤지엄·프릭은 화요일 휴관."},
   {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 써밋(D4 아침) · 오버스토리(D3 밤) · 누벨루즈(D8, 선택). 나머지는 '일정 > 가볼 만한 곳'에도 정리했어요."},
   {k:"market",t:"크리스마스 마켓·플리마켓",lead:"록펠러 트리는 12월 초 점등이라 11월 중순엔 설치 중이에요."},
   {k:"landmark",t:"랜드마크·공원"},
