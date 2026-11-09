@@ -146,6 +146,21 @@ table.mini tr:last-child td{border-bottom:0}
 .info li{margin:3px 0}
 footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);text-align:center}
 .hide{display:none!important}
+/* overview */
+.ovlist{display:grid;gap:8px;margin-top:12px}
+.ov{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:10px 12px;cursor:pointer}
+.ov:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.ovh{display:flex;align-items:baseline;gap:8px}
+.ovh .k,.ovh .dt,.ovh .go{flex:0 0 auto}
+.ovh .k{font-size:12px;font-weight:700;color:#fff;background:var(--amber);padding:1px 8px;border-radius:999px}
+.ovh .dt{font-size:12.5px;color:var(--dim);font-weight:600}
+.ovh .tt{font-weight:700;font-size:15px;flex:1 1 auto;min-width:0}
+.ovh .go{color:var(--dim);font-size:18px;line-height:1}
+.ovb{margin-top:6px;display:grid;gap:3px}
+.ovr{display:grid;grid-template-columns:34px 1fr;gap:6px;font-size:13px;line-height:1.5}
+.ovr .sl{color:var(--amber);font-weight:700;font-size:12px;padding-top:1px}
+.ovr b{font-weight:700;color:var(--ink)}
+.ovr .ok{color:var(--green);font-weight:700}
 /* day map */
 .daymap-wrap{margin:12px 0 4px}
 .daymap{height:280px;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;background:#eef0f3;z-index:0;position:relative}
@@ -975,6 +990,25 @@ function dayFromDate(){
   if(ny.getFullYear()===2026&&ny.getMonth()===10&&ny.getDate()>=13&&ny.getDate()<=21) return ny.getDate()-12;
   return 0;
 }
+function renderOverview(){
+  if(mapObj){ try{mapObj.remove()}catch(e){} mapObj=null; }
+  const slot=t=>{const h=parseInt(t,10); if(isNaN(h)) return 2; return h<12?0:(h<17?1:2);};
+  const label=["오전","오후","저녁"];
+  const nm=it=>{const p=it.p?P[it.p]:null; const name=p?p.name:it.title; const key=(p&&(p.status==="must"||p.status==="done"))||(!p&&/위키드/.test(name||""));
+    return key?`<b>${esc(name)}</b>${p.status==="done"?' <span class="ok">✔</span>':''}`:esc(name);};
+  const rows=DAYS.map(d=>{
+    const g=[[],[],[]];
+    d.items.forEach(it=>{ if(/이동$|휴식/.test(it.title||"")) return; g[slot(it.t)].push(nm(it)); });
+    return `<article class="ov" data-day="${d.d}" tabindex="0" role="button" aria-label="DAY ${d.d} 자세히 보기">
+      <div class="ovh"><span class="k">D${d.d}</span><span class="dt">${esc(d.date)}</span><span class="tt">${esc(d.title)}</span><span class="go">›</span></div>
+      <div class="ovb">${g.map((x,i)=>x.length?`<div class="ovr"><span class="sl">${label[i]}</span><span>${x.join(" → ")}</span></div>`:"").join("")}</div></article>`;
+  }).join("");
+  $("#dayView").innerHTML=`<div class="dayhead"><span class="k">전체 일정 · 11/13(금) – 11/21(토)</span><h3>9일 한눈에 보기</h3>
+    <p>굵은 글씨는 예약이 필요하거나 완료(✔)된 일정이에요. 날짜를 누르면 그날 상세 일정·지도로 이동해요.</p></div>
+    <div class="ovlist">${rows}</div>`;
+  $("#dayView").querySelectorAll(".ov").forEach(el=>{const go=()=>{const k=el.dataset.day;document.querySelectorAll("#dayChips .chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k===k));renderDay(+k);window.scrollTo({top:$(".tabs").offsetTop})};el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
+  store.set("ny_day","all");
+}
 function renderDay(n){
   const d=DAYS[n-1];
   const items=d.items.map(it=>{
@@ -1019,9 +1053,9 @@ function drawMap(n){
   if(fitPts.length>1) m.fitBounds(fitPts,{padding:[24,24],maxZoom:15}); else m.setView(fitPts[0]||HOTEL_LL,13);
   mapObj=m;
 }
-const startDay=dayFromDate()||store.get("ny_day",1);
-chips($("#dayChips"),DAYS.map(d=>({k:String(d.d),t:`D${d.d} ${d.date.replace(" ","")}`})),String(startDay),k=>renderDay(+k));
-renderDay(startDay);
+const startDay=dayFromDate()||store.get("ny_day","all");
+chips($("#dayChips"),[{k:"all",t:"전체 일정"}].concat(DAYS.map(d=>({k:String(d.d),t:`D${d.d} ${d.date.replace(" ","")}`}))),String(startDay),k=>k==="all"?renderOverview():renderDay(+k));
+if(String(startDay)==="all") renderOverview(); else renderDay(+startDay);
 const td=dayFromDate(); if(td) $("#today").textContent=`오늘은 DAY ${td} — ${DAYS[td-1].title}`;
 
 /* ---------- reservation ---------- */
