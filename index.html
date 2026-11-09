@@ -995,7 +995,7 @@ function renderOverview(){
   const slot=t=>{const h=parseInt(t,10); if(isNaN(h)) return 2; return h<12?0:(h<17?1:2);};
   const label=["오전","오후","저녁"];
   const nm=it=>{const p=it.p?P[it.p]:null; const name=p?p.name:it.title; const key=(p&&(p.status==="must"||p.status==="done"))||(!p&&/위키드/.test(name||""));
-    return key?`<b>${esc(name)}</b>${p.status==="done"?' <span class="ok">✔</span>':''}`:esc(name);};
+    return key?`<b>${esc(name)}</b>${p&&p.status==="done"?' <span class="ok">✔</span>':''}`:esc(name);};
   const rows=DAYS.map(d=>{
     const g=[[],[],[]];
     d.items.forEach(it=>{ if(/이동$|휴식/.test(it.title||"")) return; g[slot(it.t)].push(nm(it)); });
