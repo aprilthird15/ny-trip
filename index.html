@@ -146,6 +146,9 @@ table.mini tr:last-child td{border-bottom:0}
 .info li{margin:3px 0}
 footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line);text-align:center}
 .hide{display:none!important}
+.morebtn{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:18px;padding:13px 14px;border:1px dashed var(--amber);border-radius:var(--r);background:var(--amber-bg);color:var(--amber);font-weight:700;font-size:14px;cursor:pointer;text-align:left}
+.morebtn span{font-size:18px}
+.subt{font-size:13px;color:var(--dim);font-family:'Noto Sans KR',sans-serif;font-weight:500}
 /* overview */
 .ovlist{display:grid;gap:8px;margin-top:12px}
 .ov{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:10px 12px;cursor:pointer}
@@ -989,6 +992,21 @@ function dayFromDate(){
   if(ny.getFullYear()===2026&&ny.getMonth()===10&&ny.getDate()>=13&&ny.getDate()<=21) return ny.getDate()-12;
   return 0;
 }
+function goMore(){document.querySelectorAll("#dayChips .chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k==="more"));const m=document.querySelector('#dayChips .chip[data-k="more"]');if(m)m.scrollIntoView({inline:"center",block:"nearest"});renderMore();window.scrollTo({top:$(".tabs").offsetTop});}
+function renderMore(){
+  if(mapObj){ try{mapObj.remove()}catch(e){} mapObj=null; }
+  const place=x=>{const p=P[x.p];return `<details class="ti" style="margin-top:8px"><summary><div class="nm"><span>${esc(p.name)}</span><span class="chev">▼</span></div><div class="nt">${esc(x.when)}</div>${p.status!=="free"?`<div class="badges">${badge(p.status)}</div>`:""}</summary><div class="body">${cardInner(p,{compact:true})}</div></details>`;};
+  const course=c=>`<details class="ti" style="margin-top:8px"><summary><div class="nm"><span>${esc(c.title)}</span><span class="chev">▼</span></div><div class="nt">${esc(c.desc)}</div></summary>
+    <div class="body"><ol class="steps" style="margin-top:0">${c.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
+    <div class="note">${esc(c.tips)}</div>
+    ${c.places.map(id=>{const p=P[id];return `<div class="card" style="margin-top:8px"><h4>${esc(p.name)}</h4><div class="en">${esc(p.en||"")}</div>${cardInner(p,{compact:true})}</div>`}).join("")}
+    ${c.mta?`<div class="btns"><a class="btn res" target="_blank" rel="noopener" href="https://new.mta.info/agency/metro-north-railroad">메트로노스 ↗</a></div>`:""}</div></details>`;
+  $("#dayView").innerHTML=`<div class="dayhead"><span class="k">일정 외 선택지</span><h3>가볼 만한 곳 · 대안 코스</h3>
+    <p>시간이 비거나 컨디션이 좋을 때 끼워 넣거나, 일정과 통째로 바꿀 수 있는 것들. 제목을 누르면 펼쳐져요.</p></div>
+    <h2 class="sec" style="font-size:18px">장소 <span class="subt">· 끼워 넣기 좋은 곳</span></h2>${EXTRA.map(place).join("")}
+    <h2 class="sec" style="font-size:18px;margin-top:24px">반나절·하루 코스 <span class="subt">· 일정과 바꾸기</span></h2>${ALT.map(course).join("")}`;
+  store.set("ny_day","more");
+}
 function renderOverview(){
   if(mapObj){ try{mapObj.remove()}catch(e){} mapObj=null; }
   const slot=t=>{const h=parseInt(t,10); if(isNaN(h)) return 2; return h<12?0:(h<17?1:2);};
@@ -1004,7 +1022,9 @@ function renderOverview(){
   }).join("");
   $("#dayView").innerHTML=`<div class="dayhead"><span class="k">전체 일정 · 11/13(금) – 11/21(토)</span><h3>9일 한눈에 보기</h3>
     <p>굵은 글씨는 예약이 필요하거나 완료(✔)된 일정이에요. 날짜를 누르면 그날 상세 일정·지도로 이동해요.</p></div>
-    <div class="ovlist">${rows}</div>`;
+    <div class="ovlist">${rows}</div>
+    <button class="morebtn" type="button">＋ 가볼 만한 곳 · 대안 코스 보기 <span>›</span></button>`;
+  $("#dayView").querySelector(".morebtn").onclick=goMore;
   $("#dayView").querySelectorAll(".ov").forEach(el=>{const go=()=>{const k=el.dataset.day;document.querySelectorAll("#dayChips .chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k===k));renderDay(+k);window.scrollTo({top:$(".tabs").offsetTop})};el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
   store.set("ny_day","all");
 }
@@ -1025,9 +1045,8 @@ function renderDay(n){
    ${d.route.length?`<a class="routebtn" target="_blank" rel="noopener" href="${routeUrl(d.route)}">🧭 구글지도 앱에서 길찾기</a>`:""}</div>
    <ul class="tl">${items}</ul>
    <p class="lead" style="margin-top:14px">▼ 표시를 누르면 장소 정보·지도·예약 링크가 펼쳐져요.</p>
-   <h2 class="sec" style="margin-top:28px">가볼 만한 곳 <span style="font-size:13px;color:var(--dim);font-family:'Noto Sans KR',sans-serif;font-weight:500">· 일정 외 선택지</span></h2>
-   <p class="lead">시간이 비거나 컨디션이 좋을 때 끼워 넣기 좋은 곳들. ▼를 누르면 정보·지도·예약 링크가 나와요.</p>
-   <div class="extras">${EXTRA.map(x=>{const p=P[x.p];return `<details class="ti" style="margin-top:8px"><summary><div class="nm"><span>${esc(p.name)}</span><span class="chev">▼</span></div><div class="nt">${esc(x.when)}</div>${p.status!=="free"?`<div class="badges">${badge(p.status)}</div>`:""}</summary><div class="body">${cardInner(p,{compact:true})}</div></details>`}).join("")}</div>`;
+   <button class="morebtn" type="button" data-go="more">＋ 가볼 만한 곳 · 대안 코스 보기 <span>›</span></button>`;
+  $("#dayView").querySelector(".morebtn").onclick=goMore;
   store.set("ny_day",n);
   drawMap(d.d);
 }
@@ -1053,8 +1072,8 @@ function drawMap(n){
   mapObj=m;
 }
 const startDay=dayFromDate()||store.get("ny_day","all");
-chips($("#dayChips"),[{k:"all",t:"전체 일정"}].concat(DAYS.map(d=>({k:String(d.d),t:`D${d.d} ${d.date.replace(" ","")}`}))),String(startDay),k=>k==="all"?renderOverview():renderDay(+k));
-if(String(startDay)==="all") renderOverview(); else renderDay(+startDay);
+chips($("#dayChips"),[{k:"all",t:"전체 일정"}].concat(DAYS.map(d=>({k:String(d.d),t:`D${d.d} ${d.date.replace(" ","")}`})),[{k:"more",t:"＋ 가볼 만한 곳"}]),String(startDay),k=>k==="all"?renderOverview():(k==="more"?renderMore():renderDay(+k)));
+if(String(startDay)==="all") renderOverview(); else if(String(startDay)==="more") renderMore(); else renderDay(+startDay);
 const td=dayFromDate(); if(td) $("#today").textContent=`오늘은 DAY ${td} — ${DAYS[td-1].title}`;
 
 /* ---------- reservation ---------- */
@@ -1093,7 +1112,7 @@ const legendNote=`<div class="legend">${["done","must","rec","walk","free"].map(
 
 catView("see",$("#seeView"),$("#seeChips"),[
   {k:"museum",t:"미술관·박물관",lead:"🎫 MoMA·메트는 회사 사원증으로 무료 입장. 메트는 수요일, 휘트니·9/11 뮤지엄·프릭은 화요일 휴관."},
-  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 써밋(D4 아침) · 오버스토리(D3 밤) · 누벨루즈(D8, 선택). 나머지는 '일정 > 가볼 만한 곳'에도 정리했어요."},
+  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 오버스토리(D3 밤) · 써밋(D4 아침) · 누벨루즈(D8, 선택). 나머지는 '일정 > ＋ 가볼 만한 곳'에도 정리했어요."},
   {k:"market",t:"크리스마스 마켓·플리마켓",lead:"록펠러 트리는 12월 초 점등이라 11월 중순엔 설치 중이에요."},
   {k:"landmark",t:"랜드마크·공원"},
   {k:"tour",t:"투어 버스",lead:"선택 일정이에요. 추천 타이밍: D1 오후(시차로 걷기 힘들 때 다운타운 노선) 또는 D2 자유 저녁(나이트 투어)."}
@@ -1204,7 +1223,7 @@ catView("shop",$("#shopView"),$("#shopChips"),[
 ],k=>k==="all"?`<div class="note">뉴욕 의류 판매세는 $110 미만 품목 면제, 그 이상은 약 8.875%. 가격표엔 세금이 빠져 있어요.</div>`:"");
 
 /* ---------- info ---------- */
-const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"alt",t:"대안·참고 코스"},{k:"offline",t:"오프라인 사용"},{k:"sos",t:"비상 연락"}];
+const infoSubs=[{k:"air",t:"공항 이동"},{k:"metro",t:"지하철"},{k:"wear",t:"날씨·옷차림"},{k:"money",t:"결제·팁"},{k:"offline",t:"오프라인 사용"},{k:"sos",t:"비상 연락"}];
 function drawInfo(k){
   let h="";
   if(k==="air") h=`<h3>JFK → 호텔 (지하철, 1인 $11.75)</h3>
@@ -1235,11 +1254,6 @@ function drawInfo(k){
     <li>식당 팁 <b>18~22%</b>, 바 1잔당 $1~2, 택시 15~20%. 계산서에 이미 서비스료가 붙어 있으면 생략.</li>
     <li>카드 단말기에서 "USD로 결제" 선택(원화 결제는 수수료가 붙어요).</li>
     <li>판매세 8.875%는 가격표에 없어요. $110 미만 의류·신발은 면세.</li></ul></div>`;
-  if(k==="alt") h=ALT.map(a=>`<h3>${esc(a.title)}</h3><p class="lead">${esc(a.desc)}</p>
-    <ol class="steps">${a.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
-    <div class="note">${esc(a.tips)}</div>
-    <div class="grid">${a.places.map(id=>card(P[id])).join("")}</div>
-    ${a.mta?`<div class="btns"><a class="btn res" target="_blank" rel="noopener" href="https://new.mta.info/agency/metro-north-railroad">메트로노스 ↗</a></div>`:""}`).join("");
   if(k==="offline") h=`<h3>데이터 없이 이 가이드북 보기</h3>
    <ol class="steps">
     <li><b>출국 전, 와이파이에서 한 번 열기</b>사이트 내용이 휴대폰에 자동 저장돼요. 사이트가 수정됐다면 출국 직전에 한 번 더 열면 최신 버전으로 바뀌어요(쌓이지 않고 덮어써요).</li>
