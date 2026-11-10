@@ -617,6 +617,12 @@ const P = {
   halal:{cat:"eat",sub:"asian",name:"할랄 가이즈 (53번가 카트)",en:"The Halal Guys",addr:"W 53rd St & 6th Ave",
     desc:"길거리 푸드카트의 전설. 한국 여행자 필수 코스로 유명. MoMA에서 1분.",hours:"점심~새벽",price:"$",
     pick:"치킨&자이로 콤보 플래터 + 화이트소스 듬뿍, 핫소스는 조금만(매우 매움)",how:"MoMA 바로 앞",status:"walk",checked:false},
+  ladong:{cat:"eat",sub:"asian",name:"라동",en:"La Dong",addr:"11 E 17th St",
+    desc:"유니언스퀘어 옆 모던 베트남 식당. 미쉐린 가이드 2025 빕 구르망(가성비 좋은 맛집)에 선정됐어요. 태국 식당 '프라나콘' 팀이 운영해요.",
+    hours:"점심 11:30~15:15 / 저녁 16:30~22:15 (금·토 22:45) — 중간에 쉬는 시간",price:"$$ (1인 약 $30 안팎)",
+    pick:"테이블에서 육수를 부어주는 미야자키 A5 와규 쌀국수 · 반쎄오(강황 크레페) · 사탕수수 새우 · 스프링롤",
+    how:"지하철 4·5·6·L·N·Q·R·W → 14 St-Union Sq 도보 5분 / 아릿지아 플랫아이언 매장에서 도보 5분",status:"rec",
+    resv:"OpenTable 예약 권장 · 점심 마감(15:15) 직전 예약은 서두르게 되니 피하기 · 시끄러운 편",link:"https://ladongnyc.com/",checked:true},
   joes_sh:{cat:"eat",sub:"asian",name:"조스 상하이",en:"Joe's Shanghai",addr:"46 Bowery",
     desc:"뉴욕 샤오롱바오의 원조격. 차이나타운 본점(미드타운에도 지점).",hours:"매일 (방문 전 확인)",price:"$$",
     pick:"게살+돼지고기 샤오롱바오, 상하이 볶음면",how:"지하철 J·Z → Canal St",status:"walk",checked:false},
@@ -844,32 +850,32 @@ const SHOWS = [
  {name:"어쩌면 해피엔딩",en:"Maybe Happy Ending",theatre:"Belasco Theatre, 111 W 44th St",eng:2,
   why:"한국 창작 뮤지컬이 원작인 토니상 작품상 수상작. 서울을 배경으로 한 헬퍼 로봇 둘의 이야기라 한국인에게 특별해요. 잔잔하고 따뜻한 소극장 감성.",
   look:"서정적인 음악, 정교한 무대 장치",
-  deal:"Telecharge 디지털 로터리·러시",link:"https://www.google.com/search?q=Maybe+Happy+Ending+Broadway+tickets"},
+  deal:"Telecharge 디지털 로터리(전날 0시~15시) / 현장 러시 $49(매표소 월~토 10시·일 12시) / 매진 시 입석 $49",link:"https://www.google.com/search?q=Maybe+Happy+Ending+Broadway+tickets"},
  {name:"라이온 킹",en:"The Lion King",theatre:"Minskoff Theatre, 200 W 45th St",eng:1,
   why:"대사보다 비주얼과 음악이 중심. 동물 퍼펫이 객석 통로로 들어오는 오프닝 하나로도 값어치를 해요.",
-  look:"'Circle of Life' 오프닝",deal:"Broadway Direct 디지털 로터리",link:"https://www.lionking.com/"},
+  look:"'Circle of Life' 오프닝",deal:"Broadway Direct 디지털 로터리 $60 (전날 09~15시)",link:"https://www.lionking.com/"},
  {name:"MJ",en:"MJ the Musical",theatre:"Neil Simon Theatre, 250 W 52nd St",eng:1,
   why:"마이클 잭슨의 히트곡과 춤으로 꾸민 공연. 아는 노래가 많아 신나고, 댄스 수업 테마와도 연결돼요.",
-  look:"문워크·'Smooth Criminal' 군무",deal:"Broadway Direct 디지털 로터리",link:"https://mjthemusical.com/"},
+  look:"문워크·'Smooth Criminal' 군무",deal:"Broadway Direct 디지털 로터리 $49 (전날 09~15시)",link:"https://mjthemusical.com/"},
  {name:"& 줄리엣",en:"& Juliet",theatre:"Stephen Sondheim Theatre, 124 W 43rd St",eng:1,
   why:"'로미오가 죽지 않았다면?' 브리트니·케이티 페리·백스트리트 보이즈 히트곡으로 만든 팝 콘서트형 뮤지컬. 40대 친구 둘에게 추억 소환.",
-  look:"따라 부르게 되는 2000년대 팝",deal:"TodayTix 앱 러시",link:"https://andjulietbroadway.com/"},
+  look:"따라 부르게 되는 2000년대 팝",deal:"TodayTix 앱 러시 $49(매일 9시) / 현장 러시 $49(매표소 10시) / 매진 시 입석 $45",link:"https://andjulietbroadway.com/"},
  {name:"SIX",en:"SIX the Musical",theatre:"Lena Horne Theatre, 256 W 47th St",eng:2,
   why:"헨리 8세의 여섯 왕비가 걸그룹이 되어 경연하는 80분짜리 공연. 짧고 신나요. 호텔에서 1분.",
-  look:"콘서트 같은 조명과 노래",deal:"Broadway Direct 디지털 로터리",link:"https://www.sixonbroadway.com/"},
+  look:"콘서트 같은 조명과 노래",deal:"Broadway Direct 디지털 로터리 $45 (전날 09~18시) / 매진 시 입석 $49",link:"https://www.sixonbroadway.com/"},
  {name:"알라딘",en:"Disney's Aladdin",theatre:"New Amsterdam Theatre, 214 W 42nd St",eng:1,
   why:"디즈니 애니메이션 그대로의 줄거리라 영어를 몰라도 다 따라가요. 지니의 쇼 넘버와 반짝이는 무대가 화려하고, 날아다니는 양탄자 장면이 압권.",
   look:"'Friend Like Me' 지니 쇼 넘버, 'A Whole New World' 양탄자 비행",
-  deal:"Broadway Direct 디지털 로터리 $35 (공연 전날 응모) / TKTS 당일 할인이 자주 나오는 편",
+  deal:"디지털 로터리 $45 (aladdinthemusical.com/lottery → Broadway Direct, 전날 09~15시) / TKTS 당일 할인이 자주 나오는 편",
   link:"https://aladdinthemusical.com/"},
  {name:"시카고",en:"Chicago",theatre:"Ambassador Theatre, 219 W 49th St",eng:2,
   why:"1920년대 시카고 재즈 시대, 살인 혐의로 갇힌 두 여자의 이야기. 브로드웨이 최장수 리바이벌 작품으로, 검은 의상과 의자 하나로 만드는 밥 포시 스타일 안무가 핵심이에요. 대사보다 재즈 넘버와 춤이 중심이라 영화를 봤다면 쉽고, 호텔에서 1블록이에요.",
   look:"'All That Jazz', 'Cell Block Tango' 군무, 무대 위 라이브 재즈 밴드",
-  deal:"현장 러시 $49 (박스오피스 오픈 시, 1인 2매) / 매진 공연은 입석 $39",
+  deal:"로터리 없음 · 현장 러시 $49 (매표소 월~토 10시·일 12시, 25매 한정, 1인 2매, 토요일 저녁 공연은 러시 없다는 정보 있음) / 매진 시 입석 $39",
   link:"https://chicagothemusical.com/"},
  {name:"위대한 개츠비",en:"The Great Gatsby",theatre:"Broadway Theatre, 1681 Broadway",eng:2,
   why:"1920년대 의상과 세트가 화려한 작품. 줄거리를 알아서 따라가기 쉬워요.",
-  look:"파티 장면 의상·세트",deal:"Telecharge 디지털 로터리·러시",link:"https://www.google.com/search?q=The+Great+Gatsby+Broadway+musical+tickets"},
+  look:"파티 장면 의상·세트",deal:"Telecharge 디지털 로터리 $45(전날 0시~15시) / 현장 러시 $40(매표소 오픈 시)",link:"https://www.google.com/search?q=The+Great+Gatsby+Broadway+musical+tickets"},
  {name:"라디오시티 크리스마스 스펙태큘러",en:"Christmas Spectacular",theatre:"Radio City Music Hall, 1260 6th Ave",eng:1,season:true,
   why:"로켓츠의 칼군무와 산타가 나오는 연말 시즌 공연(11/4~1/4). 영어를 몰라도 100% 즐길 수 있어 두 번째 공연으로 추천.",
   look:"로켓츠 라인댄스, 3D 산타 비행",deal:"공식 사이트·박스오피스 정가",link:"https://www.rockettes.com/christmas/"}
@@ -1136,7 +1142,7 @@ function drawShow(k){
     const l=(u,label)=>`<a class="btn res" target="_blank" rel="noopener" href="${u}">${label} ↗</a>`;
     h+=`<h2 class="sec">할인 티켓, 언제 어떻게 사나</h2><p class="lead">요일과 상관없이 쓸 수 있는 일반 가이드예요. 그날 일정에 맞춰 골라 쓰면 돼요.</p>
     <table class="mini"><tr><th>방법</th><th>언제</th><th>어디서</th></tr>
-     <tr><td><b>① 로터리</b><br>무료 추첨</td><td>공연 <b>전날</b> 온라인 응모 (작품별 시간)</td><td>Broadway Direct · Telecharge · Lucky Seat</td></tr>
+     <tr><td><b>① 로터리</b><br>무료 추첨</td><td>공연 <b>전날</b> 온라인 응모 (작품별 시간)</td><td>Broadway Direct · Telecharge</td></tr>
      <tr><td><b>② 현장 러시</b><br>선착순</td><td>공연 <b>당일</b> 매표소 오픈 시 (보통 월~토 10시, 일 12시)</td><td>각 극장 매표소</td></tr>
      <tr><td><b>③ TKTS</b><br>당일 할인</td><td>공연 <b>당일</b> 오후 (요일별 오픈 시간 아래)</td><td>타임스퀘어 빨간 계단 아래</td></tr>
      <tr><td><b>④ TodayTix</b></td><td>수시 (앱 러시는 당일 오전)</td><td>앱</td></tr></table>
@@ -1153,17 +1159,21 @@ function drawShow(k){
     <h2 class="sec">① 로터리 응모 방법</h2>
     <ol class="steps">
      <li><b>응모 사이트 들어가기</b>작품마다 응모처가 달라요.
-       <div class="btns" style="padding-top:6px">${l("https://lottery.broadwaydirect.com/","Broadway Direct")}${l("https://rush.telecharge.com/","Telecharge")}${l("https://www.luckyseat.com/","Lucky Seat")}</div></li>
+       <div class="btns" style="padding-top:6px">${l("https://lottery.broadwaydirect.com/","Broadway Direct")}${l("https://rush.telecharge.com/","Telecharge")}</div></li>
      <li><b>작품 → 날짜·시간 선택 → "Enter"</b>응모는 회차마다 따로예요.</li>
      <li><b>정보 입력 후 제출</b>이름·성(여권 영문 그대로), 이메일, 매수(<b>2매</b>), 생년월일, 거주 국가 등. <b>결제 정보는 안 넣어요</b>(응모 무료). 같은 회차에 여러 번 응모하면 무효.</li>
-     <li><b>당첨 메일 → 1시간 안에 카드 결제</b>떨어져도 메일이 와요.</li>
+     <li><b>당첨 메일 → 정해진 시간 안에 카드 결제</b>Broadway Direct는 <b>1시간</b>, Telecharge는 보통 몇 시간 여유(메일에 적힌 마감 확인). 떨어져도 메일이 와요.</li>
      <li><b>공연 당일</b>모바일 티켓 또는 매표소에서 여권 보여주고 수령(안내 메일대로).</li>
     </ol>
-    <table class="mini" style="margin-top:10px"><tr><th>작품</th><th>응모처</th><th>가격·시간</th></tr>
-     <tr><td>위키드</td><td>Broadway Direct</td><td><b>$55</b> · 전날 09:00~15:00</td></tr>
-     <tr><td>알라딘</td><td>Broadway Direct</td><td>$35 · 전날</td></tr>
-     <tr><td>라이온킹 · MJ · SIX</td><td>Broadway Direct</td><td>전날</td></tr>
-     <tr><td>어쩌면 해피엔딩 · 위대한 개츠비</td><td>Telecharge</td><td>전날 0시~15시</td></tr></table>
+    <table class="mini" style="margin-top:10px"><tr><th>작품</th><th>응모처</th><th>가격 · 응모 시간(공연 전날)</th></tr>
+     <tr><td>위키드</td><td>Broadway Direct</td><td><b>$55</b> · 09:00~15:00</td></tr>
+     <tr><td>라이온킹</td><td>Broadway Direct</td><td>$60 · 09:00~15:00</td></tr>
+     <tr><td>MJ</td><td>Broadway Direct</td><td>$49 · 09:00~15:00</td></tr>
+     <tr><td>알라딘</td><td>aladdinthemusical.com/lottery</td><td>$45 · 09:00~15:00</td></tr>
+     <tr><td>SIX</td><td>Broadway Direct</td><td>$45 · 09:00~<b>18:00</b></td></tr>
+     <tr><td>위대한 개츠비</td><td>Telecharge</td><td>$45 · 0:00~15:00</td></tr>
+     <tr><td>어쩌면 해피엔딩</td><td>Telecharge</td><td>0:00~15:00</td></tr>
+     <tr><td>시카고 · & 줄리엣</td><td colspan="2">로터리 없음 → 현장 러시·TodayTix</td></tr></table>
     <p class="lead" style="margin-top:6px">가격·응모 시간은 바뀔 수 있으니 응모 화면에 적힌 시간을 확인하세요.</p>
 
     <h2 class="sec">② 현장 러시</h2>
@@ -1175,9 +1185,12 @@ function drawShow(k){
     <div class="card" style="margin-top:10px"><h4>시카고 — $49</h4><dl class="meta">
       <div><dt>장소</dt><dd>앰배서더 극장 매표소 (219 W 49th St) · 호텔에서 1블록</dd></div>
       <div><dt>시간</dt><dd>매표소 오픈 시 — 보통 <b>10:00, 일 12:00</b> (방문 전 확인)</dd></div>
-      <div><dt>조건</dt><dd>1인 2매 · 매진 공연은 입석 $39 · 시카고는 로터리 없음</dd></div></dl>
+      <div><dt>조건</dt><dd>25매 한정, 1인 2매 · 매진 공연은 입석 $39 · 로터리 없음 · <b>토요일 저녁 공연은 러시가 없다는 정보</b>가 있으니 매표소에 확인</dd></div></dl>
       <div class="btns">${m("Ambassador Theatre, 219 W 49th St","앰배서더 극장")}${l("https://chicagothemusical.com/","시카고 공식")}</div></div>
-    <p class="lead" style="margin-top:8px">& 줄리엣 등 일부 작품은 현장 대신 <b>TodayTix 앱 러시</b>(당일 오전 앱에서 오픈).</p>
+    <table class="mini" style="margin-top:10px"><tr><th>그 외 현장 러시</th><th>가격</th><th>시간</th></tr>
+     <tr><td>어쩌면 해피엔딩</td><td>$49</td><td>월~토 10시 · 일 12시 (매진 시 입석 $49)</td></tr>
+     <tr><td>위대한 개츠비</td><td>$40</td><td>매표소 오픈 시</td></tr>
+     <tr><td>& 줄리엣</td><td>$49</td><td>매일 10시 · TodayTix 앱 러시도 9시 $49</td></tr></table>
 
     <h2 class="sec">③ TKTS 당일 할인 부스</h2>
     <div class="card"><dl class="meta">
