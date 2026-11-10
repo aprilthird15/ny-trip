@@ -149,6 +149,18 @@ footer{padding:28px 0 40px;color:var(--dim);font-size:12.5px;border-top:1px soli
 .morebtn{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:18px;padding:13px 14px;border:1px dashed var(--amber);border-radius:var(--r);background:var(--amber-bg);color:var(--amber);font-weight:700;font-size:14px;cursor:pointer;text-align:left}
 .morebtn span{font-size:18px}
 .subt{font-size:13px;color:var(--dim);font-family:'Noto Sans KR',sans-serif;font-weight:500}
+.nearby{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.nearby>summary{list-style:none;cursor:pointer;padding:11px 12px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px}
+.nearby>summary::-webkit-details-marker{display:none}
+.nearby>summary .cnt{background:var(--amber-bg);color:var(--amber);font-size:12px;padding:0 7px;border-radius:999px}
+.nearby>summary .chev{margin-left:auto;color:var(--dim);font-size:12px}
+.nearby ul{list-style:none;margin:0;padding:0 12px 8px}
+.nearby li{border-top:1px solid var(--line)}
+.nearby li summary{list-style:none;cursor:pointer;padding:8px 0;font-size:13.5px;display:flex;flex-wrap:wrap;gap:2px 6px;align-items:baseline}
+.nearby li summary::-webkit-details-marker{display:none}
+.nearby .tag{font-size:12px;color:var(--amber);font-weight:600}
+.nearby .near{font-size:12px;color:var(--dim);width:100%}
+.nearby .nb{padding:0 0 10px}
 /* overview */
 .ovlist{display:grid;gap:8px;margin-top:12px}
 .ov{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:10px 12px;cursor:pointer}
@@ -614,30 +626,30 @@ const P = {
     pick:"12피스 오마카세",how:"타임스퀘어 인근",status:"must",resv:"공식 사이트 시간대 예약",checked:false},
 
   /* ===== 맛집 : 중식·아시안·기타 인기 ===== */
-  halal:{cat:"eat",sub:"asian",name:"할랄 가이즈 (53번가 카트)",en:"The Halal Guys",addr:"W 53rd St & 6th Ave",
+  halal:{cat:"eat",kind:"할랄",sub:"asian",name:"할랄 가이즈 (53번가 카트)",en:"The Halal Guys",addr:"W 53rd St & 6th Ave",
     desc:"길거리 푸드카트의 전설. 한국 여행자 필수 코스로 유명. MoMA에서 1분.",hours:"점심~새벽",price:"$",
     pick:"치킨&자이로 콤보 플래터 + 화이트소스 듬뿍, 핫소스는 조금만(매우 매움)",how:"MoMA 바로 앞",status:"walk",checked:false},
-  ladong:{cat:"eat",sub:"asian",name:"라동",en:"La Dong",addr:"11 E 17th St",
+  ladong:{cat:"eat",kind:"베트남",sub:"asian",name:"라동",en:"La Dong",addr:"11 E 17th St",
     desc:"유니언스퀘어 옆 모던 베트남 식당. 미쉐린 가이드 2025 빕 구르망(가성비 좋은 맛집)에 선정됐어요. 태국 식당 '프라나콘' 팀이 운영해요.",
     hours:"점심 11:30~15:15 / 저녁 16:30~22:15 (금·토 22:45) — 중간에 쉬는 시간",price:"$$ (1인 약 $30 안팎)",
     pick:"테이블에서 육수를 부어주는 미야자키 A5 와규 쌀국수 · 반쎄오(강황 크레페) · 사탕수수 새우 · 스프링롤",
     how:"지하철 4·5·6·L·N·Q·R·W → 14 St-Union Sq 도보 5분 / 아릿지아 플랫아이언 매장에서 도보 5분",status:"rec",
     resv:"OpenTable 예약 권장 · 점심 마감(15:15) 직전 예약은 서두르게 되니 피하기 · 시끄러운 편",link:"https://ladongnyc.com/",checked:true},
-  joes_sh:{cat:"eat",sub:"asian",name:"조스 상하이",en:"Joe's Shanghai",addr:"46 Bowery",
+  joes_sh:{cat:"eat",kind:"상하이",sub:"asian",name:"조스 상하이",en:"Joe's Shanghai",addr:"46 Bowery",
     desc:"뉴욕 샤오롱바오의 원조격. 차이나타운 본점(미드타운에도 지점).",hours:"매일 (방문 전 확인)",price:"$$",
     pick:"게살+돼지고기 샤오롱바오, 상하이 볶음면",how:"지하철 J·Z → Canal St",status:"walk",checked:false},
-  xian:{cat:"eat",sub:"asian",name:"시안 페이머스 푸드",en:"Xi'an Famous Foods",addr:"Xi'an Famous Foods Midtown",
+  xian:{cat:"eat",kind:"중식",sub:"asian",name:"시안 페이머스 푸드",en:"Xi'an Famous Foods",addr:"Xi'an Famous Foods Midtown",
     desc:"손으로 뽑은 넓은 면에 쯔란 양고기. 저렴하고 빠른 한 끼.",hours:"매일",price:"$",pick:"쯔란 양고기 비앙비앙면",how:"미드타운 곳곳",status:"walk",checked:false},
-  thaidiner:{cat:"eat",sub:"asian",name:"타이 다이너",en:"Thai Diner",addr:"186 Mott St",
+  thaidiner:{cat:"eat",kind:"태국",sub:"asian",name:"타이 다이너",en:"Thai Diner",addr:"186 Mott St",
     desc:"놀리타의 힙한 태국 식당. 소호 쇼핑 날 점심·저녁으로.",hours:"매일 (방문 전 확인)",price:"$$",
     pick:"타이 티 프렌치토스트, 카오소이, 크랩 프라이드라이스",how:"소호에서 도보 10분",status:"rec",resv:"Resy 예약 권장",checked:false},
-  ellens:{cat:"eat",sub:"asian",name:"엘렌스 스타더스트 다이너",en:"Ellen's Stardust Diner",addr:"1650 Broadway",
+  ellens:{cat:"eat",kind:"다이너",sub:"asian",name:"엘렌스 스타더스트 다이너",en:"Ellen's Stardust Diner",addr:"1650 Broadway",
     desc:"브로드웨이 지망생 웨이터들이 서빙하다 노래를 부르는 50년대 다이너. 음식보단 분위기, 호텔에서 3분.",hours:"매일 아침~밤",price:"$$",
     pick:"버거·셰이크 + 라이브 노래 구경",how:"호텔에서 도보 3분",status:"walk",resv:"예약 안 받음, 오전이 덜 붐빔",checked:false},
-  balthazar:{cat:"eat",sub:"asian",name:"발타자르",en:"Balthazar",addr:"80 Spring St",
+  balthazar:{cat:"eat",kind:"프렌치",sub:"asian",name:"발타자르",en:"Balthazar",addr:"80 Spring St",
     desc:"소호의 파리풍 브라스리. 브런치와 빵이 유명해요.",hours:"매일 아침~밤",price:"$$$",
     pick:"브런치 에그 베네딕트, 프렌치 어니언 수프, 베이커리 빵",how:"지하철 6 → Spring St",status:"rec",resv:"OpenTable·전화 예약 권장",checked:false},
-  eataly:{cat:"eat",sub:"asian",name:"이탈리 플랫아이언",en:"Eataly NYC Flatiron",addr:"200 5th Ave",
+  eataly:{cat:"eat",kind:"이탈리안",sub:"asian",name:"이탈리 플랫아이언",en:"Eataly NYC Flatiron",addr:"200 5th Ave",
     desc:"이탈리안 푸드마켓 + 레스토랑. 파스타·젤라토, 식재료 쇼핑까지.",hours:"매일",price:"$$",
     pick:"생면 파스타, 젤라토, 카페",how:"플랫아이언 빌딩 바로 앞",status:"walk",checked:false},
 
@@ -694,9 +706,28 @@ const P = {
     desc:"윌리엄스버그 대표 브런치 레스토랑. 런던에도 지점을 낸 인기 브런치집.",
     hours:"브런치·저녁 (요일별 운영시간 방문 전 확인)",price:"$$~$$$",pick:"말레이시아식 피칸 스티키번, 헤이즐넛 프랄린 팬케이크, 에그 샌드위치",
     how:"도미노 파크에서 도보 5분",status:"rec",resv:"Resy 예약 권장",checked:false},
-  winson:{cat:"eat",sub:"asian",name:"윈선 베이커리",en:"Win Son Bakery",addr:"164 Graham Ave, Brooklyn",
+  winson:{cat:"eat",kind:"대만",sub:"asian",name:"윈선 베이커리",en:"Win Son Bakery",addr:"164 Graham Ave, Brooklyn",
     desc:"대만계 미국식 베이커리 겸 식당. 파전 같은 대만식 총유빙에 계란·베이컨을 넣은 샌드위치가 명물.",
     hours:"아침·점심·저녁 (방문 전 확인)",price:"$$",pick:"총유빙 BEC(14시 전), 모찌 도넛, 에그타르트",how:"L선 Graham Av",status:"walk",checked:false},
+
+  butler:{cat:"eat",sub:"cafe",name:"버틀러 베이크숍",en:"Butler",addr:"40 Water St, Brooklyn",kind:"베이커리 카페",
+    desc:"덤보의 인기 베이커리 카페. 창가 자리가 아늑해서 오후 카페 휴식(D3 14:00)에 딱.",
+    hours:"매일 아침~오후 (방문 전 확인)",price:"$",pick:"아보카도 토스트, 페이스트리 프렌치토스트, 크루아상",how:"덤보 워싱턴 스트리트 포토스팟에서 도보 2분",status:"walk",checked:false},
+  arabica:{cat:"eat",sub:"cafe",name:"% 아라비카 덤보",en:"% Arabica DUMBO",addr:"% Arabica DUMBO Brooklyn",kind:"커피",
+    desc:"교토에서 시작한 커피 브랜드. 브루클린 브리지 근처 강변이라 뷰가 좋아요. 붐비면 테이크아웃해서 강변 공원으로.",
+    hours:"매일 (방문 전 확인)",price:"$",pick:"교토 라떼(살짝 달고 크리미)",how:"줄리아나스·제인스 캐러셀 근처",status:"walk",checked:false},
+  cecconis:{cat:"eat",sub:"asian",name:"체코니스 덤보",en:"Cecconi's Dumbo",addr:"55 Water St, Brooklyn",kind:"이탈리안",
+    desc:"브루클린 브리지와 맨해튼 스카이라인이 통창으로 보이는 이탈리안 레스토랑. 조금 근사하게 먹고 싶을 때.",
+    hours:"점심·저녁 (방문 전 확인)",price:"$$$",pick:"파스타, 피자, 브런치(주말) · 창가석 요청",how:"덤보 강변, 타임아웃 마켓 옆",status:"rec",resv:"OpenTable 예약 권장",checked:false},
+  lindustrie:{cat:"eat",sub:"pizza",name:"랭더스트리 피자 (윌리엄스버그 본점)",en:"L'Industrie Pizzeria",addr:"254 S 2nd St, Brooklyn",kind:"조각피자",
+    desc:"'뉴욕 최고의 조각피자'로 자주 꼽히는 곳. 피자 위에 부라타 치즈를 듬뿍 올린 슬라이스가 명물이에요. 웨스트빌리지·리틀이탈리 지점은 줄이 매우 길어요.",
+    hours:"매일 점심~밤 (방문 전 확인)",price:"$ (슬라이스 약 $5~8)",pick:"부라타 슬라이스, 랭더스트리 슬라이스(부라타+프로슈토), 페퍼로니",
+    how:"L선 Bedford Av 도보 10분 / 도미노 파크에서 도보 8분",status:"walk",resv:"예약 없음 · 점심 오픈 직후가 덜 붐벼요",checked:false},
+  liliacafe:{cat:"eat",sub:"cafe",name:"릴리아 카페",en:"Lilia (Cafe)",addr:"567 Union Ave, Brooklyn",kind:"이탈리안 카페",
+    desc:"예약이 하늘의 별 따기인 이탈리안 레스토랑 '릴리아'가 낮에 여는 카페. 레스토랑 대신 낮에 분위기를 맛보기 좋아요.",
+    hours:"카페 월~목 08:00~15:00 / 금~일 08:00~16:00 · 레스토랑 저녁(Resy 예약 매우 어려움)",price:"$~$$",
+    pick:"커피, 페이스트리, 샌드위치 · 저녁 레스토랑은 카초 에 페페, 양젖 아뇰로티",how:"L선 Lorimer St 도보 3분 / 베드포드 애비뉴에서 도보 7분",status:"walk",
+    resv:"카페는 워크인 · 레스토랑은 Resy",link:"https://www.lilianewyork.com/",checked:true},
   /* ===== 대안 일정 ===== */
   dia:{cat:"alt",sub:"alt",name:"디아비콘",en:"Dia Beacon",addr:"3 Beekman St, Beacon, NY",
     desc:"옛 나비스코 공장을 개조한 초대형 현대미술관. 리처드 세라의 거대한 강철 조각이 압권.",
@@ -942,6 +973,9 @@ const EXTRA = [
  {p:"topview",when:"추천: 시차로 걷기 힘든 날 다운타운 노선 · 저녁엔 나이트 투어"}
 ];
 
+/* ---------------- 맛집 좌표 (근처 맛집 계산용) ---------------- */
+const EAT_LL={gallaghers:[40.7632,-73.9835],keens:[40.7508,-73.9871],luger:[40.7099,-73.9625],essa:[40.7563,-73.9700],russ:[40.7190,-73.9895],katz:[40.7223,-73.9874],sarabeth:[40.7653,-73.9763],julianas:[40.7027,-73.9934],joes:[40.7545,-73.9867],shack:[40.7414,-73.9882],jgmelon:[40.7713,-73.9590],hamburgeram:[40.7276,-74.0013],levain:[40.7799,-73.9803],ansel:[40.7253,-74.0030],magnolia:[40.7359,-74.0050],ralph:[40.7716,-73.9670],juniors:[40.7585,-73.9862],chelseamkt:[40.7424,-74.0061],lostacos:[40.7571,-73.9881],timeout:[40.7035,-73.9905],oyster:[40.7527,-73.9772],hk:[40.7614,-73.9910],bcd:[40.7477,-73.9858],cote:[40.7413,-73.9917],jongro:[40.7478,-73.9868],baekjeong:[40.7470,-73.9853],hername:[40.7465,-73.9847],chodanggol:[40.7510,-73.9867],moono:[40.7466,-73.9840],ippudo:[40.7633,-73.9878],ichiran:[40.7486,-73.9910],raku:[40.7277,-74.0003],katsuhama:[40.7568,-73.9783],nakazawa:[40.7316,-74.0047],ladym:[40.7525,-73.9839],breads:[40.7537,-73.9831],halal:[40.7619,-73.9791],joes_sh:[40.7145,-73.9968],thaidiner:[40.7207,-73.9962],ellens:[40.7616,-73.9837],balthazar:[40.7226,-73.9981],eataly:[40.7421,-73.9897],devocion:[40.7140,-73.9620],sundaybk:[40.7137,-73.9655],winson:[40.7155,-73.9446],ladong:[40.7375,-73.9918],butler:[40.7034,-73.9908],arabica:[40.7030,-73.9935],cecconis:[40.7037,-73.9907],lindustrie:[40.7117,-73.9578],liliacafe:[40.7178,-73.9516]};
+
 </script>
 <script>
 (function(){
@@ -998,6 +1032,22 @@ function dayFromDate(){
   if(ny.getFullYear()===2026&&ny.getMonth()===10&&ny.getDate()>=13&&ny.getDate()<=21) return ny.getDate()-12;
   return 0;
 }
+const SUBLABEL={steak:"스테이크",korean:"한식",japanese:"일식",asian:"아시안·기타",pizza:"피자·버거",bagel:"브런치·델리",cafe:"디저트·카페",casual:"캐주얼"};
+function distM(a,b){const R=6371000,t=Math.PI/180,dl=(b[0]-a[0])*t,dn=(b[1]-a[1])*t,x=Math.sin(dl/2)**2+Math.cos(a[0]*t)*Math.cos(b[0]*t)*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(x));}
+const NEARBY_DAYS=[1]; /* 시범 적용: 확장 시 날짜 추가 */
+function nearbyEats(d){
+  if(!NEARBY_DAYS.includes(d.d)) return "";
+  const stops=DAYMAP[d.d]||[]; if(!stops.length) return "";
+  const inDay=new Set(d.items.map(i=>i.p).filter(Boolean)); inDay.add("hk");
+  const list=[];
+  for(const k in EAT_LL){ if(inDay.has(k)||!P[k]) continue; if(distM(EAT_LL[k],HOTEL_LL)<450) continue;
+    if(stops.some(s=>s[0]===P[k].name)) continue; let best=null; for(const s of stops){const m=distM(EAT_LL[k],[s[1],s[2]]); if(!best||m<best.m) best={m,s:s[0]};}
+    if(best.m<=650) list.push({k,...best});
+  }
+  list.sort((x,y)=>x.m-y.m); const top=list.slice(0,5); if(!top.length) return "";
+  return `<details class="nearby"><summary>🍽 이날 동선 근처 맛집 <span class="cnt">${top.length}</span><span class="chev">▼</span></summary>
+    <ul>${top.map(x=>{const p=P[x.k];const pr=(p.price||"").match(/^\$+/);return `<li><details><summary><b>${esc(p.name)}</b> <span class="tag">${p.kind||SUBLABEL[p.sub]||""}${pr?" · "+pr[0]:""}</span><span class="near">${esc(x.s)}에서 도보 ${Math.max(1,Math.round(x.m/80))}분</span></summary><div class="nb">${cardInner(p,{compact:true})}</div></details></li>`}).join("")}</ul></details>`;
+}
 function goMore(){document.querySelectorAll("#dayChips .chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k==="more"));const m=document.querySelector('#dayChips .chip[data-k="more"]');if(m)m.scrollIntoView({inline:"center",block:"nearest"});renderMore();window.scrollTo({top:$(".tabs").offsetTop});}
 function renderMore(){
   if(mapObj){ try{mapObj.remove()}catch(e){} mapObj=null; }
@@ -1051,6 +1101,7 @@ function renderDay(n){
    ${d.route.length?`<a class="routebtn" target="_blank" rel="noopener" href="${routeUrl(d.route)}">🧭 구글지도 앱에서 길찾기</a>`:""}</div>
    <ul class="tl">${items}</ul>
    <p class="lead" style="margin-top:14px">▼ 표시를 누르면 장소 정보·지도·예약 링크가 펼쳐져요.</p>
+   ${nearbyEats(d)}
    <button class="morebtn" type="button" data-go="more">＋ 가볼 만한 곳 · 대안 코스 보기 <span>›</span></button>`;
   $("#dayView").querySelector(".morebtn").onclick=goMore;
   store.set("ny_day",n);
