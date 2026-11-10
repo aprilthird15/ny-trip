@@ -821,7 +821,7 @@ const DAYS = [
 const RESV = [
  {id:"r1",day:"11/14 14:00",what:"갤러거스 스테이크하우스",status:"done",how:"예약 완료",when:"-",p:"gallaghers"},
  {id:"r2",day:"11/20 18:30",what:"킨스 스테이크하우스 (20주년 디너)",status:"must",how:"keens.com 또는 전화 (OpenTable 없음). 기념일 메모",when:"지금 바로",p:"keens"},
- {id:"r3",day:"11/14·11/17 저녁",what:"뮤지컬 로터리 응모 (위키드·알라딘 등)",status:"rec",how:"공연 전날 Broadway Direct에서 둘이 각자 응모 · 떨어지면 TKTS(시카고 등)",when:"11/13·11/16",p:null,link:"#show"},
+ {id:"r3",day:"공연 보고 싶은 날 전날",what:"뮤지컬 로터리 응모 (위키드·알라딘 등)",status:"rec",how:"Broadway Direct·Telecharge에서 둘이 각자 응모 · 떨어지면 당일 러시나 TKTS",when:"공연 전날",p:null,link:"#show"},
  {id:"r4",day:"11/16 09:00",what:"써밋 원 밴더빌트 오전",status:"must",how:"앳홈트립($42) 또는 공식 사이트. 2인 선택, 변경·환불 규정 확인",when:"출국 1주 전 날씨 보고",p:"summit"},
  {id:"r5",day:"11/20 16:15",what:"누벨루즈 (선택)",status:"must",how:"OpenTable, 창가석 요청",when:"1~2주 전",p:"nubeluz"},
  {id:"r6",day:"11/15 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
@@ -839,7 +839,7 @@ const SHOWS = [
  {name:"위키드",en:"Wicked",theatre:"Gershwin Theatre, 222 W 51st St",eng:1,pick:true,
   why:"오즈의 마법사 속 두 마녀의 우정 이야기. 영화로 줄거리를 이미 알아서 영어 부담이 가장 적고, 우정 여행 테마와도 딱 맞아요.",
   look:"초대형 무대, 'Defying Gravity' 1막 피날레",
-  deal:"디지털 로터리(Broadway Direct) / 매 공연 $45 현장 러시(박스오피스 오픈 시, 1인 2매) — 응모 방법은 '할인 티켓 가이드', 줄거리는 '위키드 준비'",
+  deal:"디지털 로터리 $55(Broadway Direct, 전날 09~15시) / 현장 러시 $45(매표소 월~토 10시·일 12시, 1인 2매) — 방법은 '할인 티켓 가이드', 줄거리는 '위키드 준비'",
   link:"https://wickedthemusical.com/"},
  {name:"어쩌면 해피엔딩",en:"Maybe Happy Ending",theatre:"Belasco Theatre, 111 W 44th St",eng:2,
   why:"한국 창작 뮤지컬이 원작인 토니상 작품상 수상작. 서울을 배경으로 한 헬퍼 로봇 둘의 이야기라 한국인에게 특별해요. 잔잔하고 따뜻한 소극장 감성.",
@@ -1132,47 +1132,67 @@ function drawShow(k){
      <div class="btns"><a class="btn map" target="_blank" rel="noopener" href="${mapUrl(s.theatre)}">📍 극장 지도</a><a class="btn res" target="_blank" rel="noopener" href="${esc(s.link)}">공식·예매 ↗</a></div></article>`).join("")}</div>`;
   }
   if(k==="ticket"){
-    h+=`<h2 class="sec">할인 티켓 구하는 4가지 방법</h2><p class="lead">위키드 기준. 할인은 운에 맡기는 방식이라, 꼭 봐야 하는 공연이면 정가 예매를 기본으로 하고 할인은 "되면 좋고"로 생각하세요.</p>
-    <table class="mini"><tr><th>방법</th><th>위키드</th><th>언제·어디서</th></tr>
-     <tr><td><b>① 디지털 로터리</b><br>무료 추첨</td><td>할인가</td><td>공연 <b>전날</b> 온라인 응모 (Broadway Direct) · 당첨 확률 낮음</td></tr>
-     <tr><td><b>② 현장 러시</b><br>선착순</td><td class="price">$45</td><td>공연 <b>당일 아침</b> 거슈윈 극장 박스오피스 · 일찍 줄 서면 가능성 높음</td></tr>
-     <tr><td><b>③ TKTS</b><br>당일 할인</td><td>20~50%↓</td><td>당일, 타임스퀘어 빨간 계단 아래 · 위키드는 드묾</td></tr>
-     <tr><td><b>④ TodayTix 앱</b></td><td>작품별</td><td>앱에서 할인가·러시</td></tr></table>
+    const m=(q,label)=>`<a class="btn map" target="_blank" rel="noopener" href="${mapUrl(q)}">📍 ${label}</a>`;
+    const l=(u,label)=>`<a class="btn res" target="_blank" rel="noopener" href="${u}">${label} ↗</a>`;
+    h+=`<h2 class="sec">할인 티켓, 언제 어떻게 사나</h2><p class="lead">요일과 상관없이 쓸 수 있는 일반 가이드예요. 그날 일정에 맞춰 골라 쓰면 돼요.</p>
+    <table class="mini"><tr><th>방법</th><th>언제</th><th>어디서</th></tr>
+     <tr><td><b>① 로터리</b><br>무료 추첨</td><td>공연 <b>전날</b> 온라인 응모 (작품별 시간)</td><td>Broadway Direct · Telecharge · Lucky Seat</td></tr>
+     <tr><td><b>② 현장 러시</b><br>선착순</td><td>공연 <b>당일</b> 매표소 오픈 시 (보통 월~토 10시, 일 12시)</td><td>각 극장 매표소</td></tr>
+     <tr><td><b>③ TKTS</b><br>당일 할인</td><td>공연 <b>당일</b> 오후 (요일별 오픈 시간 아래)</td><td>타임스퀘어 빨간 계단 아래</td></tr>
+     <tr><td><b>④ TodayTix</b></td><td>수시 (앱 러시는 당일 오전)</td><td>앱</td></tr></table>
 
-    <h2 class="sec">① 로터리 응모, 이렇게 해요</h2>
+    <h2 class="sec">하루 흐름으로 보면</h2>
     <ol class="steps">
-     <li><b>출국 전: 응모 사이트 즐겨찾기</b>위키드·라이온킹·알라딘·MJ·SIX는 <b>Broadway Direct</b>에서 응모해요. 계정 없이도 응모할 수 있지만, 미리 들어가서 화면을 한 번 봐두면 당일에 덜 헤매요.
-       <div style="margin-top:6px"><a class="btn res" target="_blank" rel="noopener" href="https://lottery.broadwaydirect.com/">Broadway Direct 로터리 ↗</a></div></li>
-     <li><b>공연 전날: 작품 선택 → 날짜·시간 고르기</b>목록에서 <b>Wicked</b>를 누르면 응모 가능한 공연 회차가 나와요. 원하는 날짜·시간의 <b>"Enter"</b> 버튼을 눌러요. 응모는 회차마다 따로예요.</li>
-     <li><b>정보 입력</b>이름·성(여권 영문 그대로), 이메일, 매수(<b>2매</b> 선택), 생년월일, 거주 국가 등을 넣고 약관 체크 후 제출. <b>결제 정보는 이때 안 넣어요</b> — 응모는 무료예요.
-       <ul><li>이름은 여권과 똑같이: 극장에서 신분증을 확인할 수 있어요.</li><li>한 사람이 같은 회차에 여러 번 응모하면 무효 처리돼요.</li></ul></li>
-     <li><b>당첨 발표: 이메일 확인</b>추첨 후 당첨되면 이메일이 와요. <b>1시간 안에</b> 링크로 들어가 카드로 결제해야 해요. 시간을 넘기면 취소돼요. 떨어져도 이메일이 와요.</li>
-     <li><b>공연 당일: 티켓 받기</b>이메일로 받은 모바일 티켓을 보여주거나, 극장 박스오피스에서 여권을 보여주고 받아요(안내 메일대로).</li>
+     <li><b>전날 — 로터리 응모</b>보고 싶은 공연 회차에 둘이 각자 응모. 여러 작품 동시에 응모해도 OK.</li>
+     <li><b>당일 아침 — 떨어졌다면 현장 러시</b>매표소 오픈 <b>약 1시간 전</b> 줄 서기. 수량이 적어 늦으면 매진.</li>
+     <li><b>당일 오후 — TKTS</b>TKTS 앱으로 판매 작품 확인 후 부스로.</li>
+     <li><b>공연 당일 저녁</b>시작 30분 전 극장 도착(보안 검색·짐 검사). 대부분 19:00 또는 20:00 시작.</li>
     </ol>
-    <div class="note"><b>꿀팁</b> — 둘이 <b>각자</b> 응모하세요. 한 명만 당첨돼도 2매라 같이 볼 수 있어요. 시간이 유연하면 여행 중 여러 날짜에 응모해두고 당첨된 날에 맞춰 일정을 바꿔도 돼요. 응모 시간·가격은 바뀌는 경우가 많으니 응모 화면에 적힌 시간을 꼭 확인하세요.</div>
-    <p class="lead">다른 응모처: <b>Telecharge</b>(어쩌면 해피엔딩·위대한 개츠비 — 전날 0시~15시), 알라딘 로터리 $35.</p>
+    <div class="note"><b>여러 개 당첨되면</b> 보고 싶은 하나만 결제하고 나머지는 결제하지 않으면 자동 취소돼요. 일정이 있는 날은 응모하지 마세요 — 당첨되면 1시간 안에 결제해야 해요.</div>
+
+    <h2 class="sec">① 로터리 응모 방법</h2>
+    <ol class="steps">
+     <li><b>응모 사이트 들어가기</b>작품마다 응모처가 달라요.
+       <div class="btns" style="padding-top:6px">${l("https://lottery.broadwaydirect.com/","Broadway Direct")}${l("https://rush.telecharge.com/","Telecharge")}${l("https://www.luckyseat.com/","Lucky Seat")}</div></li>
+     <li><b>작품 → 날짜·시간 선택 → "Enter"</b>응모는 회차마다 따로예요.</li>
+     <li><b>정보 입력 후 제출</b>이름·성(여권 영문 그대로), 이메일, 매수(<b>2매</b>), 생년월일, 거주 국가 등. <b>결제 정보는 안 넣어요</b>(응모 무료). 같은 회차에 여러 번 응모하면 무효.</li>
+     <li><b>당첨 메일 → 1시간 안에 카드 결제</b>떨어져도 메일이 와요.</li>
+     <li><b>공연 당일</b>모바일 티켓 또는 매표소에서 여권 보여주고 수령(안내 메일대로).</li>
+    </ol>
+    <table class="mini" style="margin-top:10px"><tr><th>작품</th><th>응모처</th><th>가격·시간</th></tr>
+     <tr><td>위키드</td><td>Broadway Direct</td><td><b>$55</b> · 전날 09:00~15:00</td></tr>
+     <tr><td>알라딘</td><td>Broadway Direct</td><td>$35 · 전날</td></tr>
+     <tr><td>라이온킹 · MJ · SIX</td><td>Broadway Direct</td><td>전날</td></tr>
+     <tr><td>어쩌면 해피엔딩 · 위대한 개츠비</td><td>Telecharge</td><td>전날 0시~15시</td></tr></table>
+    <p class="lead" style="margin-top:6px">가격·응모 시간은 바뀔 수 있으니 응모 화면에 적힌 시간을 확인하세요.</p>
 
     <h2 class="sec">② 현장 러시</h2>
-    <ul class="info" style="font-size:13.5px;padding-left:18px">
-     <li><b>위키드</b>: $45, 거슈윈 극장(222 W 51st St, 호텔에서 도보 5분) 박스오피스 오픈 시 줄 선 순서대로 1인 2매. 수량이 적어 <b>오픈 1시간 전</b> 줄 추천. 시야 일부 제한석일 수 있어요.</li>
-     <li><b>시카고</b>: $49, 앰배서더 극장 박스오피스 오픈 시(보통 10시, 일요일 정오) 1인 2매. 매진이면 입석 $39.</li>
-     <li><b>& 줄리엣</b>: TodayTix 앱 러시 — 당일 오전 앱에서 오픈.</li>
-    </ul>
+    <div class="card"><h4>위키드 — $45</h4><dl class="meta">
+      <div><dt>장소</dt><dd>거슈윈 극장 매표소 (222 W 51st St) · 호텔에서 도보 5분</dd></div>
+      <div><dt>시간</dt><dd>매표소 오픈 시 판매 — <b>월~토 10:00, 일 12:00</b> · 1시간 전 줄 추천</dd></div>
+      <div><dt>조건</dt><dd>1인 2매, 시야 일부 제한석일 수 있음</dd></div></dl>
+      <div class="btns">${m("Gershwin Theatre, 222 W 51st St","거슈윈 극장")}${l("https://wickedthemusical.com/faq/","위키드 FAQ")}</div></div>
+    <div class="card" style="margin-top:10px"><h4>시카고 — $49</h4><dl class="meta">
+      <div><dt>장소</dt><dd>앰배서더 극장 매표소 (219 W 49th St) · 호텔에서 1블록</dd></div>
+      <div><dt>시간</dt><dd>매표소 오픈 시 — 보통 <b>10:00, 일 12:00</b> (방문 전 확인)</dd></div>
+      <div><dt>조건</dt><dd>1인 2매 · 매진 공연은 입석 $39 · 시카고는 로터리 없음</dd></div></dl>
+      <div class="btns">${m("Ambassador Theatre, 219 W 49th St","앰배서더 극장")}${l("https://chicagothemusical.com/","시카고 공식")}</div></div>
+    <p class="lead" style="margin-top:8px">& 줄리엣 등 일부 작품은 현장 대신 <b>TodayTix 앱 러시</b>(당일 오전 앱에서 오픈).</p>
 
-    <h2 class="sec">③ TKTS · ④ TodayTix</h2>
-    <ul style="font-size:13.5px;padding-left:18px">
-     <li><b>TKTS</b>: 타임스퀘어 빨간 계단 아래 부스. 그날 남은 좌석을 할인 판매해요. 위키드는 드물고 알라딘·시카고는 자주 나와요.</li>
-     <li><b>TodayTix</b>: 출국 전 앱 설치·가입. 할인 정가 판매와 일부 작품 러시.</li>
-    </ul>
+    <h2 class="sec">③ TKTS 당일 할인 부스</h2>
+    <div class="card"><dl class="meta">
+      <div><dt>장소</dt><dd>타임스퀘어 빨간 계단 아래 (Broadway & W 47th St) · 호텔에서 2블록</dd></div>
+      <div><dt>시간</dt><dd><b>월·화·금 15:00~20:00</b> / <b>수·목·토·일 11:00~20:00</b> (낮 공연 있는 날 일찍 오픈)</dd></div>
+      <div><dt>할인</dt><dd>당일 남은 좌석 20~50%↓ · 장당 수수료 $8 · 1인 6매까지 · 카드·현금</dd></div>
+      <div><dt>언제</dt><dd>오픈 직후: 작품 많지만 줄 김 / 늦은 오후: 줄 짧지만 선택지 적음. 출발 전 <b>TKTS 앱</b>으로 판매 작품 확인</dd></div>
+      <div><dt>팁</dt><dd>위키드는 드물고 알라딘·시카고 등은 자주 나와요. 7일 안에 다시 오면 영수증으로 '패스트 패스' 줄 이용</dd></div></dl>
+      <div class="btns">${m("TKTS Times Square, Broadway & W 47th St","TKTS 부스")}${l("https://www.tdf.org/discount-ticket-programs/tkts-by-tdf/tkts-live/?tab=TimesSquare","실시간 판매 작품")}</div></div>
 
-    <h2 class="sec">우리 일정에 맞춘 플랜 — 전부 로터리로 도전</h2>
-    <ol class="steps">
-     <li><b>도전할 저녁: 11/14(토) · 11/17(화)</b>두 저녁이 비어 있어요. 우드버리에서 일찍 돌아오면 11/18(수) 늦은 회차도 가능. 일정이 있는 날은 응모하지 마세요 — 당첨되면 1시간 안에 결제하고 가야 해요.</li>
-     <li><b>공연 전날, 둘이 각자 응모</b>11/13(도착일)엔 11/14 회차, 11/16(월)엔 11/17 회차. Broadway Direct에서 <b>위키드·알라딘·라이온킹·MJ·SIX</b>를 한꺼번에 응모할 수 있어요. Telecharge(어쩌면 해피엔딩·위대한 개츠비)도 같이 하면 확률이 올라가요.</li>
-     <li><b>여러 개 당첨되면</b>보고 싶은 공연 하나만 결제하고 나머지 메일은 무시하면 돼요(결제 안 하면 자동 취소). 위키드가 1순위.</li>
-     <li><b>모두 떨어지면</b>공연 당일 저녁 <b>TKTS</b>(타임스퀘어 빨간 계단 아래)에서 알라딘·시카고 등 당일 할인 확인. 시카고는 로터리가 없고 당일 아침 앰배서더 극장 러시($49)나 TKTS로.</li>
-     <li><b>위키드는 꼭 보고 싶다면</b>로터리가 계속 안 되면 출국 전에 정가로 사두는 것도 방법이에요(<a target="_blank" rel="noopener" href="https://wickedthemusical.com/">wickedthemusical.com</a>). 재판매 사이트는 수수료가 크니 피하기.</li>
-    </ol>`;
+    <h2 class="sec">④ TodayTix 앱</h2>
+    <p class="lead">출국 전 설치·가입. 할인 정가 판매와 일부 작품 러시(당일 오전).</p>
+    <div class="btns">${l("https://www.todaytix.com/","TodayTix")}</div>
+
+    <div class="note red" style="margin-top:16px"><b>꼭 볼 공연이 있다면</b> — 할인은 운에 맡기는 방식이라, 반드시 봐야 하면 공식 사이트에서 정가로 미리 사두는 게 마음 편해요. 검색 상단의 재판매 사이트는 수수료가 크니 피하세요.</div>`;
   }
   if(k==="wicked"){
     h+=`<h2 class="sec">위키드 보기 전 준비</h2><p class="lead">영화 두 편이 뮤지컬을 거의 그대로 옮긴 작품이에요. 미리 보면 영어 걱정이 거의 없어요.</p>
