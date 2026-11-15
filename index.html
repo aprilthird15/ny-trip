@@ -484,6 +484,9 @@ const P = {
     how:"J·M·Z선 Marcy Av 도보 5분 / 도미노 파크에서 도보 10분",status:"must",resv:"공식 사이트·전화 예약. 저녁은 몇 주 전 마감, 점심이 비교적 수월",link:"https://peterluger.com/",checked:false},
 
   /* ===== 맛집 : 베이글·델리·브런치 ===== */
+  broadnosh:{cat:"eat",sub:"bagel",name:"브로드 노시 베이글",en:"Broad Nosh Bagels",addr:"Broad Nosh Bagels",
+    desc:"미드타운의 뉴욕 베이글 가게. 여행 이틀째 아침으로 다녀온 곳.",hours:"아침~오후 (방문 전 확인)",price:"$",
+    pick:"에브리싱 베이글 + 크림치즈, 베이글 샌드위치",how:"미드타운",status:"walk",checked:false},
   essa:{cat:"eat",sub:"bagel",name:"에사 베이글",en:"Ess-a-Bagel",addr:"831 3rd Ave",
     desc:"두툼하고 쫄깃한 뉴욕 베이글의 기준점. 아침 일찍 가면 줄이 짧아요.",
     hours:"매일 아침~오후",price:"$",pick:"에브리싱 베이글 + 스캘리언 크림치즈, 록스(훈제연어)",how:"지하철 E·M → Lexington Av/53 St",status:"walk",checked:false},
@@ -681,7 +684,7 @@ const P = {
   tj:{cat:"shop",sub:"mart",name:"트레이더 조스",en:"Trader Joe's",addr:"Trader Joe's",
     desc:"저렴하고 귀여운 PB 상품으로 유명한 마트. 에코백·핸드크림·간식이 대표 기념품. 맨해튼에 여러 지점이 있어 구글지도로 가까운 곳 확인.",
     hours:"보통 매일 8:00~21:00 (지점별 확인)",price:"$",pick:"아래 '트레이더 조스 인기템' 참고. 핸드크림 등 인기템은 오후엔 품절이 잦아 오전 방문 추천",
-    how:"첼시 플리마켓(D2)과 가까운 6번가 지점, 어퍼웨스트·유니언스퀘어 지점 등",status:"walk",link:"https://locations.traderjoes.com/ny/new-york/",checked:false},
+    how:"첼시 쪽 6번가 지점, 어퍼웨스트·유니언스퀘어 지점 등",status:"walk",link:"https://locations.traderjoes.com/ny/new-york/",checked:false},
   target:{cat:"shop",sub:"mart",name:"타깃 헤럴드스퀘어",en:"Target Herald Square",addr:"112 W 34th St",
     desc:"미국 대형마트. H마트와 같은 34번가라 한 번에 들르기 좋아요.",hours:"매일",price:"$",
     pick:"미국 과자·영양제·생활용품, 아이 옷(캣앤잭)",how:"34 St-Herald Sq",status:"walk",checked:false},
@@ -711,7 +714,7 @@ const P = {
     hours:"아침·점심·저녁 (방문 전 확인)",price:"$$",pick:"총유빙 BEC(14시 전), 모찌 도넛, 에그타르트",how:"L선 Graham Av",status:"walk",checked:false},
 
   butler:{cat:"eat",sub:"cafe",name:"버틀러 베이크숍",en:"Butler",addr:"40 Water St, Brooklyn",kind:"베이커리 카페",
-    desc:"덤보의 인기 베이커리 카페. 창가 자리가 아늑해서 오후 카페 휴식(D3 14:00)에 딱.",
+    desc:"덤보의 인기 베이커리 카페. 창가 자리가 아늑해서 오후 카페 휴식(D6 14:00)에 딱.",
     hours:"매일 아침~오후 (방문 전 확인)",price:"$",pick:"아보카도 토스트, 페이스트리 프렌치토스트, 크루아상",how:"덤보 워싱턴 스트리트 포토스팟에서 도보 2분",status:"walk",checked:false},
   arabica:{cat:"eat",sub:"cafe",name:"% 아라비카 덤보",en:"% Arabica DUMBO",addr:"% Arabica DUMBO Brooklyn",kind:"커피",
     desc:"교토에서 시작한 커피 브랜드. 브루클린 브리지 근처 강변이라 뷰가 좋아요. 붐비면 테이크아웃해서 강변 공원으로.",
@@ -740,59 +743,52 @@ const P = {
 
 /* ---------------- ITINERARY ---------------- */
 const DAYS = [
- {d:1,date:"11/13 (금)",title:"도착 & 미드타운 워밍업",theme:"미드타운",
-  tag:"짐 풀고 가볍게 걸으며 크리스마스 분위기부터. 시차 적응을 위해 일찍 쉬는 날.",
+ {d:1,date:"11/13 (금)",title:"도착 & 미드타운",theme:"미드타운",
+  tag:"✔ 다녀온 일정 · 타코로 첫 끼, 타임스퀘어, 노래하는 다이너에서 저녁, 록펠러센터.",
   items:[
-   {t:"10:00",title:"JFK 도착 → 호텔",note:"지하철 약 1시간 15분 / 택시 약 1시간. 방법은 '실전' 탭. 체크인은 보통 15시, 먼저 짐만 맡기기"},
-   {t:"12:30",p:"lostacos",note:"호텔 근처에서 가벼운 첫 끼"},
-   {t:"14:00",p:"rock",note:"록펠러센터 → 바로 건너편 세인트패트릭 대성당 → 5번가 구경",alt:"걷기 힘들면 탑뷰 2층 버스 다운타운 노선(호텔 앞 출발, '볼거리 > 투어 버스')"},
+   {t:"10:00",title:"JFK 도착 → 호텔에 짐 맡기기"},
+   {t:"12:30",p:"lostacos",note:"✔ 첫 끼"},
+   {t:"14:00",p:"times",note:"✔"},
    {t:"15:00",title:"호텔 체크인 & 휴식"},
-   {t:"16:30",p:"times",note:"해 질 무렵 전광판이 켜지는 시간"},
-   {t:"17:15",p:"winter",note:"핫초코 들고 마켓 한 바퀴"},
-   {t:"18:30",p:"gcfair",note:"금요일 19시 마감이니 먼저 마켓, 그다음 천장 구경"},
-   {t:"19:30",p:"oyster",alt:"캐주얼하게 먹고 싶으면 호텔 앞 9번가 식당가"}
+   {t:"18:00",p:"ellens",note:"✔ 노래하는 웨이터들과 저녁"},
+   {t:"19:30",p:"rock",note:"✔ 록펠러센터 구경"}
   ],
-  route:["Times Square","Rockefeller Center","Bryant Park","Grand Central Terminal"]},
- {d:2,date:"11/14 (토)",title:"플리마켓 · 센트럴파크 · 갤러거스",theme:"첼시·센트럴파크",
-  tag:"주말에만 여는 벼룩시장으로 시작해 단풍길을 걷고, 예약해 둔 스테이크로 늦은 점심.",
+  route:["Los Tacos No.1, 229 W 43rd St","Times Square","Ellen's Stardust Diner","Rockefeller Center"]},
+ {d:2,date:"11/14 (토)",title:"베이글 · MoMA · 갤러거스 · 230 피프스",theme:"미드타운·노매드",
+  tag:"✔ 다녀온 일정 · 베이글 아침, MoMA, 예약해 둔 스테이크, 엠파이어 뷰 루프탑.",
   items:[
-   {t:"09:00",p:"chelseaflea",note:"입장료 $1 현금 준비"},
-   {t:"10:45",title:"센트럴파크로 이동",note:"지하철 N·R·W 23 St → 5 Av/59 St (약 20분)"},
-   {t:"11:15",p:"cpark",note:"갭스토 브리지 → 더 몰 → 베데스다 → 보우 브리지. 남쪽으로 다시 나와 걸어서 갤러거스까지 15분"},
+   {t:"09:00",p:"broadnosh",note:"✔ 아침"},
+   {t:"10:30",p:"moma",note:"✔ 사원증 무료입장"},
    {t:"14:00",p:"gallaghers",note:"✔ 예약 완료"},
    {t:"16:00",title:"호텔 휴식"},
-   {t:"저녁",title:"자유 저녁",note:"점심이 든든하니 가볍게. 선택지: 탑뷰 나이트 투어(18시~, 호텔 앞 출발) / 호텔 앞 9번가 산책 / 라디오시티 크리스마스 공연(두 번째 공연을 원하면)"}
+   {t:"저녁",p:"fifth230",note:"✔ 엠파이어 스테이트 뷰 루프탑 바"}
   ],
-  route:["Chelsea Flea, 29 W 25th St","Gapstow Bridge, Central Park","Bethesda Terrace","Gallaghers Steakhouse, 228 W 52nd St"]},
- {d:3,date:"11/15 (일)",title:"브루클린 하루",theme:"브루클린",
-  tag:"한산한 아침 덤보 포토스팟 → 브루클린 플리마켓 → 강변 → 피자 점심 → 프롬나드 산책 → 노을 지는 브루클린 브리지를 건너 맨해튼 야경 속으로.",
+  route:["Broad Nosh Bagels","MoMA, 11 W 53rd St","Gallaghers Steakhouse, 228 W 52nd St","230 Fifth Rooftop"]},
+ {d:3,date:"11/15 (일)",title:"우드버리 아울렛 · 위키드",theme:"근교 쇼핑·브로드웨이",
+  tag:"아울렛에서 캐리어부터 사고 쇼핑, 일찍 돌아와 저녁엔 로터리 당첨된 위키드!",
   items:[
-   {t:"09:30",title:"덤보로 이동",note:"지하철 F → York St 또는 A·C → High St (호텔에서 약 30분)"},
-   {t:"09:45",p:"dumbo",note:"오전이라 워싱턴 스트리트 포토스팟이 한산해요. 사진 먼저!"},
-   {t:"10:15",p:"bkflea",note:"포토스팟 바로 옆 맨해튼 브리지 아래 · 약 40분 · 문 열기 전이면 캐러셀 먼저"},
-   {t:"10:55",title:"제인스 캐러셀 → 강변",note:"줄리아나스 가는 길에 회전목마·페블 비치 잠깐"},
-   {t:"11:00",p:"julianas",note:"오픈 시간이라 웨이팅이 가장 짧아요. 공원에서 도보 2분"},
-   {t:"12:30",p:"promenade",note:"줄리아나스에서 언덕길로 도보 10분. 프롬나드 + 브라운스톤 골목 산책"},
-   {t:"14:00",p:"timeout",note:"덤보로 돌아와 카페 휴식. 피곤하면 쉬고, 여유 있으면 덤보 소품숍 구경"},
-   {t:"16:00",p:"bbridge",note:"브루클린 → 맨해튼 방향. 일몰 약 16:37 → 17시 이후 야경. 사진 찍으며 천천히 약 1시간. 해는 진행방향 왼쪽(자유의 여신상 쪽)으로 져요"},
-   {t:"17:15",p:"joes_sh",note:"다리 끝(시청)에서 도보 15분, 차이나타운에서 샤오롱바오 저녁"},
-   {t:"19:00",p:"overstory",note:"야경 ① · 차이나타운에서 택시 10분 또는 지하철 J·Z Canal St → Broad St"}
+   {t:"08:00",title:"포트오소리티 버스터미널 도착",note:"호텔에서 8번가 따라 남쪽으로 도보 7분(8th Ave & 42nd St). 게이트를 먼저 확인"},
+   {t:"08:30",title:"버스 출발",note:"700번(게이트 405, 9:35 도착) 또는 500번(게이트 410, 9:40 도착) 아무거나 · 탈 때 \"Woodbury Common?\" 확인"},
+   {t:"09:40",p:"woodbury",note:"안내센터 쿠폰북 → 캐리어 매장(쌤소나이트·투미 등) 먼저 → 산 캐리어에 쇼핑한 것 담기"},
+   {t:"16:00",title:"복귀 버스 (늦어도 16시대 초반)",note:"일요일 저녁 맨해튼 진입 정체 대비 · 도착하자마자 돌아오는 버스 시간 확인 · 캐리어는 버스 아래 짐칸에"},
+   {t:"17:45",title:"호텔에 짐 두기 · 간단히 저녁",note:"공연이 약 2시간 45분이라 미리 먹어두기"},
+   {t:"18:30",title:"거슈윈 극장 도착",note:"222 W 51st St, 호텔에서 도보 5분 · 여권 지참(티켓 수령 안내 메일 확인)"},
+   {t:"19:00",title:"🎭 위키드 (로터리 당첨!)",note:"✔ 22시쯤 종료 · 줄거리는 '공연 > 위키드 준비'",link:"#show"}
   ],
-  route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Brooklyn Flea, 80 Pearl St, Brooklyn","Jane's Carousel, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Heights Promenade","Time Out Market New York","Brooklyn Bridge City Hall","Joe's Shanghai, 46 Bowery","Overstory, 70 Pine St"]},
- {d:4,date:"11/16 (월)",title:"써밋 · MoMA · 5번가 · 댄스",theme:"미드타운",
-  tag:"아침 햇빛 속 거울 전망대로 시작해 현대미술 → 5번가 쇼핑. 걷는 양이 적은 날이라 저녁 댄스 수업에 체력이 남아요.",
+  route:["Port Authority Bus Terminal","Woodbury Common Premium Outlets"]},
+ {d:4,date:"11/16 (월)",title:"센트럴파크 · 써밋 · 5번가 · 댄스",theme:"미드타운·센트럴파크",
+  tag:"오전엔 단풍 끝자락 센트럴파크, 낮엔 거울 전망대 써밋, 오후 5번가 쇼핑, 저녁엔 댄스 수업.",
   items:[
-   {t:"08:30",title:"그랜드센트럴로 이동",note:"지하철 S셔틀(Times Sq → Grand Central) 또는 도보 20분. 아침은 근처 베이글로"},
-   {t:"09:00",p:"summit",note:"평일 오전이라 한산해요. 약 1시간 30분"},
-   {t:"10:45",title:"MoMA로 도보 이동",note:"매디슨 애비뉴 따라 북쪽으로 약 15분"},
-   {t:"11:00",p:"moma",note:"🎫 사원증 무료입장 · 5층부터"},
-   {t:"13:30",p:"halal",alt:"에사 베이글 또는 카츠하마 돈카츠"},
-   {t:"14:30",p:"fifthave",note:"나이키·세포라·앤트로폴로지 등"},
-   {t:"16:30",title:"호텔 휴식"},
+   {t:"10:00",p:"cpark",note:"5 Av/59 St역에서 시작 · 갭스토 브리지 → 더 몰 → 베데스다 테라스 (약 1시간 30분)"},
+   {t:"11:50",title:"그랜드센트럴로 이동",note:"5번가 따라 도보 약 25분 또는 지하철 N·R·W 5 Av/59 St → 42 St 환승 · 써밋 입구는 그랜드센트럴 메인 홀"},
+   {t:"12:39",p:"summit",note:"✔ 예약 완료 · 10~15분 전 도착 (보안검색) · 약 1시간 30분"},
+   {t:"14:15",p:"oyster",alt:"그랜드센트럴 지하 푸드홀(다이닝 콘코스)에서 가볍게"},
+   {t:"15:15",p:"fifthave",note:"그랜드센트럴에서 5번가 따라 북쪽으로"},
+   {t:"17:00",title:"호텔 휴식"},
    {t:"19:00",p:"bdc",note:"이번 여행 유일한 댄스 수업. 편한 옷·실내화 준비"},
    {t:"20:30",p:"hk",note:"수업 후 호텔 앞에서 늦은 저녁"}
   ],
-  route:["SUMMIT One Vanderbilt","MoMA, 11 W 53rd St","Fifth Avenue & 53rd St","Broadway Dance Center, 322 W 45th St"]},
+  route:["Gapstow Bridge, Central Park","Bethesda Terrace","SUMMIT One Vanderbilt","Fifth Avenue & 53rd St","Broadway Dance Center, 322 W 45th St"]},
  {d:5,date:"11/17 (화)",title:"윌리엄스버그 · 하이라인 · 뮤지컬 도전",theme:"윌리엄스버그·첼시·브로드웨이",
   tag:"브루클린의 힙한 동네에서 커피·편집숍·브런치·강변 뷰, 오후엔 첼시마켓·하이라인. 저녁은 뮤지컬 로터리 결과에 따라.",
   items:[
@@ -809,16 +805,20 @@ const DAYS = [
    {t:"19:00",title:"저녁 미정 · 뮤지컬 로터리 도전",note:"전날(11/16) 위키드·알라딘 등 로터리에 둘이 각자 응모 → 당첨되면 공연, 떨어지면 TKTS 당일 할인 또는 자유 저녁 · 방법은 '공연 > 할인 티켓 가이드'",link:"#show"}
   ],
   route:["Bedford Av Station, Brooklyn","Devocion, 148 Grand St, Brooklyn","Bedford Ave & N 6th St, Brooklyn","Sunday in Brooklyn, 348 Wythe Ave, Brooklyn","Domino Park, Brooklyn","Chelsea Market","High Line 16th St entrance"]},
- {d:6,date:"11/18 (수)",title:"우드버리 아울렛",theme:"근교 쇼핑",
-  tag:"메트가 쉬는 수요일에 쇼핑 데이. 가족 데일리웨어·운동화 위주.",
+ {d:6,date:"11/18 (수)",title:"브루클린 하루",theme:"브루클린",
+  tag:"한산한 아침 덤보 포토스팟 → 강변 → 피자 점심 → 프롬나드 산책 → 노을 지는 브루클린 브리지를 건너 맨해튼 야경 속으로.",
   items:[
-   {t:"08:00",title:"포트오소리티 버스터미널로 이동",note:"호텔에서 8번가 따라 남쪽으로 도보 7분(8th Ave & 42nd St). 쇼트라인 계열은 409번 게이트 — 터미널이 크니 30분 전 도착"},
-   {t:"08:30",title:"버스 출발",note:"약 1시간~1시간 30분. 대안: 투어아메리카(1651 Broadway 길가 출발, 좌석 지정)"},
-   {t:"10:00",p:"woodbury",note:"안내센터에서 쿠폰북 → 지도에 살 브랜드 표시하고 시작"},
-   {t:"17:30",title:"복귀 버스",note:"저녁 시간 버스는 붐비니 예약한 시간 지키기"},
-   {t:"19:30",title:"호텔 앞 가벼운 저녁 & 짐 정리"}
+   {t:"09:30",title:"덤보로 이동",note:"지하철 F → York St 또는 A·C → High St (호텔에서 약 30분)"},
+   {t:"09:45",p:"dumbo",note:"오전이라 워싱턴 스트리트 포토스팟이 한산해요. 사진 먼저!"},
+   {t:"10:15",title:"제인스 캐러셀 → 강변",note:"회전목마·페블 비치·브루클린 브리지 파크 산책 · 버틀러 베이크숍에서 커피도 OK"},
+   {t:"11:00",p:"julianas",note:"오픈 시간이라 웨이팅이 가장 짧아요. 공원에서 도보 2분"},
+   {t:"12:30",p:"promenade",note:"줄리아나스에서 언덕길로 도보 10분. 프롬나드 + 브라운스톤 골목 산책"},
+   {t:"14:00",p:"timeout",note:"덤보로 돌아와 카페 휴식. 피곤하면 쉬고, 여유 있으면 덤보 소품숍 구경"},
+   {t:"16:00",p:"bbridge",note:"브루클린 → 맨해튼 방향. 일몰 약 16:34 → 17시 이후 야경. 사진 찍으며 천천히 약 1시간. 해는 진행방향 왼쪽(자유의 여신상 쪽)으로 져요"},
+   {t:"17:15",p:"joes_sh",note:"다리 끝(시청)에서 도보 15분, 차이나타운에서 샤오롱바오 저녁"},
+   {t:"19:00",p:"overstory",note:"야경 ① · 차이나타운에서 택시 10분 또는 지하철 J·Z Canal St → Broad St"}
   ],
-  route:["Port Authority Bus Terminal","Woodbury Common Premium Outlets"]},
+  route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Jane's Carousel, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Heights Promenade","Time Out Market New York","Brooklyn Bridge City Hall","Joe's Shanghai, 46 Bowery","Overstory, 70 Pine St"]},
  {d:7,date:"11/19 (목)",title:"메모리얼 · 소호 · 웨스트빌리지 · 재즈",theme:"다운타운",
   tag:"9/11 메모리얼을 짧게 보고, 소호·놀리타 쇼핑 → 웨스트빌리지 골목 산책 → 재즈의 성지에서 마무리. 하루 종일 다운타운 안에서만 움직여요.",
   items:[
@@ -859,15 +859,15 @@ const DAYS = [
 const RESV = [
  {id:"r1",day:"11/14 14:00",what:"갤러거스 스테이크하우스",status:"done",how:"예약 완료",when:"-",p:"gallaghers"},
  {id:"r2",day:"11/20 18:30",what:"킨스 스테이크하우스 (20주년 디너)",status:"must",how:"keens.com 또는 전화 (OpenTable 없음). 기념일 메모",when:"지금 바로",p:"keens"},
- {id:"r3",day:"공연 보고 싶은 날 전날",what:"뮤지컬 로터리 응모 (위키드·알라딘 등)",status:"rec",how:"Broadway Direct·Telecharge에서 둘이 각자 응모 · 떨어지면 당일 러시나 TKTS",when:"공연 전날",p:null,link:"#show"},
- {id:"r4",day:"11/16 09:00",what:"써밋 원 밴더빌트 오전",status:"must",how:"앳홈트립($42) 또는 공식 사이트. 2인 선택, 변경·환불 규정 확인",when:"출국 1주 전 날씨 보고",p:"summit"},
+ {id:"r3",day:"11/15 19:00",what:"위키드 — 로터리 당첨 ✔",status:"done",how:"여권 지참, 18:30까지 거슈윈 극장 · 그 외 공연은 전날 로터리 응모",when:"-",p:null,link:"#show"},
+ {id:"r4",day:"11/16 12:39",what:"써밋 원 밴더빌트",status:"done",how:"예약 완료 · 10~15분 전 그랜드센트럴 메인 홀 입구",when:"-",p:"summit"},
  {id:"r5",day:"11/20 16:15",what:"누벨루즈 (선택)",status:"must",how:"OpenTable, 창가석 요청",when:"1~2주 전",p:"nubeluz"},
- {id:"r6",day:"11/15 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능). 6시간 지나 취소 시 1인 $25",when:"1주 전",p:"overstory"},
- {id:"r7",day:"11/18 08:30",what:"우드버리 왕복 버스 (포트오소리티 출발)",status:"rec",how:"CitySights·쇼트라인 플렉스(409번 게이트) 또는 그레이라인 온라인 예매 / 대안: 투어아메리카",when:"1주 전",p:"woodbury"},
+ {id:"r6",day:"11/18 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능) · 일요일로 예약했다면 수요일로 변경. 6시간 지나 취소 시 1인 $25",when:"지금",p:"overstory"},
+ {id:"r7",day:"11/15 08:30",what:"우드버리 버스 (포트오소리티 게이트 405·410)",status:"rec",how:"쇼트라인 티켓 · 돌아오는 버스는 16시대 초반",when:"출발 전",p:"woodbury"},
  {id:"r8",day:"11/19 20:30",what:"버드랜드 · High Society New Orleans Jazz Band",status:"must",how:"birdlandjazz.com 예매 (좌석 선착순, 20시 전 도착)",when:"1~2주 전",p:"birdland"},
- {id:"r9",day:"11/16 11:00",what:"MoMA·메트 — 사원증 챙기기",status:"rec",how:"사원증 제시로 무료 입장(예매 불필요). 출국 짐에 사원증 꼭 넣기",when:"출국 전",p:"moma"},
+ {id:"r9",day:"11/14·11/20",what:"MoMA·메트 — 사원증",status:"done",how:"MoMA 다녀옴 ✔ · 메트(11/20)도 사원증 챙기기",when:"-",p:"met"},
   {id:"r16",day:"11/17 12:00",what:"선데이 인 브루클린 (윌리엄스버그 브런치)",status:"rec",how:"Resy",when:"며칠 전",p:"sundaybk"},
- {id:"r12",day:"11/15 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기",when:"며칠 전",p:"julianas"},
+ {id:"r12",day:"11/18 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기 · 일요일로 예약했다면 수요일로 변경",when:"지금",p:"julianas"},
   {id:"r13",day:"11/16 19:00",what:"브로드웨이 댄스 센터 클래스",status:"rec",how:"공식 사이트 시간표 확인 후 결제",when:"전날",p:"bdc"},
  {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
 ];
@@ -876,7 +876,7 @@ const RESV = [
 const SHOWS = [
  {name:"위키드",en:"Wicked",theatre:"Gershwin Theatre, 222 W 51st St",eng:1,pick:true,
   why:"오즈의 마법사 속 두 마녀의 우정 이야기. 영화로 줄거리를 이미 알아서 영어 부담이 가장 적고, 우정 여행 테마와도 딱 맞아요.",
-  look:"초대형 무대, 'Defying Gravity' 1막 피날레",
+  look:"초대형 무대, 'Defying Gravity' 1막 피날레 · ✔ 11/15 로터리 당첨!",
   deal:"디지털 로터리 $55(Broadway Direct, 전날 09~15시) / 현장 러시 $45(매표소 월~토 10시·일 12시, 1인 2매) — 방법은 '할인 티켓 가이드', 줄거리는 '위키드 준비'",
   link:"https://wickedthemusical.com/"},
  {name:"어쩌면 해피엔딩",en:"Maybe Happy Ending",theatre:"Belasco Theatre, 111 W 44th St",eng:2,
@@ -952,12 +952,12 @@ const TJ = [
 /* ---------------- DAY MAP STOPS [이름, 위도, 경도] ---------------- */
 const HOTEL_LL = [40.7613,-73.9873];
 const DAYMAP = {
- 1:[["로스 타코스 No.1",40.7571,-73.9881],["록펠러 센터",40.7587,-73.9787],["세인트 패트릭 대성당",40.7585,-73.9760],["타임스퀘어",40.7580,-73.9855],["브라이언트파크 윈터빌리지",40.7536,-73.9832],["그랜드 센트럴",40.7527,-73.9772]],
- 2:[["첼시 플리마켓",40.7438,-73.9908],["갭스토 브리지",40.7660,-73.9740],["더 몰",40.7700,-73.9715],["베데스다 테라스",40.7740,-73.9708],["보우 브리지",40.7755,-73.9718],["갤러거스",40.7632,-73.9835]],
- 3:[["덤보 포토스팟",40.7033,-73.9894],["브루클린 플리마켓",40.7036,-73.9878],["제인스 캐러셀",40.7045,-73.9916],["줄리아나스",40.7027,-73.9934],["브루클린 하이츠 프롬나드",40.6965,-73.9973],["타임아웃 마켓",40.7035,-73.9905],["브루클린 브리지 입구",40.6995,-73.9897],["브리지 맨해튼 도착",40.7127,-74.0040],["조스 상하이",40.7157,-73.9968],["오버스토리",40.7065,-74.0078]],
- 4:[["써밋 원 밴더빌트",40.7530,-73.9787],["MoMA",40.7614,-73.9776],["할랄 가이즈 (53rd & 6th)",40.7619,-73.9791],["5번가",40.7606,-73.9757],["브로드웨이 댄스 센터",40.7598,-73.9893]],
+ 1:[["로스 타코스 No.1",40.7571,-73.9881],["타임스퀘어",40.7580,-73.9855],["엘렌스 스타더스트 다이너",40.7616,-73.9837],["록펠러 센터",40.7587,-73.9787]],
+ 2:[["브로드 노시 베이글",40.7553,-73.9850],["MoMA",40.7614,-73.9776],["갤러거스",40.7632,-73.9835],["230 피프스",40.7441,-73.9884]],
+ 3:[["포트오소리티 버스터미널",40.7570,-73.9910],["우드버리 아울렛",41.3150,-74.1250]],
+ 4:[["센트럴파크 갭스토 브리지",40.7660,-73.9740],["베데스다 테라스",40.7740,-73.9708],["써밋 원 밴더빌트",40.7530,-73.9787],["5번가",40.7606,-73.9757],["브로드웨이 댄스 센터",40.7598,-73.9893]],
  5:[["데보시온",40.7140,-73.9620],["베드포드 애비뉴",40.7178,-73.9576],["선데이 인 브루클린",40.7137,-73.9655],["도미노 파크",40.7145,-73.9688],["첼시 마켓",40.7424,-74.0061],["하이라인 (선택)",40.7470,-74.0050]],
- 6:[["포트오소리티 버스터미널",40.7570,-73.9910],["우드버리 아울렛",41.3150,-74.1250]],
+ 6:[["덤보 포토스팟",40.7033,-73.9894],["제인스 캐러셀",40.7045,-73.9916],["줄리아나스",40.7027,-73.9934],["브루클린 하이츠 프롬나드",40.6965,-73.9973],["타임아웃 마켓",40.7035,-73.9905],["브루클린 브리지 입구",40.6995,-73.9897],["브리지 맨해튼 도착",40.7127,-74.0040],["조스 상하이",40.7157,-73.9968],["오버스토리",40.7065,-74.0078]],
  7:[["9/11 메모리얼",40.7115,-74.0134],["오큘러스",40.7115,-74.0110],["소호 (프린스 St)",40.7246,-73.9989],["글로시에",40.7224,-73.9977],["발타자르",40.7226,-73.9981],["도미니크 앙셀",40.7253,-74.0030],["매그놀리아 베이커리",40.7359,-74.0050],["워싱턴스퀘어",40.7308,-73.9973],["버드랜드",40.7590,-73.9897]],
  8:[["메트로폴리탄 미술관",40.7794,-73.9632],["랄프스 커피",40.7716,-73.9670],["누벨루즈",40.7454,-73.9884],["킨스 스테이크하우스",40.7508,-73.9871]],
  9:[["JFK 공항",40.6413,-73.7781]]
@@ -970,7 +970,7 @@ const EXTRA = [
  {p:"edge",when:"추천: 하이라인을 걷는 날 북쪽 끝(허드슨야드)과 연결"},
  {p:"summit",when:"밤 시간대(19~20시대)도 남아 있으면 거울방 야경으로 한 번 더"},
  {p:"radiocity",when:"추천: D2 토요일 저녁이 비면 · 호텔에서 도보 10분"},
- {p:"totr",when:"엠파이어와 센트럴파크를 한 프레임에 담는 전망대 · 록펠러센터(D1) 들를 때"},
+ {p:"totr",when:"엠파이어와 센트럴파크를 한 프레임에 담는 전망대 · 록펠러센터 근처"},
  {p:"topview",when:"추천: 시차로 걷기 힘든 날 다운타운 노선 · 저녁엔 나이트 투어"}
 ];
 
@@ -1170,7 +1170,7 @@ const legendNote=`<div class="legend">${["done","must","rec","walk","free"].map(
 
 catView("see",$("#seeView"),$("#seeChips"),[
   {k:"museum",t:"미술관·박물관",lead:"🎫 MoMA·메트는 회사 사원증으로 무료 입장. 메트는 수요일, 휘트니·9/11 뮤지엄·프릭은 화요일 휴관."},
-  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 오버스토리(D3 밤) · 써밋(D4 아침) · 누벨루즈(D8, 선택). 나머지는 '일정 > ＋ 가볼 만한 곳'에도 정리했어요."},
+  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 써밋(D4 낮) · 오버스토리(D6 밤) · 누벨루즈(D8, 선택). 나머지는 '일정 > ＋ 가볼 만한 곳'에도 정리했어요."},
   {k:"market",t:"크리스마스 마켓·플리마켓",lead:"록펠러 트리는 12월 초 점등이라 11월 중순엔 설치 중이에요."},
   {k:"landmark",t:"랜드마크·공원"},
   {k:"tour",t:"투어 버스",lead:"선택 일정이에요. 추천 타이밍: D1 오후(시차로 걷기 힘들 때 다운타운 노선) 또는 D2 자유 저녁(나이트 투어)."}
