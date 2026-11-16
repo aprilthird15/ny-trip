@@ -365,6 +365,9 @@ const P = {
   rock:{cat:"see",sub:"landmark",name:"록펠러 센터",en:"Rockefeller Center",addr:"45 Rockefeller Plaza",
     desc:"아이스링크와 크리스마스 트리로 유명한 광장. 11월 중순엔 트리 설치 중이고 점등은 12월 초예요.",
     hours:"상시 (링크는 별도 운영)",price:"광장 무료",pick:"채널 가든, 아이스링크, 프로메테우스 동상",how:"호텔에서 도보 10분",status:"free",checked:true},
+  nypl:{cat:"see",sub:"landmark",name:"뉴욕 공립도서관",en:"New York Public Library – Stephen A. Schwarzman Building",addr:"476 5th Ave",
+    desc:"브라이언트파크 옆 보자르 양식 도서관. 천장화가 있는 로즈 메인 열람실이 유명해요.",hours:"방문 전 확인",price:"무료",
+    pick:"로즈 메인 열람실, 정문 사자상 '인내'와 '불굴'",how:"브라이언트파크 바로 옆",status:"free",checked:false},
   stpat:{cat:"see",sub:"landmark",name:"세인트 패트릭 대성당",en:"St. Patrick's Cathedral",addr:"5th Ave & 51st St",
     desc:"5번가 한복판의 고딕 대성당. 내부 무료 관람, 스테인드글라스가 아름다워요.",
     hours:"매일 개방 (미사 중엔 조용히)",price:"무료",pick:"정면 장미창",how:"록펠러센터 건너편",status:"free",checked:false},
@@ -520,6 +523,8 @@ const P = {
     desc:"어퍼이스트의 오래된 버거 펍. 메트 관람 후 들르기 좋아요.",hours:"매일",price:"$$",pick:"치즈버거 + 코티지 프라이",how:"메트에서 도보 15분",status:"walk",checked:false},
 
   /* ===== 맛집 : 디저트·카페 ===== */
+  culture:{cat:"eat",sub:"cafe",name:"컬처 에스프레소",en:"Culture Espresso",addr:"72 W 38th St",kind:"커피",
+    desc:"브라이언트파크 근처 인기 커피집. 갓 구운 초코칩 쿠키도 유명해요.",hours:"방문 전 확인",price:"$",pick:"라떼, 초코칩 쿠키",how:"공립도서관에서 도보 3분",status:"walk",checked:false},
   levain:{cat:"eat",sub:"cafe",name:"르뱅 베이커리",en:"Levain Bakery",addr:"167 W 74th St",
     desc:"돌덩이처럼 두꺼운 쿠키로 유명한 원조 매장.",hours:"매일",price:"$",pick:"초코칩 월넛 쿠키(따뜻할 때)",how:"지하철 1·2·3 → 72 St",status:"walk",checked:false},
   ansel:{cat:"eat",sub:"cafe",name:"도미니크 앙셀 베이커리",en:"Dominique Ansel Bakery",addr:"189 Spring St",
@@ -560,6 +565,9 @@ const P = {
   fifthave:{cat:"shop",sub:"area",name:"5번가",en:"Fifth Avenue",addr:"5th Ave & 53rd St",
     desc:"브랜드 대형 플래그십 거리. MoMA·록펠러센터와 동선이 겹쳐요.",
     hours:"매장 보통 10~20시",price:"$~$$$$",pick:"나이키, 자라, 세포라, 앤트로폴로지, 삭스 피프스 애비뉴",how:"호텔에서 도보 10분",status:"free",checked:false},
+  macys:{cat:"shop",sub:"area",name:"메이시스 헤럴드스퀘어",en:"Macy's Herald Square",addr:"151 W 34th St",
+    desc:"한 블록 전체를 차지하는 대형 백화점. 연말 쇼윈도와 오래된 나무 에스컬레이터가 볼거리.",hours:"매일 (방문 전 확인)",price:"$~$$$",
+    pick:"관광객 할인 — 안내데스크에서 여권 제시",how:"지하철 B·D·F·M·N·Q·R·W → 34 St-Herald Sq",status:"free",checked:false},
   eileen:{cat:"shop",sub:"women",name:"아일린 피셔",en:"Eileen Fisher",addr:"Eileen Fisher SoHo, 395 W Broadway",
     desc:"편안하면서 고급스러운 실루엣, 좋은 소재의 여성복.",hours:"매장별 상이",price:"$$$",pick:"캐시미어·울 니트, 와이드 팬츠",how:"소호",status:"free",checked:false},
   theory:{cat:"shop",sub:"women",name:"띠어리 / 빈스",en:"Theory / Vince",addr:"Theory Meatpacking, 38 Gansevoort St",
@@ -776,21 +784,20 @@ const DAYS = [
    {t:"19:00",title:"🎭 위키드 (로터리 당첨!)",note:"✔ 22시쯤 종료 · 줄거리는 '공연 > 위키드 준비'",link:"#show"}
   ],
   route:["Port Authority Bus Terminal","Woodbury Common Premium Outlets"]},
- {d:4,date:"11/16 (월)",title:"센트럴파크 · 써밋 · 5번가 · 댄스",theme:"미드타운·센트럴파크",
-  tag:"오전엔 단풍 끝자락 센트럴파크, 낮엔 거울 전망대 써밋, 오후 5번가 쇼핑, 저녁엔 댄스 수업.",
+ {d:4,date:"11/16 (월)",title:"써밋 · 공립도서관 · 쇼핑",theme:"미드타운",
+  tag:"✔ 다녀온 일정 · 거울 전망대 써밋, 그랜드센트럴, 도서관과 커피, 메이시스·타깃 쇼핑.",
   items:[
-   {t:"10:00",p:"cpark",note:"5 Av/59 St역에서 시작 · 갭스토 브리지 → 더 몰 → 베데스다 테라스 (약 1시간 30분)"},
-   {t:"11:50",title:"그랜드센트럴로 이동",note:"5번가 따라 도보 약 25분 또는 지하철 N·R·W 5 Av/59 St → 42 St 환승 · 써밋 입구는 그랜드센트럴 메인 홀"},
-   {t:"12:39",p:"summit",note:"✔ 예약 완료 · 10~15분 전 도착 (보안검색) · 약 1시간 30분"},
-   {t:"14:15",p:"oyster",alt:"그랜드센트럴 지하 푸드홀(다이닝 콘코스)에서 가볍게"},
-   {t:"15:15",p:"fifthave",note:"그랜드센트럴에서 5번가 따라 북쪽으로"},
-   {t:"17:00",title:"호텔 휴식"},
-   {t:"19:00",p:"bdc",note:"이번 여행 유일한 댄스 수업. 편한 옷·실내화 준비"},
-   {t:"20:30",p:"hk",note:"수업 후 호텔 앞에서 늦은 저녁"}
+   {t:"12:39",p:"summit",note:"✔"},
+   {t:"14:00",p:"gct",note:"✔"},
+   {t:"14:30",title:"치폴레 점심",note:"✔"},
+   {t:"15:15",p:"nypl",note:"✔"},
+   {t:"16:00",p:"culture",note:"✔"},
+   {t:"16:45",p:"macys",note:"✔ 바로 옆 타깃(34th St)까지"},
+   {t:"18:00",title:"숙소 복귀",note:"저녁엔 근처 한 곳 더 (잇푸도·밤의 타임스퀘어 등)"}
   ],
-  route:["Gapstow Bridge, Central Park","Bethesda Terrace","SUMMIT One Vanderbilt","Fifth Avenue & 53rd St","Broadway Dance Center, 322 W 45th St"]},
- {d:5,date:"11/17 (화)",title:"윌리엄스버그 · 하이라인 · 뮤지컬 도전",theme:"윌리엄스버그·첼시·브로드웨이",
-  tag:"브루클린의 힙한 동네에서 커피·편집숍·브런치·강변 뷰, 오후엔 첼시마켓·하이라인. 저녁은 뮤지컬 로터리 결과에 따라.",
+  route:["SUMMIT One Vanderbilt","Grand Central Terminal","New York Public Library Stephen A. Schwarzman Building","Culture Espresso, 72 W 38th St","Macy's Herald Square","Target Herald Square"]},
+ {d:5,date:"11/17 (화)",title:"윌리엄스버그 · 하이라인 · 알라딘",theme:"윌리엄스버그·첼시·브로드웨이",
+  tag:"브루클린의 힙한 동네에서 커피·편집숍·브런치·강변 뷰, 오후엔 첼시마켓·하이라인. 저녁엔 로터리 당첨된 알라딘!",
   items:[
    {t:"09:45",title:"윌리엄스버그로 이동",note:"지하철 C·E 50 St → 14 St-8 Av에서 L선 환승 → Bedford Av (약 35분)"},
    {t:"10:15",p:"devocion",note:"채광 좋은 로스터리 카페에서 아침 커피"},
@@ -801,10 +808,10 @@ const DAYS = [
    {t:"14:45",p:"chelseamkt",note:"간식 타임"},
    {t:"15:15",p:"highline",note:"선택 · 체력 남으면 16th St 입구로 올라가 북쪽으로 짧게(20~30분) 걷고 23rd St에서 내려와 택시·지하철로 호텔"},
    {t:"16:30",title:"호텔 휴식"},
-   {t:"17:30",p:"hk",note:"로터리 당첨되면 공연 전 이른 저녁(극장 도보권)"},
-   {t:"19:00",title:"저녁 미정 · 뮤지컬 로터리 도전",note:"전날(11/16) 위키드·알라딘 등 로터리에 둘이 각자 응모 → 당첨되면 공연, 떨어지면 TKTS 당일 할인 또는 자유 저녁 · 방법은 '공연 > 할인 티켓 가이드'",link:"#show"}
+   {t:"17:30",p:"hk",note:"공연 전 이른 저녁"},
+   {t:"19:00",title:"🎭 알라딘 (로터리 당첨!)",note:"뉴암스테르담 극장(214 W 42nd St) · 호텔에서 도보 약 10분 · 18:30까지 도착, 여권 지참",link:"#show"}
   ],
-  route:["Bedford Av Station, Brooklyn","Devocion, 148 Grand St, Brooklyn","Bedford Ave & N 6th St, Brooklyn","Sunday in Brooklyn, 348 Wythe Ave, Brooklyn","Domino Park, Brooklyn","Chelsea Market","High Line 16th St entrance"]},
+  route:["Bedford Av Station, Brooklyn","Devocion, 148 Grand St, Brooklyn","Bedford Ave & N 6th St, Brooklyn","Sunday in Brooklyn, 348 Wythe Ave, Brooklyn","Domino Park, Brooklyn","Chelsea Market","High Line 16th St entrance","New Amsterdam Theatre, 214 W 42nd St"]},
  {d:6,date:"11/18 (수)",title:"브루클린 하루",theme:"브루클린",
   tag:"한산한 아침 덤보 포토스팟 → 강변 → 피자 점심 → 프롬나드 산책 → 노을 지는 브루클린 브리지를 건너 맨해튼 야경 속으로.",
   items:[
@@ -859,7 +866,7 @@ const DAYS = [
 const RESV = [
  {id:"r1",day:"11/14 14:00",what:"갤러거스 스테이크하우스",status:"done",how:"예약 완료",when:"-",p:"gallaghers"},
  {id:"r2",day:"11/20 18:30",what:"킨스 스테이크하우스 (20주년 디너)",status:"must",how:"keens.com 또는 전화 (OpenTable 없음). 기념일 메모",when:"지금 바로",p:"keens"},
- {id:"r3",day:"11/15 19:00",what:"위키드 — 로터리 당첨 ✔",status:"done",how:"여권 지참, 18:30까지 거슈윈 극장 · 그 외 공연은 전날 로터리 응모",when:"-",p:null,link:"#show"},
+ {id:"r3",day:"11/15·11/17 19:00",what:"위키드 ✔ · 알라딘(11/17) — 로터리 당첨",status:"done",how:"알라딘은 뉴암스테르담 극장(214 W 42nd St), 여권 지참, 18:30까지",when:"-",p:null,link:"#show"},
  {id:"r4",day:"11/16 12:39",what:"써밋 원 밴더빌트",status:"done",how:"예약 완료 · 10~15분 전 그랜드센트럴 메인 홀 입구",when:"-",p:"summit"},
  {id:"r5",day:"11/20 16:15",what:"누벨루즈 (선택)",status:"must",how:"OpenTable, 창가석 요청",when:"1~2주 전",p:"nubeluz"},
  {id:"r6",day:"11/18 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능) · 일요일로 예약했다면 수요일로 변경. 6시간 지나 취소 시 1인 $25",when:"지금",p:"overstory"},
@@ -868,8 +875,7 @@ const RESV = [
  {id:"r9",day:"11/14·11/20",what:"MoMA·메트 — 사원증",status:"done",how:"MoMA 다녀옴 ✔ · 메트(11/20)도 사원증 챙기기",when:"-",p:"met"},
   {id:"r16",day:"11/17 12:00",what:"선데이 인 브루클린 (윌리엄스버그 브런치)",status:"rec",how:"Resy",when:"며칠 전",p:"sundaybk"},
  {id:"r12",day:"11/18 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기 · 일요일로 예약했다면 수요일로 변경",when:"지금",p:"julianas"},
-  {id:"r13",day:"11/16 19:00",what:"브로드웨이 댄스 센터 클래스",status:"rec",how:"공식 사이트 시간표 확인 후 결제",when:"전날",p:"bdc"},
- {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
+  {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
 ];
 
 /* ---------------- MUSICALS ---------------- */
@@ -955,8 +961,8 @@ const DAYMAP = {
  1:[["로스 타코스 No.1",40.7571,-73.9881],["타임스퀘어",40.7580,-73.9855],["엘렌스 스타더스트 다이너",40.7616,-73.9837],["록펠러 센터",40.7587,-73.9787]],
  2:[["브로드 노시 베이글",40.7553,-73.9850],["MoMA",40.7614,-73.9776],["갤러거스",40.7632,-73.9835],["230 피프스",40.7441,-73.9884]],
  3:[["포트오소리티 버스터미널",40.7570,-73.9910],["우드버리 아울렛",41.3150,-74.1250]],
- 4:[["센트럴파크 갭스토 브리지",40.7660,-73.9740],["베데스다 테라스",40.7740,-73.9708],["써밋 원 밴더빌트",40.7530,-73.9787],["5번가",40.7606,-73.9757],["브로드웨이 댄스 센터",40.7598,-73.9893]],
- 5:[["데보시온",40.7140,-73.9620],["베드포드 애비뉴",40.7178,-73.9576],["선데이 인 브루클린",40.7137,-73.9655],["도미노 파크",40.7145,-73.9688],["첼시 마켓",40.7424,-74.0061],["하이라인 (선택)",40.7470,-74.0050]],
+ 4:[["써밋 원 밴더빌트",40.7530,-73.9787],["그랜드 센트럴",40.7527,-73.9772],["뉴욕 공립도서관",40.7532,-73.9822],["컬처 에스프레소",40.7518,-73.9846],["메이시스",40.7508,-73.9890],["타깃",40.7495,-73.9890]],
+ 5:[["데보시온",40.7140,-73.9620],["베드포드 애비뉴",40.7178,-73.9576],["선데이 인 브루클린",40.7137,-73.9655],["도미노 파크",40.7145,-73.9688],["첼시 마켓",40.7424,-74.0061],["하이라인 (선택)",40.7470,-74.0050],["뉴암스테르담 극장 (알라딘)",40.7562,-73.9878]],
  6:[["덤보 포토스팟",40.7033,-73.9894],["제인스 캐러셀",40.7045,-73.9916],["줄리아나스",40.7027,-73.9934],["브루클린 하이츠 프롬나드",40.6965,-73.9973],["타임아웃 마켓",40.7035,-73.9905],["브루클린 브리지 입구",40.6995,-73.9897],["브리지 맨해튼 도착",40.7127,-74.0040],["조스 상하이",40.7157,-73.9968],["오버스토리",40.7065,-74.0078]],
  7:[["9/11 메모리얼",40.7115,-74.0134],["오큘러스",40.7115,-74.0110],["소호 (프린스 St)",40.7246,-73.9989],["글로시에",40.7224,-73.9977],["발타자르",40.7226,-73.9981],["도미니크 앙셀",40.7253,-74.0030],["매그놀리아 베이커리",40.7359,-74.0050],["워싱턴스퀘어",40.7308,-73.9973],["버드랜드",40.7590,-73.9897]],
  8:[["메트로폴리탄 미술관",40.7794,-73.9632],["랄프스 커피",40.7716,-73.9670],["누벨루즈",40.7454,-73.9884],["킨스 스테이크하우스",40.7508,-73.9871]],
@@ -975,7 +981,7 @@ const EXTRA = [
 ];
 
 /* ---------------- 맛집 좌표 (근처 맛집 계산용) ---------------- */
-const EAT_LL={gallaghers:[40.7632,-73.9835],keens:[40.7508,-73.9871],luger:[40.7099,-73.9625],essa:[40.7563,-73.9700],russ:[40.7190,-73.9895],katz:[40.7223,-73.9874],sarabeth:[40.7653,-73.9763],julianas:[40.7027,-73.9934],joes:[40.7545,-73.9867],shack:[40.7414,-73.9882],jgmelon:[40.7713,-73.9590],hamburgeram:[40.7276,-74.0013],levain:[40.7799,-73.9803],ansel:[40.7253,-74.0030],magnolia:[40.7359,-74.0050],ralph:[40.7716,-73.9670],juniors:[40.7585,-73.9862],chelseamkt:[40.7424,-74.0061],lostacos:[40.7571,-73.9881],timeout:[40.7035,-73.9905],oyster:[40.7527,-73.9772],hk:[40.7614,-73.9910],bcd:[40.7477,-73.9858],cote:[40.7413,-73.9917],jongro:[40.7478,-73.9868],baekjeong:[40.7470,-73.9853],hername:[40.7465,-73.9847],chodanggol:[40.7510,-73.9867],moono:[40.7466,-73.9840],ippudo:[40.7633,-73.9878],ichiran:[40.7486,-73.9910],raku:[40.7277,-74.0003],katsuhama:[40.7568,-73.9783],nakazawa:[40.7316,-74.0047],ladym:[40.7525,-73.9839],breads:[40.7537,-73.9831],halal:[40.7619,-73.9791],joes_sh:[40.7145,-73.9968],thaidiner:[40.7207,-73.9962],ellens:[40.7616,-73.9837],balthazar:[40.7226,-73.9981],eataly:[40.7421,-73.9897],devocion:[40.7140,-73.9620],sundaybk:[40.7137,-73.9655],winson:[40.7155,-73.9446],ladong:[40.7375,-73.9918],butler:[40.7034,-73.9908],arabica:[40.7030,-73.9935],cecconis:[40.7037,-73.9907],lindustrie:[40.7117,-73.9578],liliacafe:[40.7178,-73.9516]};
+const EAT_LL={gallaghers:[40.7632,-73.9835],keens:[40.7508,-73.9871],luger:[40.7099,-73.9625],essa:[40.7563,-73.9700],russ:[40.7190,-73.9895],katz:[40.7223,-73.9874],sarabeth:[40.7653,-73.9763],julianas:[40.7027,-73.9934],joes:[40.7545,-73.9867],shack:[40.7414,-73.9882],jgmelon:[40.7713,-73.9590],hamburgeram:[40.7276,-74.0013],levain:[40.7799,-73.9803],ansel:[40.7253,-74.0030],magnolia:[40.7359,-74.0050],ralph:[40.7716,-73.9670],juniors:[40.7585,-73.9862],chelseamkt:[40.7424,-74.0061],lostacos:[40.7571,-73.9881],timeout:[40.7035,-73.9905],oyster:[40.7527,-73.9772],hk:[40.7614,-73.9910],bcd:[40.7477,-73.9858],cote:[40.7413,-73.9917],jongro:[40.7478,-73.9868],baekjeong:[40.7470,-73.9853],hername:[40.7465,-73.9847],chodanggol:[40.7510,-73.9867],moono:[40.7466,-73.9840],ippudo:[40.7633,-73.9878],ichiran:[40.7486,-73.9910],raku:[40.7277,-74.0003],katsuhama:[40.7568,-73.9783],nakazawa:[40.7316,-74.0047],ladym:[40.7525,-73.9839],breads:[40.7537,-73.9831],halal:[40.7619,-73.9791],joes_sh:[40.7145,-73.9968],thaidiner:[40.7207,-73.9962],ellens:[40.7616,-73.9837],balthazar:[40.7226,-73.9981],eataly:[40.7421,-73.9897],devocion:[40.7140,-73.9620],sundaybk:[40.7137,-73.9655],winson:[40.7155,-73.9446],ladong:[40.7375,-73.9918],butler:[40.7034,-73.9908],arabica:[40.7030,-73.9935],cecconis:[40.7037,-73.9907],lindustrie:[40.7117,-73.9578],liliacafe:[40.7178,-73.9516],culture:[40.7518,-73.9846]};
 
 </script>
 <script>
