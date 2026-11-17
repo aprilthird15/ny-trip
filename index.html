@@ -454,7 +454,7 @@ const P = {
   birdland:{cat:"show",sub:"jazz",name:"버드랜드",en:"Birdland Jazz Club",addr:"315 W 44th St",
     desc:"찰리 파커의 별명에서 이름을 딴 전설적인 재즈클럽. 호텔에서 걸어갈 수 있어 늦은 시간에도 부담 없어요.",
     hours:"매일 저녁 공연 (시간은 공연별 상이)",price:"티켓 + 1인 음식·음료 최소 $20",
-    pick:"우리 일정: 11/19(목) 20:30 The High Society New Orleans Jazz Band — 신나는 뉴올리언스 전통 재즈라 초보자에게 가장 무난 / 같은 날 대안: Maria Schneider Orchestra(19:00·21:30, 서정적인 감상형 빅밴드) / 스마트 캐주얼 복장",how:"호텔에서 도보 5분",status:"must",
+    pick:"우리 일정: 11/20(금) 17:30 Birdland Big Band ✔ — 매주 금요일 신나는 스윙 빅밴드 / 스마트 캐주얼 복장",how:"호텔에서 도보 5분",status:"must",
     resv:"birdlandjazz.com 예매. 좌석은 선착순이라 30~45분 전 도착. 티켓 외 1인 $20 이상 음식·음료 주문",link:"https://www.birdlandjazz.com/",checked:true},
   vanguard:{cat:"show",sub:"jazz",name:"빌리지 뱅가드",en:"Village Vanguard",addr:"178 7th Ave S",
     desc:"1935년부터 이어온 재즈의 성지. 작은 지하 공간이라 연주자와 아주 가까워요. 다운타운 일정 날 저녁에 추천.",
@@ -477,19 +477,23 @@ const P = {
     pick:"드라이에이징 프라임 스테이크(히코리 숯불), 로브스터, 크림 스피니치",how:"호텔에서 도보 7분",status:"done",
     resv:"✔ 11/14(토) 14:00 예약 완료",link:"https://www.gallaghersnysteakhouse.com/location/gallaghers-nyc/",checked:true},
   keens:{cat:"eat",sub:"steak",name:"킨스 스테이크하우스",en:"Keens Steakhouse",addr:"72 W 36th St",
-    desc:"1885년 개업. 천장을 뒤덮은 수만 개의 옛 담배 파이프가 상징인 고풍스러운 공간. 20주년 기념 디너 장소.",
+    desc:"1885년 개업. 천장을 뒤덮은 수만 개의 옛 담배 파이프가 상징인 고풍스러운 공간.",
     hours:"월~금 11:45~22:30 / 토 17:00~22:30 / 일 17:00~21:30",price:"$$$ (머튼찹 $60)",
     pick:"레전더리 머튼찹, 프라임 립, 드라이에이징 스테이크",how:"지하철 B·D·F·M·N·Q·R·W → 34 St-Herald Sq",status:"must",
     resv:"OpenTable 미등록 → 공식 사이트(keens.com) 또는 전화 예약. 기념일이라고 말해두기",link:"https://www.keens.com/",checked:true},
-  luger:{cat:"eat",sub:"steak",name:"피터 루거 (대안)",en:"Peter Luger Steak House",addr:"178 Broadway, Brooklyn",
-    desc:"1887년 개업한 윌리엄스버그의 전설적 스테이크하우스. 일정엔 넣지 않았고, 갤러거스·킨스와 겹치지 않게 대안으로만 둬요. 윌리엄스버그(D5)에서 가까워요.",
-    hours:"점심·저녁 (방문 전 확인)",price:"$$$$",pick:"포터하우스(2인), 두툼한 베이컨 슬라이스 / 점심에만 파는 버거",
-    how:"J·M·Z선 Marcy Av 도보 5분 / 도미노 파크에서 도보 10분",status:"must",resv:"공식 사이트·전화 예약. 저녁은 몇 주 전 마감, 점심이 비교적 수월",link:"https://peterluger.com/",checked:false},
+  luger:{cat:"eat",sub:"steak",name:"피터 루거",en:"Peter Luger Steak House",addr:"178 Broadway, Brooklyn",
+    desc:"1887년 개업한 윌리엄스버그의 전설적 스테이크하우스. 이번 여행 20주년 기념 식사(11/18 수 점심).",
+    hours:"점심·저녁",price:"$$$$",pick:"포터하우스 for two, 크림 스피니치, 두툼한 베이컨 / 점심 한정 버거 / 애플 스트루델",
+    how:"J·M·Z선 Marcy Av 도보 5분 / 도미노 파크에서 도보 10분",status:"must",resv:"Resy 예약 (11/18 11:45 다이닝룸) · 취소 규정·결제 방식 확인",link:"https://peterluger.com/",checked:true},
 
   /* ===== 맛집 : 베이글·델리·브런치 ===== */
   broadnosh:{cat:"eat",sub:"bagel",name:"브로드 노시 베이글",en:"Broad Nosh Bagels",addr:"Broad Nosh Bagels",
     desc:"미드타운의 뉴욕 베이글 가게. 여행 이틀째 아침으로 다녀온 곳.",hours:"아침~오후 (방문 전 확인)",price:"$",
     pick:"에브리싱 베이글 + 크림치즈, 베이글 샌드위치",how:"미드타운",status:"walk",checked:false},
+  apollo:{cat:"eat",sub:"bagel",name:"아폴로 베이글",en:"Apollo Bagels",addr:"224 W 35th St",
+    desc:"요즘 뉴욕에서 가장 핫한 베이글 가게 중 하나. 줄이 길어서 온라인 주문 후 픽업이 편해요. 이스트빌리지·파이낸셜 디스트릭트에도 지점.",
+    hours:"아침~오후 (방문 전 확인)",price:"$",pick:"베이글 + 스프레드, 베이글 샌드위치",how:"지하철 1·2·3 → 34 St-Penn Station 도보 2분",status:"walk",
+    resv:"Toast 온라인 주문 → 픽업",link:"https://www.toasttab.com/local/order/apollo-bagels-224-w-35th",checked:true},
   essa:{cat:"eat",sub:"bagel",name:"에사 베이글",en:"Ess-a-Bagel",addr:"831 3rd Ave",
     desc:"두툼하고 쫄깃한 뉴욕 베이글의 기준점. 아침 일찍 가면 줄이 짧아요.",
     hours:"매일 아침~오후",price:"$",pick:"에브리싱 베이글 + 스캘리언 크림치즈, 록스(훈제연어)",how:"지하철 E·M → Lexington Av/53 St",status:"walk",checked:false},
@@ -797,60 +801,62 @@ const DAYS = [
    {t:"저녁",p:"nubeluz",note:"✔ 50층에서 엠파이어 스테이트 야경"}
   ],
   route:["SUMMIT One Vanderbilt","Grand Central Terminal","New York Public Library Stephen A. Schwarzman Building","Culture Espresso, 72 W 38th St","Macy's Herald Square","Target Herald Square","Nubeluz, 25 W 28th St"]},
- {d:5,date:"11/17 (화)",title:"윌리엄스버그 · 하이라인 · 알라딘",theme:"윌리엄스버그·첼시·브로드웨이",
-  tag:"브루클린의 힙한 동네에서 커피·편집숍·브런치·강변 뷰, 오후엔 첼시마켓·하이라인. 저녁엔 로터리 당첨된 알라딘!",
+ {d:5,date:"11/17 (화)",title:"베슬 · 하이라인 · 센트럴파크 · 알라딘",theme:"허드슨야드·첼시·센트럴파크",
+  tag:"아침엔 한산한 베슬과 하이라인, 베이글을 픽업해 센트럴파크 피크닉, 저녁엔 로터리 당첨된 알라딘!",
   items:[
-   {t:"09:45",title:"윌리엄스버그로 이동",note:"지하철 C·E 50 St → 14 St-8 Av에서 L선 환승 → Bedford Av (약 35분)"},
-   {t:"10:15",p:"devocion",note:"채광 좋은 로스터리 카페에서 아침 커피"},
-   {t:"10:45",p:"bedford",note:"편집숍·빈티지·주얼리 구경"},
-   {t:"12:00",p:"sundaybk",alt:"대만식 캐주얼을 원하면 윈선 베이커리(L선 Graham Av)"},
-   {t:"13:15",p:"domino",note:"강변 산책로에서 맨해튼 스카이라인 감상"},
-   {t:"14:15",title:"L선으로 맨해튼 복귀",note:"Bedford Av → 8 Av (약 15분)"},
-   {t:"14:45",p:"chelseamkt",note:"간식 타임"},
-   {t:"15:15",p:"highline",note:"선택 · 체력 남으면 16th St 입구로 올라가 북쪽으로 짧게(20~30분) 걷고 23rd St에서 내려와 택시·지하철로 호텔"},
-   {t:"16:30",title:"호텔 휴식"},
+   {t:"09:30",p:"hudsonyards",note:"호텔에서 도보 약 20분 · 베슬은 밖에서 보는 건 무료, 계단은 유료 입장"},
+   {t:"10:00",p:"highline",note:"허드슨야드에서 남쪽으로 걸어 내려가기 · 아침이라 한산"},
+   {t:"11:30",p:"chelseamkt",note:"점심은 베이글이니 간식만"},
+   {t:"12:30",p:"apollo",note:"지하철 1·2·3 14 St → 34 St-Penn Station, 도보 2분 · Toast 온라인 주문으로 픽업하면 줄 안 섬"},
+   {t:"13:15",p:"cpark",note:"지하철 1선 34 St → 59 St-Columbus Circle · 베이글 피크닉 후 베데스다 → 보우 브리지 → 더 몰 → 갭스토 브리지 · 오후 햇살 속 단풍 (일몰 약 16:35)"},
+   {t:"16:30",title:"호텔 휴식",note:"공원 남쪽에서 도보 10~15분"},
    {t:"17:30",p:"hk",note:"공연 전 이른 저녁"},
    {t:"19:00",title:"🎭 알라딘 (로터리 당첨!)",note:"뉴암스테르담 극장(214 W 42nd St) · 호텔에서 도보 약 10분 · 18:30까지 도착, 여권 지참",link:"#show"}
   ],
-  route:["Bedford Av Station, Brooklyn","Devocion, 148 Grand St, Brooklyn","Bedford Ave & N 6th St, Brooklyn","Sunday in Brooklyn, 348 Wythe Ave, Brooklyn","Domino Park, Brooklyn","Chelsea Market","High Line 16th St entrance","New Amsterdam Theatre, 214 W 42nd St"]},
- {d:6,date:"11/18 (수)",title:"브루클린 하루",theme:"브루클린",
-  tag:"한산한 아침 덤보 포토스팟 → 강변 → 피자 점심 → 프롬나드 산책 → 노을 지는 브루클린 브리지를 건너 맨해튼 야경 속으로.",
+  route:["Hudson Yards Vessel","High Line 30th St","Chelsea Market","Apollo Bagels, 224 W 35th St","Central Park Bethesda Terrace","New Amsterdam Theatre, 214 W 42nd St"]},
+ {d:6,date:"11/18 (수)",title:"윌리엄스버그 · 피터 루거 · 덤보 · 브루클린 브리지",theme:"브루클린",
+  tag:"윌리엄스버그 커피와 편집숍, 피터 루거 점심, 페리로 덤보, 노을 지는 브루클린 브리지를 건너 차이나타운 저녁.",
   items:[
-   {t:"09:30",title:"덤보로 이동",note:"지하철 F → York St 또는 A·C → High St (호텔에서 약 30분)"},
-   {t:"09:45",p:"dumbo",note:"오전이라 워싱턴 스트리트 포토스팟이 한산해요. 사진 먼저!"},
-   {t:"10:15",title:"제인스 캐러셀 → 강변",note:"회전목마·페블 비치·브루클린 브리지 파크 산책 · 버틀러 베이크숍에서 커피도 OK"},
-   {t:"11:00",p:"julianas",note:"오픈 시간이라 웨이팅이 가장 짧아요. 공원에서 도보 2분"},
-   {t:"12:30",p:"promenade",note:"줄리아나스에서 언덕길로 도보 10분. 프롬나드 + 브라운스톤 골목 산책"},
-   {t:"14:00",p:"timeout",note:"덤보로 돌아와 카페 휴식. 피곤하면 쉬고, 여유 있으면 덤보 소품숍 구경"},
-   {t:"16:00",p:"bbridge",note:"브루클린 → 맨해튼 방향. 일몰 약 16:34 → 17시 이후 야경. 사진 찍으며 천천히 약 1시간. 해는 진행방향 왼쪽(자유의 여신상 쪽)으로 져요"},
-   {t:"17:15",p:"joes_sh",note:"다리 끝(시청)에서 도보 15분, 차이나타운에서 샤오롱바오 저녁"},
-   {t:"19:00",p:"overstory",note:"야경 ① · 차이나타운에서 택시 10분 또는 지하철 J·Z Canal St → Broad St"}
+   {t:"09:15",title:"윌리엄스버그로 이동",note:"지하철 C·E 50 St → 14 St-8 Av에서 L선 환승 → Bedford Av (약 35분)"},
+   {t:"10:00",p:"devocion",note:"채광 좋은 로스터리 카페"},
+   {t:"10:30",p:"bedford",note:"편집숍·빈티지·주얼리"},
+   {t:"11:15",p:"domino",note:"강변에서 윌리엄스버그 브리지·맨해튼 스카이라인",alt:"린더스트리 슬라이스 하나 나눠 맛보기 (254 S 2nd St, 점심 전이라 조금만)"},
+   {t:"11:45",p:"luger",note:"Resy 예약 · 포터하우스 for two + 크림 스피니치 + 베이컨, 점심 한정 버거도 유명 · 디저트 애플 스트루델"},
+   {t:"13:15",title:"NYC 페리 → 덤보",note:"사우스 윌리엄스버그 선착장(피터 루거에서 도보 약 8분) · 이스트리버 노선 남쪽 방향 DUMBO 하차 · 약 10~15분, 1인 약 $4~5 · NYC Ferry 앱으로 시간 확인·발권"},
+   {t:"13:45",p:"dumbo",note:"워싱턴 스트리트 포토스팟 → 제인스 캐러셀(겨울엔 주중 휴무일 수 있음) → 페블 비치·강변"},
+   {t:"14:45",p:"butler",note:"카페 휴식 약 1시간",alt:"% 아라비카 덤보 또는 타임아웃 마켓 루프탑"},
+   {t:"15:30",p:"promenade",note:"선택 · 언덕길 도보 10분 · 피곤하면 생략"},
+   {t:"16:00",p:"bbridge",note:"브루클린 → 맨해튼 방향 · 입구는 덤보 Washington St 계단 또는 Tillary/Adams St · 일몰 약 16:33, 해는 진행방향 왼쪽 · 사진 찍으며 약 1시간"},
+   {t:"17:15",p:"joes_sh",note:"다리 끝(시청)에서 도보 15분 · 점심이 든든하니 가볍게"},
+   {t:"18:30",title:"호텔 복귀",note:"Canal St → N·Q·R·W선 → 49 St (약 20분) · 내일 아침 시카고 러시 줄이니 일찍 쉬기"}
   ],
-  route:["York St Station, Brooklyn","Washington St & Water St, Brooklyn","Jane's Carousel, Brooklyn","Juliana's, 19 Old Fulton St, Brooklyn","Brooklyn Heights Promenade","Time Out Market New York","Brooklyn Bridge City Hall","Joe's Shanghai, 46 Bowery","Overstory, 70 Pine St"]},
- {d:7,date:"11/19 (목)",title:"메모리얼 · 소호 · 웨스트빌리지 · 재즈",theme:"다운타운",
-  tag:"9/11 메모리얼을 짧게 보고, 소호·놀리타 쇼핑 → 웨스트빌리지 골목 산책 → 재즈의 성지에서 마무리. 하루 종일 다운타운 안에서만 움직여요.",
+  route:["Bedford Av Station, Brooklyn","Devocion, 148 Grand St, Brooklyn","Bedford Ave & N 6th St, Brooklyn","Domino Park, Brooklyn","Peter Luger Steak House, 178 Broadway, Brooklyn","NYC Ferry South Williamsburg","Washington St & Water St, Brooklyn","Brooklyn Heights Promenade","Brooklyn Bridge City Hall","Joe's Shanghai, 46 Bowery"]},
+ {d:7,date:"11/19 (목)",title:"시카고 러시 · 다운타운 · 빌리지 · 오버스토리",theme:"다운타운·그리니치 빌리지",
+  tag:"아침엔 시카고 현장 러시 도전, 9/11 메모리얼과 소호·그리니치 빌리지를 걷고, 64층에서 노을. 러시에 성공하면 저녁은 시카고!",
   items:[
-   {t:"10:00",p:"m911",note:"추모 연못만 짧게(뮤지엄은 생략) · 호텔 앞 E선 50 St → World Trade Center 한 번에"},
-   {t:"10:30",p:"oculus",note:"하얀 날개 모양 역사 내부 구경"},
-   {t:"11:15",p:"soho",note:"글로시에(72 Spring St)·아릿지아 소호점·러닝화 매장·르 라보 등. '쇼핑' 탭에서 미리 찜"},
-   {t:"13:00",p:"balthazar",alt:"햄버거 아메리카(스매시 버거, 소호 맥두걸 St) · 타이 다이너 · 라쿠 우동"},
-   {t:"14:30",p:"ansel",note:"쇼핑 이어서 + 당 충전"},
-   {t:"15:30",p:"wvillage",note:"블리커 스트리트 → 매그놀리아 바나나 푸딩 → 프렌즈 아파트 → 워싱턴스퀘어"},
-   {t:"18:00",title:"웨스트빌리지 저녁",note:"골목의 작은 비스트로·와인바. 구글지도 평점 4.5↑로 골라 걷기"},
-   {t:"19:40",title:"미드타운으로 이동",note:"지하철 A·C·E W 4 St → 42 St-Port Authority (약 20분). 좌석 선착순이라 20시 전 도착"},
-   {t:"20:30",p:"birdland",note:"The High Society New Orleans Jazz Band · 끝나면 호텔까지 도보 5분",alt:"다운타운에 더 있고 싶으면 빌리지 뱅가드"}
+   {t:"09:00",title:"🎟 시카고 현장 러시 줄 서기",note:"앰배서더 극장 매표소(219 W 49th St, 호텔에서 1블록) · 10:00 오픈, $49, 25매 한정, 1인 2매 · 사면 공연 시간 확인",link:"#show"},
+   {t:"10:30",p:"m911",note:"추모 연못·오큘러스 짧게 · 지하철 E 50 St → World Trade Center"},
+   {t:"11:15",p:"oculus"},
+   {t:"12:00",p:"soho",note:"글로시에·아릿지아·러닝화 매장·르 라보 등"},
+   {t:"13:00",p:"hamburgeram",alt:"린더스트리 웨스트빌리지점(줄 김) · 발타자르 · 타이 다이너"},
+   {t:"14:00",p:"wvillage",note:"블리커 St → 매그놀리아 → 프렌즈 아파트 → 워싱턴스퀘어"},
+   {t:"16:00",p:"overstory",note:"지하철로 약 15분 · 목요일 16:00 오픈 · 64층에서 노을(약 16:33)과 야경 · 예약했다면 시간 변경, 워크인도 가능"},
+   {t:"17:30",title:"호텔 복귀",note:"지하철 2·3 Wall St → Times Sq (약 20분)"},
+   {t:"저녁",title:"시카고 (러시 성공 시) 또는 자유 저녁",note:"실패하면 TKTS에서 당일 할인 확인하거나 호텔 근처 저녁",link:"#show"}
   ],
-  route:["9/11 Memorial","Oculus","Prince St & Greene St","Balthazar, 80 Spring St","Magnolia Bakery, 401 Bleecker St","Washington Square Park","Birdland Jazz Club, 315 W 44th St"]},
- {d:8,date:"11/20 (금)",title:"메트 & 20주년 기념 디너",theme:"어퍼이스트·노매드",
-  tag:"여행의 하이라이트. 명작을 보고, 오후엔 여유롭게 쉬었다가 클래식 스테이크하우스에서 자축.",
+  route:["Ambassador Theatre, 219 W 49th St","9/11 Memorial","Oculus","Prince St & Greene St","Hamburger America, 51 MacDougal St","Magnolia Bakery, 401 Bleecker St","Washington Square Park","Overstory, 70 Pine St"]},
+ {d:8,date:"11/20 (금)",title:"다시 가고 싶은 곳 · 버드랜드",theme:"자유",
+  tag:"여행 마지막 날. 낮은 메트나 다시 가고 싶은 곳으로 자유롭게, 저녁엔 버드랜드 빅밴드.",
   items:[
-   {t:"10:00",p:"met",note:"🎫 사원증 무료입장 · 명작 위주 2~3시간"},
-   {t:"13:00",p:"ralph",note:"매디슨 애비뉴 쪽으로 걸어 커피·디저트"},
-   {t:"14:00",title:"호텔 휴식 & 디너 차림 준비"},
-   {t:"18:30",p:"keens",note:"20주년 기념 디너 · 호텔에서 지하철 약 15분(34 St-Herald Sq) 또는 택시"},
-   {t:"20:30",title:"호텔 복귀 · 짐 정리",note:"다음 날 이른 출발. 한국 갈 간식이 필요하면 킨스에서 4블록 거리인 H마트·타깃(34th St)에 잠깐"}
+   {t:"오전",p:"met",note:"선택 · 🎫 사원증 무료 · 또는 다시 가고 싶은 곳으로",alt:"메트 옆 센트럴파크 산책, 프릭 컬렉션(도보 12분)"},
+   {t:"오후",title:"자유 일정",note:"마지막 쇼핑·기념품 (H마트·타깃·트레이더 조스 등)"},
+   {t:"15:30",title:"호텔 휴식"},
+   {t:"16:45",title:"버드랜드 도착",note:"좌석 선착순이라 일찍"},
+   {t:"17:30",p:"birdland",note:"✔ 예약 완료 · Birdland Big Band (금요일 스윙 빅밴드) · 약 1시간 15~30분"},
+   {t:"19:00",title:"저녁 (미정)",note:"가깝고 가볍게: 한인타운(BCD 순두부·허 네임 이즈 한) 또는 잇푸도 라멘(호텔 도보 5분)"},
+   {t:"20:30",title:"호텔 복귀 · 짐 정리",note:"다음 날 07:40 체크아웃"}
   ],
-  route:["The Met Fifth Avenue","Ralph's Coffee, 888 Madison Ave","Keens Steakhouse, 72 W 36th St"]},
+  route:["The Met Fifth Avenue","Birdland Jazz Club, 315 W 44th St"]},
  {d:9,date:"11/21 (토)",title:"출국",theme:"",
   tag:"낮 12시 비행기. 국제선은 3시간 전 도착 권장.",
   items:[
@@ -865,16 +871,15 @@ const DAYS = [
 /* ---------------- RESERVATION CHECKLIST ---------------- */
 const RESV = [
  {id:"r1",day:"11/14 14:00",what:"갤러거스 스테이크하우스",status:"done",how:"예약 완료",when:"-",p:"gallaghers"},
- {id:"r2",day:"11/20 18:30",what:"킨스 스테이크하우스 (20주년 디너)",status:"must",how:"keens.com 또는 전화 (OpenTable 없음). 기념일 메모",when:"지금 바로",p:"keens"},
+ {id:"r18",day:"11/18 11:45",what:"피터 루거 점심",status:"must",how:"Resy · 다이닝룸 2인 · 취소 규정·결제 방식 확인",when:"지금",p:"luger"},
  {id:"r3",day:"11/15·11/17 19:00",what:"위키드 ✔ · 알라딘(11/17) — 로터리 당첨",status:"done",how:"알라딘은 뉴암스테르담 극장(214 W 42nd St), 여권 지참, 18:30까지",when:"-",p:null,link:"#show"},
  {id:"r4",day:"11/16 12:39",what:"써밋 원 밴더빌트",status:"done",how:"예약 완료 · 10~15분 전 그랜드센트럴 메인 홀 입구",when:"-",p:"summit"},
- {id:"r6",day:"11/18 19:00",what:"오버스토리",status:"rec",how:"Resy (워크인도 가능) · 일요일로 예약했다면 수요일로 변경. 6시간 지나 취소 시 1인 $25",when:"지금",p:"overstory"},
+ {id:"r6",day:"11/19 16:00",what:"오버스토리",status:"rec",how:"Resy (워크인 가능) · 예약했다면 목요일 16:00로 변경 · 6시간 지나 취소 시 1인 $25",when:"지금",p:"overstory"},
  {id:"r7",day:"11/15 08:30",what:"우드버리 버스 (포트오소리티 게이트 405·410)",status:"rec",how:"쇼트라인 티켓 · 돌아오는 버스는 16시대 초반",when:"출발 전",p:"woodbury"},
- {id:"r8",day:"11/19 20:30",what:"버드랜드 · High Society New Orleans Jazz Band",status:"must",how:"birdlandjazz.com 예매 (좌석 선착순, 20시 전 도착)",when:"1~2주 전",p:"birdland"},
+ {id:"r8",day:"11/20 17:30",what:"버드랜드 · Birdland Big Band",status:"done",how:"예약 완료 · 좌석 선착순, 16:45 도착",when:"-",p:"birdland"},
+ {id:"r19",day:"11/19 09:00",what:"시카고 현장 러시 ($49)",status:"rec",how:"앰배서더 극장 매표소 10:00 오픈, 1시간 전 줄",when:"당일",p:null,link:"#show"},
  {id:"r9",day:"11/14·11/20",what:"MoMA·메트 — 사원증",status:"done",how:"MoMA 다녀옴 ✔ · 메트(11/20)도 사원증 챙기기",when:"-",p:"met"},
-  {id:"r16",day:"11/17 12:00",what:"선데이 인 브루클린 (윌리엄스버그 브런치)",status:"rec",how:"Resy",when:"며칠 전",p:"sundaybk"},
- {id:"r12",day:"11/18 11:00",what:"줄리아나스 (점심)",status:"rec",how:"OpenTable, 안 되면 줄 서기 · 일요일로 예약했다면 수요일로 변경",when:"지금",p:"julianas"},
-  {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
+   {id:"r14",day:"11/13 10:00",what:"공항 이동 (한인택시 이용 시)",status:"rec",how:"택시 업체 예약 / 지하철이면 예약 불필요",when:"1주 전",p:null},
 ];
 
 /* ---------------- MUSICALS ---------------- */
@@ -920,13 +925,10 @@ const SHOWS = [
 
 /* ---------------- 대안 일정 ---------------- */
 const ALT = [
- {title:"피터 루거 (스테이크 대안)",desc:"D5 윌리엄스버그 점심을 선데이 인 브루클린 대신 피터 루거로 바꿀 수 있어요. 다만 토(갤러거스)·금(킨스)과 스테이크가 몰리니, 꼭 원할 때만.",
-  steps:["D5 12:00 선데이 인 브루클린 → 피터 루거 점심으로 교체 (베드포드 애비뉴에서 도보 15분)","점심 메뉴: 버거(점심 한정) 또는 포터하우스 2인","식사 후 도미노 파크까지 도보 10분, 이후 일정은 그대로"],
-  tips:"점심도 예약 권장. 결제 방식은 방문 전 확인.",places:["luger"]},
  {title:"로어맨해튼 코스: 페리 + 월스트리트 + 9/11 뮤지엄",desc:"D7에서 뺀 코스. 자유의 여신상을 가까이 보고 싶거나 9/11 뮤지엄을 제대로 보고 싶다면 D7 오전을 이걸로 바꿔요(소호 쇼핑이 줄어요).",
   steps:["09:00 스태튼아일랜드 페리 왕복(무료, 약 1시간) — 갈 때 오른쪽 갑판","10:15 월스트리트·황소상·증권거래소 (20분)","11:00 9/11 메모리얼 + 뮤지엄 (약 2시간, 화요일 휴관)","13:00 오큘러스 → 소호로 이동"],
   tips:"황소상은 아침 일찍이 덜 붐벼요. 9/11 뮤지엄은 시간지정 예매 권장.",places:["ferry","wall","m911"]},
- {title:"휘트니 미술관 + 리틀 아일랜드",desc:"일정에서 뺀 코스. 하이라인 남쪽 끝(미트패킹)에 모여 있어요. 윌리엄스버그 대신 맨해튼에서 미술관을 하나 더 보고 싶다면 D5 오전을 이걸로(휘트니는 화요일 휴관이라 다른 날과 교체 필요).",
+ {title:"휘트니 미술관 + 리틀 아일랜드",desc:"일정에서 뺀 코스. 하이라인 남쪽 끝(미트패킹)에 모여 있어요. 윌리엄스버그 대신 맨해튼에서 미술관을 하나 더 보고 싶다면 하루 오전과 바꾸면 돼요(휘트니는 화요일 휴관).",
   steps:["10:30 휘트니 미술관 (약 2시간, 테라스 꼭 나가보기)","12:30 바로 옆 리틀 아일랜드 (30분)","13:00 첼시마켓 점심 → 하이라인 북쪽으로"],
   tips:"휘트니는 화요일 휴관, 금요일 17~22시 무료.",places:["whitney","little"]},
  {title:"허드슨강 당일치기: 디아비콘 + 콜드스프링",desc:"일정에서 빼둔 근교 코스. Day4(월)나 Day7(목)과 바꿀 수 있어요. 기차 창밖 허드슨강 뷰가 좋아 진행방향 왼쪽 좌석 추천.",
@@ -961,10 +963,10 @@ const DAYMAP = {
  2:[["브로드 노시 베이글",40.7553,-73.9850],["MoMA",40.7614,-73.9776],["갤러거스",40.7632,-73.9835],["230 피프스",40.7441,-73.9884]],
  3:[["포트오소리티 버스터미널",40.7570,-73.9910],["우드버리 아울렛",41.3150,-74.1250]],
  4:[["써밋 원 밴더빌트",40.7530,-73.9787],["그랜드 센트럴",40.7527,-73.9772],["뉴욕 공립도서관",40.7532,-73.9822],["컬처 에스프레소",40.7518,-73.9846],["메이시스",40.7508,-73.9890],["타깃",40.7495,-73.9890],["누벨루즈",40.7454,-73.9884]],
- 5:[["데보시온",40.7140,-73.9620],["베드포드 애비뉴",40.7178,-73.9576],["선데이 인 브루클린",40.7137,-73.9655],["도미노 파크",40.7145,-73.9688],["첼시 마켓",40.7424,-74.0061],["하이라인 (선택)",40.7470,-74.0050],["뉴암스테르담 극장 (알라딘)",40.7562,-73.9878]],
- 6:[["덤보 포토스팟",40.7033,-73.9894],["제인스 캐러셀",40.7045,-73.9916],["줄리아나스",40.7027,-73.9934],["브루클린 하이츠 프롬나드",40.6965,-73.9973],["타임아웃 마켓",40.7035,-73.9905],["브루클린 브리지 입구",40.6995,-73.9897],["브리지 맨해튼 도착",40.7127,-74.0040],["조스 상하이",40.7157,-73.9968],["오버스토리",40.7065,-74.0078]],
- 7:[["9/11 메모리얼",40.7115,-74.0134],["오큘러스",40.7115,-74.0110],["소호 (프린스 St)",40.7246,-73.9989],["글로시에",40.7224,-73.9977],["발타자르",40.7226,-73.9981],["도미니크 앙셀",40.7253,-74.0030],["매그놀리아 베이커리",40.7359,-74.0050],["워싱턴스퀘어",40.7308,-73.9973],["버드랜드",40.7590,-73.9897]],
- 8:[["메트로폴리탄 미술관",40.7794,-73.9632],["랄프스 커피",40.7716,-73.9670],["킨스 스테이크하우스",40.7508,-73.9871]],
+ 5:[["베슬 (허드슨 야드)",40.7538,-74.0022],["하이라인",40.7480,-74.0048],["첼시 마켓",40.7424,-74.0061],["아폴로 베이글 (35th St)",40.7517,-73.9917],["센트럴파크 베데스다",40.7740,-73.9708],["뉴암스테르담 극장 (알라딘)",40.7562,-73.9878]],
+ 6:[["데보시온",40.7140,-73.9620],["베드포드 애비뉴",40.7178,-73.9576],["도미노 파크",40.7145,-73.9688],["피터 루거",40.7099,-73.9625],["페리 사우스 윌리엄스버그",40.7090,-73.9686],["덤보 포토스팟",40.7033,-73.9894],["버틀러 베이크숍",40.7034,-73.9908],["브루클린 하이츠 프롬나드",40.6965,-73.9973],["브루클린 브리지 입구",40.6995,-73.9897],["브리지 맨해튼 도착",40.7127,-74.0040],["조스 상하이",40.7157,-73.9968]],
+ 7:[["앰배서더 극장 (시카고 러시)",40.7612,-73.9852],["9/11 메모리얼",40.7115,-74.0134],["오큘러스",40.7115,-74.0110],["소호 (프린스 St)",40.7246,-73.9989],["햄버거 아메리카",40.7276,-74.0013],["매그놀리아 베이커리",40.7359,-74.0050],["워싱턴스퀘어",40.7308,-73.9973],["오버스토리",40.7065,-74.0078]],
+ 8:[["메트로폴리탄 미술관",40.7794,-73.9632],["버드랜드",40.7590,-73.9897]],
  9:[["JFK 공항",40.6413,-73.7781]]
 };
 
@@ -980,7 +982,7 @@ const EXTRA = [
 ];
 
 /* ---------------- 맛집 좌표 (근처 맛집 계산용) ---------------- */
-const EAT_LL={gallaghers:[40.7632,-73.9835],keens:[40.7508,-73.9871],luger:[40.7099,-73.9625],essa:[40.7563,-73.9700],russ:[40.7190,-73.9895],katz:[40.7223,-73.9874],sarabeth:[40.7653,-73.9763],julianas:[40.7027,-73.9934],joes:[40.7545,-73.9867],shack:[40.7414,-73.9882],jgmelon:[40.7713,-73.9590],hamburgeram:[40.7276,-74.0013],levain:[40.7799,-73.9803],ansel:[40.7253,-74.0030],magnolia:[40.7359,-74.0050],ralph:[40.7716,-73.9670],juniors:[40.7585,-73.9862],chelseamkt:[40.7424,-74.0061],lostacos:[40.7571,-73.9881],timeout:[40.7035,-73.9905],oyster:[40.7527,-73.9772],hk:[40.7614,-73.9910],bcd:[40.7477,-73.9858],cote:[40.7413,-73.9917],jongro:[40.7478,-73.9868],baekjeong:[40.7470,-73.9853],hername:[40.7465,-73.9847],chodanggol:[40.7510,-73.9867],moono:[40.7466,-73.9840],ippudo:[40.7633,-73.9878],ichiran:[40.7486,-73.9910],raku:[40.7277,-74.0003],katsuhama:[40.7568,-73.9783],nakazawa:[40.7316,-74.0047],ladym:[40.7525,-73.9839],breads:[40.7537,-73.9831],halal:[40.7619,-73.9791],joes_sh:[40.7145,-73.9968],thaidiner:[40.7207,-73.9962],ellens:[40.7616,-73.9837],balthazar:[40.7226,-73.9981],eataly:[40.7421,-73.9897],devocion:[40.7140,-73.9620],sundaybk:[40.7137,-73.9655],winson:[40.7155,-73.9446],ladong:[40.7375,-73.9918],butler:[40.7034,-73.9908],arabica:[40.7030,-73.9935],cecconis:[40.7037,-73.9907],lindustrie:[40.7117,-73.9578],liliacafe:[40.7178,-73.9516],culture:[40.7518,-73.9846]};
+const EAT_LL={gallaghers:[40.7632,-73.9835],keens:[40.7508,-73.9871],luger:[40.7099,-73.9625],essa:[40.7563,-73.9700],russ:[40.7190,-73.9895],katz:[40.7223,-73.9874],sarabeth:[40.7653,-73.9763],julianas:[40.7027,-73.9934],joes:[40.7545,-73.9867],shack:[40.7414,-73.9882],jgmelon:[40.7713,-73.9590],hamburgeram:[40.7276,-74.0013],levain:[40.7799,-73.9803],ansel:[40.7253,-74.0030],magnolia:[40.7359,-74.0050],ralph:[40.7716,-73.9670],juniors:[40.7585,-73.9862],chelseamkt:[40.7424,-74.0061],lostacos:[40.7571,-73.9881],timeout:[40.7035,-73.9905],oyster:[40.7527,-73.9772],hk:[40.7614,-73.9910],bcd:[40.7477,-73.9858],cote:[40.7413,-73.9917],jongro:[40.7478,-73.9868],baekjeong:[40.7470,-73.9853],hername:[40.7465,-73.9847],chodanggol:[40.7510,-73.9867],moono:[40.7466,-73.9840],ippudo:[40.7633,-73.9878],ichiran:[40.7486,-73.9910],raku:[40.7277,-74.0003],katsuhama:[40.7568,-73.9783],nakazawa:[40.7316,-74.0047],ladym:[40.7525,-73.9839],breads:[40.7537,-73.9831],halal:[40.7619,-73.9791],joes_sh:[40.7145,-73.9968],thaidiner:[40.7207,-73.9962],ellens:[40.7616,-73.9837],balthazar:[40.7226,-73.9981],eataly:[40.7421,-73.9897],devocion:[40.7140,-73.9620],sundaybk:[40.7137,-73.9655],winson:[40.7155,-73.9446],ladong:[40.7375,-73.9918],butler:[40.7034,-73.9908],arabica:[40.7030,-73.9935],cecconis:[40.7037,-73.9907],lindustrie:[40.7117,-73.9578],liliacafe:[40.7178,-73.9516],culture:[40.7518,-73.9846],apollo:[40.7517,-73.9917]};
 
 </script>
 <script>
@@ -1175,7 +1177,7 @@ const legendNote=`<div class="legend">${["done","must","rec","walk","free"].map(
 
 catView("see",$("#seeView"),$("#seeChips"),[
   {k:"museum",t:"미술관·박물관",lead:"🎫 MoMA·메트는 회사 사원증으로 무료 입장. 메트는 수요일, 휘트니·9/11 뮤지엄·프릭은 화요일 휴관."},
-  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 써밋(D4 낮) · 누벨루즈(D4 밤 ✔) · 오버스토리(D6 밤). 나머지는 '일정 > ＋ 가볼 만한 곳'에도 정리했어요."},
+  {k:"view",t:"전망대·루프탑",lead:"일정에 넣은 전망: 써밋(D4 ✔) · 누벨루즈(D4 ✔) · 오버스토리(D7 노을). 나머지는 '일정 > ＋ 가볼 만한 곳'에도 정리했어요."},
   {k:"market",t:"크리스마스 마켓·플리마켓",lead:"록펠러 트리는 12월 초 점등이라 11월 중순엔 설치 중이에요."},
   {k:"landmark",t:"랜드마크·공원"},
   {k:"tour",t:"투어 버스",lead:"선택 일정이에요. 추천 타이밍: D1 오후(시차로 걷기 힘들 때 다운타운 노선) 또는 D2 자유 저녁(나이트 투어)."}
@@ -1282,7 +1284,7 @@ function drawShow(k){
   }
   if(k==="jazz"||k==="dance"){
     const arr=Object.values(P).filter(p=>p.cat==="show"&&p.sub===k);
-    h+=`<h2 class="sec">${k==="jazz"?"재즈바":"댄스 수업 (1회)"}</h2><p class="lead">${k==="jazz"?"일정은 D7(목) 20:30 버드랜드 — The High Society New Orleans Jazz Band(신나는 뉴올리언스 전통 재즈). 빌리지 뱅가드·블루노트는 대안.":"일정은 D4(월) 19:00. 월요일은 브로드웨이 공연이 대부분 쉬는 날이에요."}</p><div class="grid">${arr.map(card).join("")}</div>`;
+    h+=`<h2 class="sec">${k==="jazz"?"재즈바":"댄스 수업 (1회)"}</h2><p class="lead">${k==="jazz"?"일정은 11/20(금) 17:30 버드랜드 — Birdland Big Band ✔ (금요일 스윙 빅밴드). 빌리지 뱅가드·블루노트는 대안.":"일정은 D4(월) 19:00. 월요일은 브로드웨이 공연이 대부분 쉬는 날이에요."}</p><div class="grid">${arr.map(card).join("")}</div>`;
   }
   v.innerHTML=h;
 }
